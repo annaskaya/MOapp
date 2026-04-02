@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <title>Anna Skaya — Founder</title>
+  <meta name="description" content="Anna Skaya — entrepreneur, founder of Basepaws, and builder at the intersection of science, technology, and design.">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Anna Skaya — Founder">
+  <meta property="og:description" content="Entrepreneur, founder of Basepaws, and builder at the intersection of science, technology, and design.">
+  <meta property="og:site_name" content="Anna Skaya">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Anna Skaya — Founder">
+  <meta name="twitter:description" content="Entrepreneur, founder of Basepaws, and builder at the intersection of science, technology, and design.">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../styles/site.css">
+  <link rel="stylesheet" href="../styles/tailwind.out.css">
+
+  <style>
+    /* ── Hero ── */
+    .bio-hero {
+      position: relative;
+      min-height: 60vh;
+      display: flex;
+      align-items: flex-end;
+      background: var(--aap-bg-dark);
+      overflow: hidden;
+    }
+
+    .bio-hero__gradient {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(28,22,24,0.15) 0%,
+        rgba(28,22,24,0.60) 60%,
+        rgba(28,22,24,0.92) 100%
+      );
+      z-index: 1;
+    }
+
+    .bio-hero__inner {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: var(--aap-max-width);
+      margin: 0 auto;
+      padding: var(--aap-space-xl) var(--aap-space-md) var(--aap-space-xl);
+    }
+
+    .bio-hero__eyebrow {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--aap-accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .bio-hero__name {
+      font-family: var(--aap-font-heading);
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--aap-text-light);
+      margin: 0 0 1rem;
+    }
+
+    .bio-hero__tagline {
+      font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+      color: rgba(250, 249, 246, 0.75);
+      max-width: 540px;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* ── Section basics ── */
+    .bio-section {
+      max-width: var(--aap-max-width);
+      margin: 0 auto;
+      padding: var(--aap-space-3xl) var(--aap-space-md);
+    }
+
+    .bio-section--narrow {
+      max-width: 720px;
+    }
+
+    .bio-divider {
+      border: none;
+      border-top: 1px solid var(--aap-border);
+      max-width: var(--aap-max-width);
+      margin: 0 auto;
+    }
+
+    /* ── About narrative ── */
+    .bio-narrative {
+      font-size: 1.125rem;
+      line-height: 1.8;
+      color: var(--aap-text);
+    }
+
+    .bio-narrative p {
+      margin-bottom: 1.5rem;
+    }
+
+    .bio-narrative p:last-child {
+      margin-bottom: 0;
+    }
+
+    .bio-lead {
+      font-size: clamp(1.2rem, 2.5vw, 1.375rem);
+      font-weight: 500;
+      color: var(--aap-text);
+      line-height: 1.7;
+    }
+
+    /* ── Highlight cards ── */
+    .bio-highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: var(--aap-space-md);
+    }
+
+    .bio-card {
+      background: var(--aap-bg);
+      border: 1px solid var(--aap-border);
+      border-radius: var(--aap-radius-lg);
+      padding: var(--aap-space-lg);
+      transition: box-shadow 0.25s ease, transform 0.25s ease;
+    }
+
+    .bio-card:hover {
+      box-shadow: var(--aap-shadow-lg);
+      transform: translateY(-2px);
+    }
+
+    .bio-card__icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      background: var(--aap-accent-light);
+      color: var(--aap-accent);
+    }
+
+    .bio-card__title {
+      font-family: var(--aap-font-heading);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--aap-text);
+      margin: 0 0 0.5rem;
+    }
+
+    .bio-card__text {
+      font-size: 0.95rem;
+      color: var(--aap-text-muted);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* ── Milestones timeline ── */
+    .bio-timeline {
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .bio-timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.5rem;
+      bottom: 0.5rem;
+      width: 2px;
+      background: var(--aap-border);
+    }
+
+    .bio-timeline__item {
+      position: relative;
+      padding-bottom: 2rem;
+    }
+
+    .bio-timeline__item:last-child {
+      padding-bottom: 0;
+    }
+
+    .bio-timeline__item::before {
+      content: '';
+      position: absolute;
+      left: -2rem;
+      top: 0.45rem;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--aap-accent);
+      border: 2px solid var(--aap-bg);
+      box-shadow: 0 0 0 2px var(--aap-accent);
+    }
+
+    .bio-timeline__year {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: var(--aap-accent);
+      margin-bottom: 0.25rem;
+    }
+
+    .bio-timeline__title {
+      font-family: var(--aap-font-heading);
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: var(--aap-text);
+      margin: 0 0 0.25rem;
+    }
+
+    .bio-timeline__desc {
+      font-size: 0.95rem;
+      color: var(--aap-text-muted);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* ── Quote block ── */
+    .bio-quote {
+      background: var(--aap-bg-muted);
+      border-radius: var(--aap-radius-lg);
+      padding: var(--aap-space-xl) var(--aap-space-lg);
+      text-align: center;
+      margin: var(--aap-space-xl) 0;
+    }
+
+    .bio-quote__text {
+      font-family: var(--aap-font-heading);
+      font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+      font-weight: 500;
+      font-style: italic;
+      color: var(--aap-text);
+      line-height: 1.6;
+      max-width: 600px;
+      margin: 0 auto 0.75rem;
+    }
+
+    .bio-quote__text::before { content: '\201C'; }
+    .bio-quote__text::after  { content: '\201D'; }
+
+    .bio-quote__attr {
+      font-size: 0.875rem;
+      color: var(--aap-text-muted);
+      margin: 0;
+    }
+
+    /* ── CTA strip ── */
+    .bio-cta {
+      background: var(--aap-bg-dark);
+      text-align: center;
+      padding: var(--aap-space-3xl) var(--aap-space-md);
+    }
+
+    .bio-cta__heading {
+      font-family: var(--aap-font-heading);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      color: var(--aap-text-light);
+      margin: 0 0 0.75rem;
+    }
+
+    .bio-cta__sub {
+      font-size: 1.05rem;
+      color: rgba(250,249,246,0.65);
+      margin: 0 0 2rem;
+    }
+
+    .bio-cta__links {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ── Footer override for standalone page ── */
+    .bio-footer {
+      background: var(--aap-bg-dark);
+      border-top: 1px solid rgba(250,249,246,0.08);
+      padding: var(--aap-space-lg) var(--aap-space-md);
+      text-align: center;
+    }
+
+    .bio-footer__copy {
+      font-size: 0.8rem;
+      color: rgba(250,249,246,0.4);
+      margin: 0;
+    }
+
+    /* ── Responsive ── */
+    @media (min-width: 768px) {
+      .bio-hero__inner {
+        padding: var(--aap-space-3xl) var(--aap-space-xl) var(--aap-space-3xl);
+      }
+
+      .bio-section {
+        padding: var(--aap-space-3xl) var(--aap-space-xl);
+      }
+
+      .bio-two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--aap-space-xl);
+        align-items: start;
+      }
+    }
+
+    /* ── Smooth entrance ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .bio-animate {
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .bio-animate--d1 { animation-delay: 0.1s; }
+    .bio-animate--d2 { animation-delay: 0.2s; }
+    .bio-animate--d3 { animation-delay: 0.3s; }
+    .bio-animate--d4 { animation-delay: 0.4s; }
+  </style>
+</head>
+
+<body style="margin: 0; background: var(--aap-bg);">
+
+  <div id="siteHeader"></div>
+
+  <!-- ════════ HERO ════════ -->
+  <section class="bio-hero">
+    <div class="bio-hero__gradient"></div>
+    <div class="bio-hero__inner">
+      <p class="bio-hero__eyebrow bio-animate">Founder &amp; Entrepreneur</p>
+      <h1 class="bio-hero__name bio-animate bio-animate--d1">Anna Skaya</h1>
+      <p class="bio-hero__tagline bio-animate bio-animate--d2">
+        Building at the intersection of science, technology, and
+        design&mdash;from pet genomics to smart property platforms.
+      </p>
+    </div>
+  </section>
+
+  <!-- ════════ ABOUT ════════ -->
+  <section class="bio-section bio-section--narrow">
+    <div class="bio-narrative">
+      <p class="bio-lead">
+        Anna Skaya is a serial entrepreneur and technologist who founded
+        <strong>Basepaws</strong>, the first direct-to-consumer cat genetics
+        company, transforming how millions of pet owners understand their
+        animals' health and heritage.
+      </p>
+      <p>
+        Under Anna's leadership, Basepaws pioneered at-home DNA and health
+        screening kits for cats&mdash;bringing the same revolution that
+        personal genomics created for human health into the veterinary world.
+        The company was acquired by Zoetis, the world's largest animal health
+        company, validating a bold thesis: that personalized, data-driven
+        pet care is the future.
+      </p>
+      <p>
+        Before Basepaws, Anna honed her craft across biotech, data science,
+        and product design. Her approach blends deep technical rigor with an
+        eye for consumer experience&mdash;a combination that has become her
+        signature across every venture.
+      </p>
+    </div>
+  </section>
+
+  <hr class="bio-divider">
+
+  <!-- ════════ HIGHLIGHTS ════════ -->
+  <section class="bio-section">
+    <div class="bio-highlights">
+
+      <div class="bio-card">
+        <div class="bio-card__icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3 class="bio-card__title">Basepaws</h3>
+        <p class="bio-card__text">
+          Founded the first direct-to-consumer cat genetics company. Acquired
+          by Zoetis, the global leader in animal health.
+        </p>
+      </div>
+
+      <div class="bio-card">
+        <div class="bio-card__icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+        </div>
+        <h3 class="bio-card__title">Mission-Driven</h3>
+        <p class="bio-card__text">
+          Passionate about using technology to improve quality of life&mdash;for
+          people and their pets alike.
+        </p>
+      </div>
+
+      <div class="bio-card">
+        <div class="bio-card__icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <h3 class="bio-card__title">Builder &amp; Operator</h3>
+        <p class="bio-card__text">
+          Hands-on across the full stack&mdash;from genomics pipelines to product
+          design, marketing, and fundraising.
+        </p>
+      </div>
+
+      <div class="bio-card">
+        <div class="bio-card__icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <h3 class="bio-card__title">Thought Leader</h3>
+        <p class="bio-card__text">
+          Speaker and advocate for personalized medicine, pet-tech
+          innovation, and women in STEM.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="bio-divider">
+
+  <!-- ════════ JOURNEY TIMELINE ════════ -->
+  <section class="bio-section">
+    <div class="bio-two-col">
+
+      <div>
+        <h2 style="font-family: var(--aap-font-heading); font-size: 1.75rem; font-weight: 700; color: var(--aap-text); margin: 0 0 0.5rem;">
+          The Journey
+        </h2>
+        <p style="color: var(--aap-text-muted); line-height: 1.6; margin: 0 0 2rem;">
+          Key milestones along the way&mdash;from idea to acquisition and beyond.
+        </p>
+      </div>
+
+      <div class="bio-timeline">
+        <div class="bio-timeline__item">
+          <p class="bio-timeline__year">2016</p>
+          <h4 class="bio-timeline__title">Basepaws Founded</h4>
+          <p class="bio-timeline__desc">
+            Launched the first-ever at-home DNA test for cats, fueled by
+            a Kickstarter campaign that captured global attention.
+          </p>
+        </div>
+        <div class="bio-timeline__item">
+          <p class="bio-timeline__year">2018</p>
+          <h4 class="bio-timeline__title">Product-Market Fit</h4>
+          <p class="bio-timeline__desc">
+            Scaled direct-to-consumer sales, built a proprietary feline
+            genomics database, and secured venture funding.
+          </p>
+        </div>
+        <div class="bio-timeline__item">
+          <p class="bio-timeline__year">2021</p>
+          <h4 class="bio-timeline__title">Zoetis Acquisition</h4>
+          <p class="bio-timeline__desc">
+            Basepaws was acquired by Zoetis, the world's largest animal
+            health company&mdash;a landmark exit in the pet-tech space.
+          </p>
+        </div>
+        <div class="bio-timeline__item">
+          <p class="bio-timeline__year">Now</p>
+          <h4 class="bio-timeline__title">What's Next</h4>
+          <p class="bio-timeline__desc">
+            Exploring new ventures at the intersection of AI, proptech,
+            and connected living experiences.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════ QUOTE ════════ -->
+  <div class="bio-section bio-section--narrow">
+    <div class="bio-quote">
+      <p class="bio-quote__text">
+        The best companies are built at the edge of what people think is possible
+        and what they secretly hope someone will create.
+      </p>
+      <p class="bio-quote__attr">— Anna Skaya</p>
+    </div>
+  </div>
+
+  <!-- ════════ CTA ════════ -->
+  <section class="bio-cta">
+    <h2 class="bio-cta__heading">Let's Connect</h2>
+    <p class="bio-cta__sub">Whether it's a new venture, a speaking opportunity, or just a great idea&mdash;reach out.</p>
+    <div class="bio-cta__links">
+      <a href="/contact/" class="aap-btn aap-btn--primary">Get in Touch</a>
+      <a href="https://www.linkedin.com/in/annaskaya/" target="_blank" rel="noopener" class="aap-btn aap-btn--light">LinkedIn</a>
+    </div>
+  </section>
+
+  <!-- ════════ FOOTER ════════ -->
+  <footer class="bio-footer">
+    <p class="bio-footer__copy">&copy; 2026 Anna Skaya. All rights reserved.</p>
+  </footer>
+
+  <!-- ════════ SCRIPTS ════════ -->
+  <script type="module" src="../shared/version-info.js"></script>
+  <script type="module">
+    import { initPublicPage } from '../shared/public-shell.js';
+    initPublicPage({
+      transparent: true,
+      light: true,
+      activePage: 'bio'
+    });
+  </script>
+</body>
+</html>

@@ -1,12 +1,12 @@
 {
-  "version": "v260401.01 7:04p",
+  "version": "v260402.01 3:31p",
   "release": 1,
-  "sha": "3d68bef",
-  "fullSha": "3d68beff24892cb7e7ffe42b863760b887c15005",
-  "actor": "rsonnad",
+  "sha": "2950ced",
+  "fullSha": "2950cedd45f842f0a53023dfeb03a0d08147b030",
+  "actor": "annaskaya",
   "source": "github-main-push",
   "model": "ci",
-  "machine": "runnervmrg6be",
-  "pushedAt": "2026-04-01T14:04:02-05:00",
-  "commits": [{"sha":"3d68bef","message":"Sync with alpacapps: admin tabs fix, infra page updates, LLM instructions","author":"Rahul"}]
+  "machine": "runnervm727z3",
+  "pushedAt": "2026-04-02T09:31:34-06:00",
+  "commits": []
 }

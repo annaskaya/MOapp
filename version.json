@@ -1,12 +1,12 @@
 {
-  "version": "v260402.03 3:54p",
-  "release": 3,
-  "sha": "268e3bb",
-  "fullSha": "268e3bbfeaeb0acb2f84669da771be67f529d192",
+  "version": "v260406.01 4:10p",
+  "release": 1,
+  "sha": "7c03b98",
+  "fullSha": "7c03b9838a55825da45d5615195cc3048215711a",
   "actor": "annaskaya",
   "source": "github-main-push",
   "model": "ci",
-  "machine": "runnervmrg6be",
-  "pushedAt": "2026-04-02T09:54:22-06:00",
-  "commits": [{"sha":"268e3bb","message":"feat: redesign bio page with cat-themed personality and upgraded aesthetics (#2)","author":"annaskaya"}]
+  "machine": "runnervm727z3",
+  "pushedAt": "2026-04-06T10:10:28-06:00",
+  "commits": [{"sha":"7c03b98","message":"Add Moisture Oyster branding assets","author":"Julianna Bebre"}]
 }

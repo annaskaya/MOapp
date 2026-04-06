@@ -1,0 +1,2046 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moisture Oyster — Packaging Design Options</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=Unbounded:wght@300;400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --mo-pink: #E8729A;
+            --mo-pink-light: #F4A5C0;
+            --mo-pink-hot: #FF5C8A;
+            --mo-pink-blush: #FADCE6;
+            --mo-mint: #7ED4C1;
+            --mo-mint-light: #A8E6D8;
+            --mo-teal: #5BBFAA;
+            --mo-teal-deep: #3DA898;
+            --mo-pearl: #FFF5F7;
+            --mo-lavender: #C8A2E0;
+            --mo-charcoal: #2A2A3D;
+            --mo-midnight: #1A1A2E;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #0E0E12;
+            color: #fff;
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        /* ===== PAGE HEADER ===== */
+        .page-header {
+            text-align: center;
+            padding: 5rem 2rem 2rem;
+        }
+        .page-header .tag {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.6rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--mo-pink);
+        }
+        .page-header h1 {
+            font-family: 'Unbounded', sans-serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-top: 0.75rem;
+            background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.6) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .page-header p {
+            color: rgba(255,255,255,0.4);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        /* ===== OPTION WRAPPER ===== */
+        .option {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        .option-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+        .option-num {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 800;
+            font-size: 0.7rem;
+            color: var(--mo-pink);
+            background: rgba(232,114,154,0.1);
+            padding: 0.3rem 0.7rem;
+            border-radius: 4px;
+        }
+        .option-name {
+            font-family: 'Sora', sans-serif;
+            font-weight: 700;
+            font-size: 1.4rem;
+            color: #fff;
+        }
+        .option-desc {
+            font-family: 'Instrument Serif', serif;
+            font-style: italic;
+            font-size: 1rem;
+            color: rgba(255,255,255,0.4);
+            margin-bottom: 2.5rem;
+        }
+
+        /* ===== STAGE ===== */
+        .stage {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            gap: 4rem;
+            padding: 4rem 3rem 3rem;
+            border-radius: 24px;
+            position: relative;
+            overflow: hidden;
+            min-height: 600px;
+            flex-wrap: wrap;
+        }
+
+        /* ===== BOX (all options) ===== */
+        .box {
+            width: 280px;
+            height: 520px;
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+            flex-shrink: 0;
+            transform: perspective(800px) rotateY(-4deg);
+            transition: transform 0.4s ease;
+        }
+        .box:hover { transform: perspective(800px) rotateY(0deg); }
+
+        /* ===== BOTTLE (all options) ===== */
+        .bottle-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-shrink: 0;
+            transform: perspective(800px) rotateY(4deg);
+            transition: transform 0.4s ease;
+        }
+        .bottle-wrap:hover { transform: perspective(800px) rotateY(0deg); }
+
+        .bottle-cap {
+            width: 54px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+        .cap-nub {
+            width: 20px;
+            height: 6px;
+            background: var(--mo-teal);
+            border-radius: 3px 3px 0 0;
+        }
+        .cap-top {
+            width: 32px;
+            height: 10px;
+            background: linear-gradient(180deg, #8EDED0, var(--mo-mint));
+            border-radius: 4px 4px 0 0;
+        }
+        .cap-mid {
+            width: 46px;
+            height: 7px;
+            background: var(--mo-mint);
+            border-top: 1px solid rgba(255,255,255,0.3);
+        }
+        .cap-mid2 {
+            width: 50px;
+            height: 7px;
+            background: var(--mo-mint);
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+        .cap-base {
+            width: 54px;
+            height: 10px;
+            background: linear-gradient(180deg, var(--mo-mint), var(--mo-teal));
+            border-radius: 0 0 2px 2px;
+        }
+        .bottle-neck {
+            width: 38px;
+            height: 6px;
+            background: rgba(200,215,225,0.25);
+            margin: 0 auto;
+        }
+        .bottle-body {
+            width: 96px;
+            height: 140px;
+            border-radius: 8px 8px 16px 16px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(150deg, rgba(255,255,255,0.25) 0%, rgba(200,215,230,0.15) 50%, rgba(255,255,255,0.2) 100%);
+            border: 1px solid rgba(255,255,255,0.15);
+            backdrop-filter: blur(4px);
+            box-shadow:
+                inset -10px 0 20px rgba(200,215,225,0.1),
+                inset 8px 0 15px rgba(255,255,255,0.15),
+                0 8px 30px rgba(0,0,0,0.2);
+        }
+        .bottle-body::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 8px;
+            width: 10px;
+            height: 75%;
+            background: linear-gradient(180deg, rgba(255,255,255,0.35), rgba(255,255,255,0.05));
+            border-radius: 10px;
+        }
+        .bottle-label {
+            position: absolute;
+            left: 6px; right: 6px;
+            top: 12px; bottom: 12px;
+            border-radius: 4px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 5px;
+        }
+
+        /* ===== NOTES ===== */
+        .notes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .note {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+        }
+        .note h5 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.6rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--mo-pink);
+            margin-bottom: 0.4rem;
+        }
+        .note p {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.5);
+            line-height: 1.4;
+        }
+
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(232,114,154,0.2), rgba(126,212,193,0.2), transparent);
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        /* ============================================================ */
+        /* OPTION 1: PERFUME MINIMAL                                     */
+        /* ============================================================ */
+        .stage-1 {
+            background: linear-gradient(180deg, #F8F6F3 0%, #EFEBE6 100%);
+            box-shadow: 0 0 80px rgba(232,114,154,0.06);
+        }
+        .box-1 {
+            background: #FFFFFF;
+            box-shadow:
+                20px 20px 60px rgba(0,0,0,0.08),
+                0 0 0 1px rgba(0,0,0,0.03);
+        }
+        /* Almost nothing on the box — radical white space */
+        .box-1 .b1-inner {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+            position: relative;
+        }
+        .box-1 .b1-top-half {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        /* Huge, cropped MO as a subtle watermark */
+        .box-1 .b1-watermark {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 900;
+            font-size: 8rem;
+            line-height: 0.85;
+            color: rgba(0,0,0,0.025);
+            position: absolute;
+            top: 20px;
+            left: -10px;
+            letter-spacing: -0.05em;
+            pointer-events: none;
+            user-select: none;
+        }
+        .box-1 .b1-center {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        .box-1 .b1-brand {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 800;
+            font-size: 1.85rem;
+            line-height: 0.95;
+            letter-spacing: -0.04em;
+            color: #1a1a1a;
+        }
+        .box-1 .b1-tm {
+            font-size: 0.4rem;
+            vertical-align: super;
+            color: var(--mo-pink);
+            font-weight: 700;
+        }
+        .box-1 .b1-sub {
+            font-family: 'Instrument Serif', serif;
+            font-style: italic;
+            font-size: 0.7rem;
+            color: var(--mo-pink);
+            margin-top: 8px;
+            letter-spacing: 0.02em;
+        }
+        /* Iridescent foil strip */
+        .box-1 .b1-foil {
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--mo-pink-light), var(--mo-lavender), var(--mo-mint-light), var(--mo-pink-light));
+            background-size: 200% 100%;
+            animation: foilShift 4s ease infinite;
+        }
+        @keyframes foilShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        .box-1 .b1-bottom {
+            padding: 20px 24px 16px;
+        }
+        .box-1 .b1-pf {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.55rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #aaa;
+            font-weight: 500;
+        }
+        .box-1 .b1-product {
+            font-family: 'Sora', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            color: #1a1a1a;
+            margin-top: 2px;
+            letter-spacing: -0.02em;
+        }
+        .box-1 .b1-claims {
+            margin-top: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .box-1 .b1-claim {
+            font-size: 0.62rem;
+            color: #999;
+            display: flex;
+            align-items: flex-start;
+            gap: 6px;
+            line-height: 1.35;
+        }
+        .box-1 .b1-dot {
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            margin-top: 4px;
+        }
+        .box-1 .b1-footer {
+            margin-top: 14px;
+            padding-top: 10px;
+            border-top: 1px solid #f0f0f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .box-1 .b1-ophth {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.42rem;
+            color: #bbb;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            line-height: 1.3;
+        }
+        .box-1 .b1-doses {
+            font-family: 'Sora', sans-serif;
+            font-weight: 700;
+            font-size: 0.7rem;
+            color: #1a1a1a;
+        }
+        .box-1 .b1-drops-icon { color: var(--mo-pink); }
+        .box-1 .b1-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 8px;
+            font-size: 0.5rem;
+            color: #ccc;
+        }
+        .box-1 .b1-lens {
+            font-size: 0.42rem;
+            color: #ccc;
+            margin-top: 8px;
+            line-height: 1.3;
+        }
+
+        /* Label 1 */
+        .label-1 {
+            background: white;
+        }
+        .label-1 .l-brand {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 800;
+            font-size: 0.52rem;
+            color: #1a1a1a;
+            text-align: center;
+            line-height: 1;
+            letter-spacing: -0.03em;
+        }
+        .label-1 .l-line {
+            width: 100%;
+            height: 1.5px;
+            background: linear-gradient(90deg, var(--mo-pink-light), var(--mo-lavender), var(--mo-mint-light));
+            margin: 4px 0;
+        }
+        .label-1 .l-pf {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.2rem;
+            color: var(--mo-pink);
+            text-align: center;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+        .label-1 .l-type {
+            font-family: 'Sora', sans-serif;
+            font-weight: 600;
+            font-size: 0.3rem;
+            color: #1a1a1a;
+            text-align: center;
+            margin-top: 1px;
+            letter-spacing: -0.01em;
+        }
+        .label-1 .l-bot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-top: auto;
+        }
+        .label-1 .l-vol {
+            font-family: 'Space Grotesk'; font-size: 0.18rem; color: #bbb;
+        }
+        .label-1 .l-safe {
+            font-family: 'Space Grotesk'; font-size: 0.17rem; color: white;
+            background: var(--mo-pink); padding: 1px 2px; border-radius: 1px;
+        }
+        .label-1 .l-doses {
+            font-family: 'Sora'; font-weight: 700; font-size: 0.22rem; color: #1a1a1a;
+        }
+
+        /* ============================================================ */
+        /* OPTION 2: NEON DROP (MAXIMUM GEN Z)                          */
+        /* ============================================================ */
+        .stage-2 {
+            background: linear-gradient(135deg, #1a0a20 0%, #0a1520 50%, #0a2018 100%);
+            box-shadow: inset 0 0 120px rgba(200,162,224,0.05);
+        }
+        .stage-2::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(232,114,154,0.15) 0%, transparent 70%);
+            top: -100px;
+            right: -50px;
+            pointer-events: none;
+        }
+        .stage-2::after {
+            content: '';
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(126,212,193,0.12) 0%, transparent 70%);
+            bottom: -80px;
+            left: -50px;
+            pointer-events: none;
+        }
+
+        .box-2 {
+            background: #0E0E14;
+            box-shadow:
+                0 0 60px rgba(232,114,154,0.1),
+                0 0 120px rgba(126,212,193,0.05),
+                20px 20px 60px rgba(0,0,0,0.4);
+            border: 1px solid rgba(255,255,255,0.04);
+        }
+        .box-2 .b2-inner {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+        /* Oversized gradient typography that bleeds off edges */
+        .box-2 .b2-bleed-text {
+            position: absolute;
+            top: -15px;
+            left: -20px;
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 900;
+            font-size: 5.5rem;
+            line-height: 0.85;
+            letter-spacing: -0.06em;
+            background: linear-gradient(180deg, rgba(232,114,154,0.15) 0%, rgba(200,162,224,0.08) 50%, rgba(126,212,193,0.04) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            pointer-events: none;
+            user-select: none;
+        }
+        .box-2 .b2-content {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 30px 24px 18px;
+        }
+        .box-2 .b2-brand {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 800;
+            font-size: 2rem;
+            line-height: 0.92;
+            letter-spacing: -0.04em;
+            background: linear-gradient(135deg, var(--mo-pink) 0%, var(--mo-lavender) 40%, var(--mo-mint) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .box-2 .b2-tm {
+            font-size: 0.4rem;
+            -webkit-text-fill-color: var(--mo-lavender);
+        }
+        .box-2 .b2-mid {
+            margin-top: auto;
+            margin-bottom: auto;
+            padding: 0 0 0 2px;
+        }
+        .box-2 .b2-pf {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.5rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--mo-pink);
+            font-weight: 500;
+            display: inline-block;
+            border-bottom: 1px solid rgba(232,114,154,0.3);
+            padding-bottom: 2px;
+        }
+        .box-2 .b2-product {
+            font-family: 'Sora', sans-serif;
+            font-weight: 700;
+            font-size: 1.65rem;
+            line-height: 1;
+            color: #fff;
+            margin-top: 6px;
+            letter-spacing: -0.03em;
+        }
+        .box-2 .b2-claims {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+        .box-2 .b2-claim {
+            font-size: 0.6rem;
+            color: rgba(255,255,255,0.4);
+            padding: 7px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .box-2 .b2-claim:last-child { border-bottom: none; }
+        .box-2 .b2-claim-num {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.45rem;
+            color: var(--mo-mint);
+            font-weight: 600;
+            width: 14px;
+            flex-shrink: 0;
+        }
+        .box-2 .b2-footer {
+            margin-top: auto;
+        }
+        .box-2 .b2-lens {
+            font-size: 0.42rem;
+            color: rgba(255,255,255,0.2);
+            line-height: 1.3;
+            margin-bottom: 10px;
+        }
+        .box-2 .b2-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        .box-2 .b2-left-info {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .box-2 .b2-ophth {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.4rem;
+            color: rgba(255,255,255,0.25);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+        .box-2 .b2-sterile {
+            font-size: 0.45rem;
+            color: rgba(255,255,255,0.2);
+        }
+        .box-2 .b2-vol {
+            font-family: 'Sora'; font-weight: 600; font-size: 0.55rem; color: var(--mo-mint);
+        }
+        .box-2 .b2-right-info {
+            text-align: right;
+        }
+        .box-2 .b2-doses {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 800;
+            font-size: 1.4rem;
+            color: #fff;
+            line-height: 1;
+        }
+        .box-2 .b2-doses-sub {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.4rem;
+            color: rgba(255,255,255,0.3);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        /* Label 2 */
+        .label-2 {
+            background: linear-gradient(180deg, #12121A 0%, #0E0E14 100%);
+            border: 0.5px solid rgba(255,255,255,0.06);
+        }
+        .label-2 .l-brand {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 800;
+            font-size: 0.48rem;
+            text-align: center;
+            line-height: 1;
+            letter-spacing: -0.03em;
+            background: linear-gradient(135deg, var(--mo-pink) 0%, var(--mo-mint) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .label-2 .l-pf {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.17rem;
+            color: var(--mo-pink);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            text-align: center;
+            margin-top: 2px;
+        }
+        .label-2 .l-type {
+            font-family: 'Sora', sans-serif;
+            font-weight: 600;
+            font-size: 0.28rem;
+            color: rgba(255,255,255,0.8);
+            text-align: center;
+            margin-top: 2px;
+        }
+        .label-2 .l-bot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-top: auto;
+        }
+        .label-2 .l-vol { font-family: 'Space Grotesk'; font-size: 0.17rem; color: rgba(255,255,255,0.3); }
+        .label-2 .l-safe { font-family: 'Space Grotesk'; font-size: 0.16rem; color: #0E0E14; background: var(--mo-mint); padding: 1px 2px; border-radius: 1px; font-weight: 600; }
+        .label-2 .l-doses { font-family: 'Sora'; font-weight: 700; font-size: 0.22rem; color: #fff; }
+
+
+        /* ============================================================ */
+        /* OPTION 3: SOFT GLASS (Frosted luxe meets skincare)           */
+        /* ============================================================ */
+        .stage-3 {
+            background: linear-gradient(180deg, #E8E0D8 0%, #D8D0C8 100%);
+        }
+
+        .box-3 {
+            background: linear-gradient(180deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.4) 100%);
+            backdrop-filter: blur(30px);
+            border: 1px solid rgba(255,255,255,0.6);
+            box-shadow:
+                20px 20px 60px rgba(0,0,0,0.06),
+                inset 0 1px 0 rgba(255,255,255,0.8);
+        }
+        .box-3 .b3-inner {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        /* Frosted gradient blob */
+        .box-3 .b3-blob-1 {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(232,114,154,0.2) 0%, transparent 70%);
+            top: 30px;
+            right: -40px;
+            filter: blur(30px);
+        }
+        .box-3 .b3-blob-2 {
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(126,212,193,0.2) 0%, transparent 70%);
+            bottom: 80px;
+            left: -30px;
+            filter: blur(25px);
+        }
+        .box-3 .b3-blob-3 {
+            position: absolute;
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(200,162,224,0.15) 0%, transparent 70%);
+            top: 200px;
+            left: 40px;
+            filter: blur(20px);
+        }
+        .box-3 .b3-content {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 32px 26px 18px;
+        }
+        .box-3 .b3-brand {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 800;
+            font-size: 1.75rem;
+            line-height: 0.92;
+            letter-spacing: -0.04em;
+            color: var(--mo-charcoal);
+        }
+        .box-3 .b3-tm {
+            font-size: 0.4rem;
+            vertical-align: super;
+            color: var(--mo-pink);
+        }
+        .box-3 .b3-tagline {
+            font-family: 'Instrument Serif', serif;
+            font-style: italic;
+            font-size: 0.8rem;
+            color: var(--mo-pink);
+            margin-top: 5px;
+            opacity: 0.8;
+        }
+        .box-3 .b3-mid {
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+        .box-3 .b3-glass-card {
+            background: rgba(255,255,255,0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.6);
+            border-radius: 12px;
+            padding: 16px 18px;
+        }
+        .box-3 .b3-pf {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.5rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--mo-pink);
+            font-weight: 600;
+        }
+        .box-3 .b3-product {
+            font-family: 'Sora', sans-serif;
+            font-weight: 700;
+            font-size: 1.3rem;
+            line-height: 1.05;
+            color: var(--mo-charcoal);
+            margin-top: 3px;
+            letter-spacing: -0.02em;
+        }
+        .box-3 .b3-claim-row {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 10px;
+            font-size: 0.58rem;
+            color: rgba(42,42,61,0.55);
+            line-height: 1.35;
+        }
+        .box-3 .b3-claim-pip {
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .box-3 .b3-footer {
+            margin-top: auto;
+        }
+        .box-3 .b3-lens {
+            font-size: 0.42rem;
+            color: rgba(42,42,61,0.3);
+            line-height: 1.3;
+            margin-bottom: 10px;
+        }
+        .box-3 .b3-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        .box-3 .b3-ophth {
+            font-family: 'Space Grotesk'; font-size: 0.4rem; color: rgba(42,42,61,0.3);
+            text-transform: uppercase; letter-spacing: 0.08em; line-height: 1.3;
+        }
+        .box-3 .b3-doses {
+            font-family: 'Unbounded'; font-weight: 800; font-size: 1.1rem; color: var(--mo-charcoal);
+            line-height: 1;
+        }
+        .box-3 .b3-doses-plus {
+            color: var(--mo-pink);
+        }
+        .box-3 .b3-doses-label {
+            font-family: 'Space Grotesk'; font-size: 0.35rem; color: rgba(42,42,61,0.3);
+            letter-spacing: 0.15em; text-transform: uppercase; text-align: right;
+        }
+        .box-3 .b3-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 8px;
+            font-size: 0.48rem;
+            color: rgba(42,42,61,0.3);
+        }
+
+        /* Label 3 */
+        .label-3 {
+            background: linear-gradient(180deg, rgba(255,255,255,0.75) 0%, rgba(255,255,255,0.5) 100%);
+            backdrop-filter: blur(8px);
+            border: 0.5px solid rgba(255,255,255,0.5);
+        }
+        .label-3 .l-brand {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 800;
+            font-size: 0.5rem;
+            color: var(--mo-charcoal);
+            text-align: center;
+            line-height: 1;
+            letter-spacing: -0.03em;
+        }
+        .label-3 .l-pf {
+            font-family: 'Space Grotesk'; font-size: 0.18rem; color: var(--mo-pink);
+            text-align: center; letter-spacing: 0.12em; text-transform: uppercase; margin-top: 2px;
+        }
+        .label-3 .l-line {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--mo-pink-light), var(--mo-mint-light), transparent);
+            margin: 3px 0;
+        }
+        .label-3 .l-type {
+            font-family: 'Sora'; font-weight: 600; font-size: 0.28rem;
+            color: var(--mo-charcoal); text-align: center; letter-spacing: -0.01em;
+        }
+        .label-3 .l-bot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-top: auto;
+        }
+        .label-3 .l-vol { font-family: 'Space Grotesk'; font-size: 0.17rem; color: rgba(42,42,61,0.3); }
+        .label-3 .l-safe { font-family: 'Space Grotesk'; font-size: 0.16rem; color: white; background: var(--mo-pink); padding: 1px 2px; border-radius: 1px; }
+        .label-3 .l-doses { font-family: 'Sora'; font-weight: 700; font-size: 0.2rem; color: var(--mo-charcoal); }
+
+        /* ===== FOOTER ===== */
+        footer {
+            text-align: center;
+            padding: 4rem 2rem 3rem;
+            font-size: 0.7rem;
+            color: rgba(255,255,255,0.2);
+        }
+        footer .f-brand {
+            font-family: 'Unbounded';
+            font-weight: 700;
+            font-size: 0.8rem;
+            background: linear-gradient(135deg, var(--mo-pink), var(--mo-mint));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 800px) {
+            .stage { flex-direction: column; align-items: center; gap: 2rem; padding: 2rem; }
+            .box { transform: none; }
+            .bottle-wrap { transform: none; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="page-header">
+    <div class="tag">Moisture Oyster &mdash; Packaging Concepts</div>
+    <h1>Five Directions</h1>
+    <p>Same bottle. Same info. Radically different presence.</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- OPTION 1: PERFUME MINIMAL                                     -->
+<!-- ============================================================ -->
+<div class="option">
+    <div class="option-label">
+        <span class="option-num">01</span>
+        <span class="option-name">Perfume Minimal</span>
+    </div>
+    <div class="option-desc">Radical white space. The box feels like unwrapping a fragrance, not a medicine.</div>
+
+    <div class="stage stage-1">
+        <div class="box box-1">
+            <div class="b1-inner">
+                <div class="b1-top-half">
+                    <div class="b1-watermark">MO</div>
+                    <div class="b1-center">
+                        <div class="b1-brand">MOISTURE<br>OYSTER<span class="b1-tm">&trade;</span></div>
+                        <div class="b1-sub">let your eyes shine</div>
+                    </div>
+                </div>
+                <div class="b1-foil"></div>
+                <div class="b1-bottom">
+                    <div class="b1-pf">Preservative Free</div>
+                    <div class="b1-product">Lubricating<br>Eye Drops</div>
+                    <div class="b1-claims">
+                        <div class="b1-claim"><div class="b1-dot" style="background:var(--mo-pink)"></div>PH Balanced</div>
+                        <div class="b1-claim"><div class="b1-dot" style="background:var(--mo-mint)"></div>Contains Sodium Hyaluronate which occurs naturally in tears</div>
+                        <div class="b1-claim"><div class="b1-dot" style="background:var(--mo-lavender)"></div>Fast acting temporary relief for irritated dry eyes</div>
+                    </div>
+                    <div class="b1-lens">Suitable for use before inserting and after removing contact lenses (not a rewetting drop)</div>
+                    <div class="b1-footer">
+                        <div>
+                            <div class="b1-ophth">Ophthalmologist<br>Approved</div>
+                        </div>
+                        <div class="b1-doses">300<span class="b1-drops-icon">+</span> doses</div>
+                    </div>
+                    <div class="b1-meta">
+                        <span>Sterile</span>
+                        <span>0.33 Fl Oz / 10 Ml</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BOTTLE 1 -->
+        <div class="bottle-wrap">
+            <div class="bottle-cap">
+                <div class="cap-nub"></div>
+                <div class="cap-top"></div>
+                <div class="cap-mid"></div>
+                <div class="cap-mid2"></div>
+                <div class="cap-base"></div>
+            </div>
+            <div class="bottle-neck"></div>
+            <div class="bottle-body">
+                <div class="bottle-label label-1">
+                    <div class="l-brand">MOISTURE<br>OYSTER</div>
+                    <div class="l-line"></div>
+                    <div class="l-pf">Preservative Free</div>
+                    <div class="l-type">Lubricating<br>Eye Drops</div>
+                    <div class="l-bot">
+                        <div class="l-vol">0.33 Fl Oz<br>10 Ml</div>
+                        <div class="l-safe">SAFE 90 DAYS</div>
+                        <div class="l-doses">300+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="notes">
+        <div class="note"><h5>Approach</h5><p>Inspired by Sante Beauteye & luxury fragrance packaging. 70% white space creates instant premium perception.</p></div>
+        <div class="note"><h5>Standout</h5><p>Animated iridescent foil strip divides brand from info. Oversized "MO" watermark adds depth without clutter.</p></div>
+        <div class="note"><h5>Shelf Disruption</h5><p>Nothing else in the eye drop aisle looks this empty. The restraint IS the statement. Reads as skincare, not pharma.</p></div>
+        <div class="note"><h5>Best For</h5><p>Sephora, premium DTC, beauty counters, content creators who want it on camera.</p></div>
+    </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ============================================================ -->
+<!-- OPTION 2: NEON DROP                                           -->
+<!-- ============================================================ -->
+<div class="option">
+    <div class="option-label">
+        <span class="option-num">02</span>
+        <span class="option-name">Neon Drop</span>
+    </div>
+    <div class="option-desc">Dark, bold, impossible to ignore. The box that makes people pick it up.</div>
+
+    <div class="stage stage-2">
+        <div class="box box-2">
+            <div class="b2-inner">
+                <div class="b2-bleed-text">MO<br>IS<br>TU<br>RE</div>
+                <div class="b2-content">
+                    <div class="b2-brand">MOISTURE<br>OYSTER<span class="b2-tm">&trade;</span></div>
+
+                    <div class="b2-mid">
+                        <div class="b2-pf">Preservative Free</div>
+                        <div class="b2-product">Lubricating<br>Eye Drops</div>
+                        <div class="b2-claims">
+                            <div class="b2-claim">
+                                <span class="b2-claim-num">01</span>
+                                PH Balanced
+                            </div>
+                            <div class="b2-claim">
+                                <span class="b2-claim-num">02</span>
+                                Contains Sodium Hyaluronate which occurs naturally in tears
+                            </div>
+                            <div class="b2-claim">
+                                <span class="b2-claim-num">03</span>
+                                Fast acting temporary relief for irritated dry eyes
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="b2-footer">
+                        <div class="b2-lens">Suitable for use before inserting and after removing contact lenses (not a rewetting drop)</div>
+                        <div class="b2-bottom">
+                            <div class="b2-left-info">
+                                <div class="b2-ophth">Ophthalmologist Approved</div>
+                                <div class="b2-sterile">Sterile</div>
+                                <div class="b2-vol">0.33 Fl Oz / 10 Ml</div>
+                            </div>
+                            <div class="b2-right-info">
+                                <div class="b2-doses">300+</div>
+                                <div class="b2-doses-sub">Doses</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BOTTLE 2 -->
+        <div class="bottle-wrap">
+            <div class="bottle-cap">
+                <div class="cap-nub"></div>
+                <div class="cap-top"></div>
+                <div class="cap-mid"></div>
+                <div class="cap-mid2"></div>
+                <div class="cap-base"></div>
+            </div>
+            <div class="bottle-neck"></div>
+            <div class="bottle-body">
+                <div class="bottle-label label-2">
+                    <div class="l-brand">MOISTURE<br>OYSTER</div>
+                    <div class="l-pf">Preservative Free</div>
+                    <div style="width:80%; height:0.5px; background:rgba(255,255,255,0.08); margin:3px auto;"></div>
+                    <div class="l-type">Lubricating<br>Eye Drops</div>
+                    <div class="l-bot">
+                        <div class="l-vol">0.33 Fl Oz<br>10 Ml</div>
+                        <div class="l-safe">SAFE 90 DAYS</div>
+                        <div class="l-doses">300+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="notes">
+        <div class="note"><h5>Approach</h5><p>Oversized type bleeding off edges + gradient glow. Inspired by streetwear packaging & gaming aesthetics that Gen Z lives in.</p></div>
+        <div class="note"><h5>Standout</h5><p>Dark box = category-first. No other eye drop brand goes dark. Numbered claims feel editorial, not medical. Iridescent gradient wordmark glows.</p></div>
+        <div class="note"><h5>Shelf Disruption</h5><p>Maximum contrast against the sea of white/blue pharma boxes. Dark label on clear bottle creates a striking see-through effect.</p></div>
+        <div class="note"><h5>Best For</h5><p>Gaming/streaming audiences, Gen Z TikTok, Ulta/Urban Outfitters retail, content-first marketing.</p></div>
+    </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ============================================================ -->
+<!-- OPTION 3: SOFT GLASS                                          -->
+<!-- ============================================================ -->
+<div class="option">
+    <div class="option-label">
+        <span class="option-num">03</span>
+        <span class="option-name">Soft Glass</span>
+    </div>
+    <div class="option-desc">Frosted glassmorphism meets skincare. The box you want to keep, not throw away.</div>
+
+    <div class="stage stage-3">
+        <div class="box box-3">
+            <div class="b3-inner">
+                <div class="b3-blob-1"></div>
+                <div class="b3-blob-2"></div>
+                <div class="b3-blob-3"></div>
+                <div class="b3-content">
+                    <div class="b3-brand">MOISTURE<br>OYSTER<span class="b3-tm">&trade;</span></div>
+                    <div class="b3-tagline">let your eyes shine</div>
+
+                    <div class="b3-mid">
+                        <div class="b3-glass-card">
+                            <div class="b3-pf">Preservative Free</div>
+                            <div class="b3-product">Lubricating<br>Eye Drops</div>
+                            <div class="b3-claim-row">
+                                <div class="b3-claim-pip" style="background:var(--mo-pink)"></div>
+                                PH Balanced
+                            </div>
+                            <div class="b3-claim-row">
+                                <div class="b3-claim-pip" style="background:var(--mo-mint)"></div>
+                                Contains Sodium Hyaluronate which occurs naturally in tears
+                            </div>
+                            <div class="b3-claim-row">
+                                <div class="b3-claim-pip" style="background:var(--mo-lavender)"></div>
+                                Fast acting temporary relief for irritated dry eyes
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="b3-footer">
+                        <div class="b3-lens">Suitable for use before inserting and after removing contact lenses (not a rewetting drop)</div>
+                        <div class="b3-bar">
+                            <div>
+                                <div class="b3-ophth">Ophthalmologist<br>Approved</div>
+                            </div>
+                            <div style="text-align:right;">
+                                <div class="b3-doses">300<span class="b3-doses-plus">+</span></div>
+                                <div class="b3-doses-label">Doses</div>
+                            </div>
+                        </div>
+                        <div class="b3-meta">
+                            <span>Sterile</span>
+                            <span>0.33 Fl Oz / 10 Ml</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BOTTLE 3 -->
+        <div class="bottle-wrap">
+            <div class="bottle-cap">
+                <div class="cap-nub"></div>
+                <div class="cap-top"></div>
+                <div class="cap-mid"></div>
+                <div class="cap-mid2"></div>
+                <div class="cap-base"></div>
+            </div>
+            <div class="bottle-neck"></div>
+            <div class="bottle-body">
+                <div class="bottle-label label-3">
+                    <div class="l-brand">MOISTURE<br>OYSTER</div>
+                    <div class="l-pf">Preservative Free</div>
+                    <div class="l-line"></div>
+                    <div class="l-type">Lubricating<br>Eye Drops</div>
+                    <div class="l-bot">
+                        <div class="l-vol">0.33 Fl Oz<br>10 Ml</div>
+                        <div class="l-safe">SAFE 90 DAYS</div>
+                        <div class="l-doses">300+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="notes">
+        <div class="note"><h5>Approach</h5><p>Frosted glass aesthetic with floating color blobs behind translucent surface. Like holding a piece of polished sea glass.</p></div>
+        <div class="note"><h5>Standout</h5><p>Glassmorphism card for claims creates depth. Blurred pink, mint, lavender blobs shift with viewing angle if printed on lenticular stock.</p></div>
+        <div class="note"><h5>Shelf Disruption</h5><p>Translucent/frosted packaging reads as expensive. The color blobs make each box slightly unique in how light hits it. Feels like Korean beauty.</p></div>
+        <div class="note"><h5>Best For</h5><p>K-beauty adjacent retail, Sephora/Revolve, wellness-forward audiences, Instagram aesthetic.</p></div>
+    </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ============================================================ -->
+<!-- OPTION 4: EYE COLLAGE                                         -->
+<!-- ============================================================ -->
+<style>
+    /* OPTION 4 STYLES */
+    .stage-4 {
+        background: linear-gradient(180deg, #FFF8F5 0%, #F5EDE8 100%);
+    }
+
+    .box-4 {
+        background: #FFFAF8;
+        box-shadow: 20px 20px 60px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.02);
+        position: relative;
+    }
+    .box-4 .b4-inner {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Eye collage area — top half of the box */
+    .box-4 .b4-eyes-area {
+        flex: 0 0 52%;
+        position: relative;
+        overflow: hidden;
+        background: #FFFAF8;
+    }
+
+    /* Individual eye shapes */
+    .eye-shape {
+        position: absolute;
+        border-radius: 50% / 60%;
+        overflow: hidden;
+        filter: saturate(0.85) contrast(1.05);
+        transition: transform 0.3s ease;
+    }
+    .box-4:hover .eye-shape {
+        filter: saturate(1.1) contrast(1.05);
+    }
+
+    /* Each eye uses a gradient to simulate a realistic eye cutout */
+    .eye-shape .eye-inner {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Skin tone base */
+    .eye-skin { background: linear-gradient(135deg, #D4A98C, #C99A7E); }
+    .eye-skin-light { background: linear-gradient(135deg, #E8C4AD, #DDB8A0); }
+    .eye-skin-warm { background: linear-gradient(135deg, #D9A88A, #CFA080); }
+    .eye-skin-pink { background: linear-gradient(135deg, #DBAAA0, #D09B90); }
+
+    /* Eyelid detail */
+    .eye-lid {
+        position: absolute;
+        width: 100%;
+        height: 40%;
+        top: 0;
+        border-radius: 0 0 50% 50% / 0 0 80% 80%;
+    }
+    .eye-lid-bottom {
+        position: absolute;
+        width: 100%;
+        height: 35%;
+        bottom: 0;
+        border-radius: 50% 50% 0 0 / 80% 80% 0 0;
+    }
+
+    /* Iris */
+    .eye-iris {
+        position: absolute;
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: inset 0 0 4px rgba(0,0,0,0.3);
+    }
+    .eye-pupil {
+        position: absolute;
+        border-radius: 50%;
+        background: #111;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .eye-highlight {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.85);
+    }
+    /* Eyelash lines */
+    .eye-lashes {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    /* Eye colors */
+    .iris-blue { background: radial-gradient(circle, #4A8BC2 20%, #2D6BA0 50%, #1F4F78 90%); }
+    .iris-green { background: radial-gradient(circle, #6B9E6B 20%, #4A7D4A 50%, #2D5C2D 90%); }
+    .iris-brown { background: radial-gradient(circle, #8B6F3E 20%, #6B5230 50%, #4A3820 90%); }
+    .iris-hazel { background: radial-gradient(circle, #7B8E4A 20%, #6B7040 50%, #4A5030 90%); }
+    .iris-gray { background: radial-gradient(circle, #7A8BA0 20%, #5A6E85 50%, #3E5068 90%); }
+
+    /* Eyeliner/shadow accents */
+    .shadow-gold { box-shadow: inset 0 -3px 8px rgba(180,140,80,0.4), inset 0 3px 6px rgba(180,140,80,0.3); }
+    .shadow-rose { box-shadow: inset 0 -3px 8px rgba(180,100,100,0.3), inset 0 3px 6px rgba(200,120,120,0.2); }
+    .shadow-bronze { box-shadow: inset 0 -3px 8px rgba(160,120,60,0.4), inset 0 3px 6px rgba(160,120,60,0.3); }
+
+    /* Bottom content area */
+    .box-4 .b4-content {
+        flex: 1;
+        padding: 18px 24px 16px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        z-index: 2;
+        background: white;
+    }
+    .box-4 .b4-divider-line {
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, var(--mo-pink), var(--mo-lavender), var(--mo-mint));
+    }
+    .box-4 .b4-brand {
+        font-family: 'Unbounded', sans-serif;
+        font-weight: 800;
+        font-size: 1.5rem;
+        line-height: 0.95;
+        letter-spacing: -0.04em;
+        color: #1a1a1a;
+        margin-top: 12px;
+    }
+    .box-4 .b4-tm {
+        font-size: 0.4rem;
+        vertical-align: super;
+        color: var(--mo-pink);
+    }
+    .box-4 .b4-tagline {
+        font-family: 'Instrument Serif', serif;
+        font-style: italic;
+        font-size: 0.65rem;
+        color: var(--mo-pink);
+        margin-top: 3px;
+    }
+    .box-4 .b4-pf {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 0.48rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: #bbb;
+        font-weight: 500;
+        margin-top: 12px;
+    }
+    .box-4 .b4-product {
+        font-family: 'Sora', sans-serif;
+        font-weight: 700;
+        font-size: 0.95rem;
+        line-height: 1.05;
+        color: #1a1a1a;
+        margin-top: 2px;
+        letter-spacing: -0.02em;
+    }
+    .box-4 .b4-claims {
+        margin-top: 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+    }
+    .box-4 .b4-claim {
+        font-size: 0.55rem;
+        color: #aaa;
+        display: flex;
+        align-items: flex-start;
+        gap: 5px;
+        line-height: 1.3;
+    }
+    .box-4 .b4-cdot {
+        width: 3px; height: 3px;
+        border-radius: 50%;
+        flex-shrink: 0;
+        margin-top: 4px;
+    }
+    .box-4 .b4-footer {
+        margin-top: auto;
+        padding-top: 8px;
+        border-top: 1px solid #f0f0f0;
+    }
+    .box-4 .b4-lens {
+        font-size: 0.4rem;
+        color: #ccc;
+        line-height: 1.3;
+        margin-bottom: 6px;
+    }
+    .box-4 .b4-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+    .box-4 .b4-ophth {
+        font-family: 'Space Grotesk'; font-size: 0.38rem; color: #bbb;
+        text-transform: uppercase; letter-spacing: 0.08em; line-height: 1.3;
+    }
+    .box-4 .b4-doses {
+        font-family: 'Unbounded'; font-weight: 800; font-size: 1rem;
+        color: #1a1a1a; line-height: 1;
+    }
+    .box-4 .b4-doses-plus { color: var(--mo-pink); }
+    .box-4 .b4-doses-label {
+        font-family: 'Space Grotesk'; font-size: 0.32rem; color: #bbb;
+        letter-spacing: 0.12em; text-transform: uppercase; text-align: right;
+    }
+    .box-4 .b4-meta {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 5px;
+        font-size: 0.42rem;
+        color: #ccc;
+    }
+
+    /* Label 4 — eye-themed */
+    .label-4 {
+        background: white;
+    }
+    .label-4 .l-eye-mini {
+        width: 30px;
+        height: 16px;
+        border-radius: 50% / 60%;
+        overflow: hidden;
+        position: relative;
+        margin: 0 auto 3px;
+    }
+    .label-4 .l-eye-mini .mini-skin {
+        width: 100%; height: 100%;
+        background: linear-gradient(135deg, #E8C4AD, #DDB8A0);
+        position: relative;
+    }
+    .label-4 .l-eye-mini .mini-iris {
+        position: absolute;
+        width: 10px; height: 10px;
+        border-radius: 50%;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        background: radial-gradient(circle, #4A8BC2 20%, #2D6BA0 60%, #1F4F78 100%);
+        box-shadow: inset 0 0 2px rgba(0,0,0,0.3);
+    }
+    .label-4 .l-eye-mini .mini-pupil {
+        position: absolute;
+        width: 4px; height: 4px;
+        border-radius: 50%;
+        background: #111;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .label-4 .l-eye-mini .mini-highlight {
+        position: absolute;
+        width: 2px; height: 2px;
+        border-radius: 50%;
+        background: white;
+        top: 35%; left: 60%;
+    }
+    .label-4 .l-brand {
+        font-family: 'Unbounded', sans-serif;
+        font-weight: 800;
+        font-size: 0.48rem;
+        color: #1a1a1a;
+        text-align: center;
+        line-height: 1;
+        letter-spacing: -0.03em;
+    }
+    .label-4 .l-pf {
+        font-family: 'Space Grotesk'; font-size: 0.18rem; color: var(--mo-pink);
+        text-align: center; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 2px;
+    }
+    .label-4 .l-type {
+        font-family: 'Sora'; font-weight: 600; font-size: 0.28rem;
+        color: #1a1a1a; text-align: center; margin-top: 1px;
+    }
+    .label-4 .l-bot {
+        display: flex; justify-content: space-between; align-items: center;
+        width: 100%; margin-top: auto;
+    }
+    .label-4 .l-vol { font-family: 'Space Grotesk'; font-size: 0.17rem; color: #bbb; }
+    .label-4 .l-safe { font-family: 'Space Grotesk'; font-size: 0.16rem; color: white; background: var(--mo-pink); padding: 1px 2px; border-radius: 1px; }
+    .label-4 .l-doses { font-family: 'Sora'; font-weight: 700; font-size: 0.2rem; color: #1a1a1a; }
+</style>
+
+<div class="option">
+    <div class="option-label">
+        <span class="option-num">04</span>
+        <span class="option-name">Eye Gallery</span>
+    </div>
+    <div class="option-desc">A collage of beautiful eyes becomes the hero. The product speaks through what it serves.</div>
+
+    <div class="stage stage-4">
+        <div class="box box-4">
+            <div class="b4-inner">
+                <!-- EYE COLLAGE AREA -->
+                <div class="b4-eyes-area">
+                    <!-- Eye 1 — Large blue, top-left -->
+                    <div class="eye-shape shadow-gold" style="width:110px; height:52px; top:15px; left:10px; transform:rotate(-3deg);">
+                        <div class="eye-inner eye-skin-light">
+                            <div class="eye-lid" style="background:linear-gradient(180deg, rgba(200,170,130,0.5), rgba(220,185,150,0.3));"></div>
+                            <div class="eye-lid-bottom" style="background:linear-gradient(0deg, rgba(210,175,140,0.3), transparent);"></div>
+                            <div class="eye-iris iris-blue" style="width:26px; height:26px;">
+                                <div class="eye-pupil" style="width:10px; height:10px;"></div>
+                                <div class="eye-highlight" style="width:5px; height:5px; top:30%; left:60%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Eye 2 — Medium green, top-right -->
+                    <div class="eye-shape shadow-bronze" style="width:90px; height:42px; top:10px; right:15px; transform:rotate(2deg);">
+                        <div class="eye-inner eye-skin-warm">
+                            <div class="eye-lid" style="background:linear-gradient(180deg, rgba(170,130,80,0.5), rgba(190,150,100,0.2));"></div>
+                            <div class="eye-lid-bottom" style="background:linear-gradient(0deg, rgba(190,150,110,0.3), transparent);"></div>
+                            <div class="eye-iris iris-green" style="width:22px; height:22px;">
+                                <div class="eye-pupil" style="width:8px; height:8px;"></div>
+                                <div class="eye-highlight" style="width:4px; height:4px; top:28%; left:58%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Eye 3 — Small hazel, mid-left -->
+                    <div class="eye-shape shadow-rose" style="width:65px; height:30px; top:72px; left:25px; transform:rotate(1deg);">
+                        <div class="eye-inner eye-skin-pink">
+                            <div class="eye-lid" style="background:linear-gradient(180deg, rgba(190,130,130,0.4), rgba(200,150,140,0.2));"></div>
+                            <div class="eye-iris iris-hazel" style="width:16px; height:16px;">
+                                <div class="eye-pupil" style="width:6px; height:6px;"></div>
+                                <div class="eye-highlight" style="width:3px; height:3px; top:30%; left:55%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Eye 4 — Large brown, center -->
+                    <div class="eye-shape shadow-gold" style="width:120px; height:55px; top:65px; left:80px; transform:rotate(-1deg);">
+                        <div class="eye-inner eye-skin">
+                            <div class="eye-lid" style="background:linear-gradient(180deg, rgba(180,140,90,0.5), rgba(200,160,110,0.3));"></div>
+                            <div class="eye-lid-bottom" style="background:linear-gradient(0deg, rgba(200,160,120,0.3), transparent);"></div>
+                            <div class="eye-iris iris-brown" style="width:28px; height:28px;">
+                                <div class="eye-pupil" style="width:11px; height:11px;"></div>
+                                <div class="eye-highlight" style="width:6px; height:6px; top:28%; left:62%;"></div>
+                                <div class="eye-highlight" style="width:3px; height:3px; top:55%; left:35%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Eye 5 — Tiny gray, scattered -->
+                    <div class="eye-shape" style="width:45px; height:20px; top:55px; left:105px; transform:rotate(4deg); opacity:0.7;">
+                        <div class="eye-inner eye-skin-light">
+                            <div class="eye-iris iris-gray" style="width:12px; height:12px;">
+                                <div class="eye-pupil" style="width:5px; height:5px;"></div>
+                                <div class="eye-highlight" style="width:2px; height:2px; top:30%; left:58%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Eye 6 — Medium blue, center-right -->
+                    <div class="eye-shape shadow-rose" style="width:95px; height:45px; top:125px; left:40px; transform:rotate(-2deg);">
+                        <div class="eye-inner eye-skin-pink">
+                            <div class="eye-lid" style="background:linear-gradient(180deg, rgba(190,120,120,0.4), rgba(210,140,140,0.2));"></div>
+                            <div class="eye-lid-bottom" style="background:linear-gradient(0deg, rgba(200,140,130,0.3), transparent);"></div>
+                            <div class="eye-iris iris-blue" style="width:24px; height:24px;">
+                                <div class="eye-pupil" style="width:9px; height:9px;"></div>
+                                <div class="eye-highlight" style="width:5px; height:5px; top:25%; left:60%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Eye 7 — Large green, bottom-right -->
+                    <div class="eye-shape shadow-bronze" style="width:105px; height:48px; top:130px; right:5px; transform:rotate(3deg);">
+                        <div class="eye-inner eye-skin-warm">
+                            <div class="eye-lid" style="background:linear-gradient(180deg, rgba(180,140,80,0.5), rgba(195,155,100,0.3));"></div>
+                            <div class="eye-lid-bottom" style="background:linear-gradient(0deg, rgba(195,155,100,0.25), transparent);"></div>
+                            <div class="eye-iris iris-green" style="width:24px; height:24px;">
+                                <div class="eye-pupil" style="width:9px; height:9px;"></div>
+                                <div class="eye-highlight" style="width:4px; height:4px; top:30%; left:60%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Eye 8 — Small winking/closed eye -->
+                    <div class="eye-shape" style="width:60px; height:14px; top:180px; left:10px; transform:rotate(-5deg); border-radius:50%;">
+                        <div style="width:100%; height:100%; background:linear-gradient(135deg, #D9B8A0, #CFA890); border-bottom:2px solid rgba(140,100,60,0.4);"></div>
+                    </div>
+
+                    <!-- Eye 9 — Medium hazel, bottom -->
+                    <div class="eye-shape shadow-gold" style="width:80px; height:38px; top:195px; left:70px; transform:rotate(1deg);">
+                        <div class="eye-inner eye-skin-light">
+                            <div class="eye-lid" style="background:linear-gradient(180deg, rgba(200,170,120,0.45), rgba(210,180,140,0.2));"></div>
+                            <div class="eye-iris iris-hazel" style="width:20px; height:20px;">
+                                <div class="eye-pupil" style="width:7px; height:7px;"></div>
+                                <div class="eye-highlight" style="width:4px; height:4px; top:28%; left:58%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Eye 10 — Tiny blue, accent -->
+                    <div class="eye-shape" style="width:40px; height:18px; top:200px; right:20px; transform:rotate(-3deg); opacity:0.75;">
+                        <div class="eye-inner eye-skin-pink">
+                            <div class="eye-iris iris-blue" style="width:11px; height:11px;">
+                                <div class="eye-pupil" style="width:4px; height:4px;"></div>
+                                <div class="eye-highlight" style="width:2px; height:2px; top:30%; left:60%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Subtle "Let your eyes shine" overlay -->
+                    <div style="position:absolute; bottom:12px; left:0; right:0; text-align:center; z-index:3;">
+                        <span style="font-family:'Instrument Serif',serif; font-style:italic; font-size:0.6rem; color:rgba(42,42,61,0.25); letter-spacing:0.05em;">every eye tells a story</span>
+                    </div>
+                </div>
+
+                <!-- Gradient divider -->
+                <div class="b4-divider-line"></div>
+
+                <!-- Product info bottom half -->
+                <div class="b4-content">
+                    <div class="b4-brand">MOISTURE<br>OYSTER<span class="b4-tm">&trade;</span></div>
+                    <div class="b4-tagline">let your eyes shine</div>
+
+                    <div class="b4-pf">Preservative Free</div>
+                    <div class="b4-product">Lubricating<br>Eye Drops</div>
+
+                    <div class="b4-claims">
+                        <div class="b4-claim"><div class="b4-cdot" style="background:var(--mo-pink)"></div>PH Balanced</div>
+                        <div class="b4-claim"><div class="b4-cdot" style="background:var(--mo-mint)"></div>Contains Sodium Hyaluronate which occurs naturally in tears</div>
+                        <div class="b4-claim"><div class="b4-cdot" style="background:var(--mo-lavender)"></div>Fast acting temporary relief for irritated dry eyes</div>
+                    </div>
+
+                    <div class="b4-footer">
+                        <div class="b4-lens">Suitable for use before inserting and after removing contact lenses (not a rewetting drop)</div>
+                        <div class="b4-bottom">
+                            <div>
+                                <div class="b4-ophth">Ophthalmologist<br>Approved</div>
+                            </div>
+                            <div style="text-align:right;">
+                                <div class="b4-doses">300<span class="b4-doses-plus">+</span></div>
+                                <div class="b4-doses-label">Doses</div>
+                            </div>
+                        </div>
+                        <div class="b4-meta">
+                            <span>Sterile</span>
+                            <span>0.33 Fl Oz / 10 Ml</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BOTTLE 4 -->
+        <div class="bottle-wrap">
+            <div class="bottle-cap">
+                <div class="cap-nub"></div>
+                <div class="cap-top"></div>
+                <div class="cap-mid"></div>
+                <div class="cap-mid2"></div>
+                <div class="cap-base"></div>
+            </div>
+            <div class="bottle-neck"></div>
+            <div class="bottle-body">
+                <div class="bottle-label label-4">
+                    <!-- Mini eye on label -->
+                    <div class="l-eye-mini">
+                        <div class="mini-skin">
+                            <div class="mini-iris">
+                                <div class="mini-pupil"></div>
+                                <div class="mini-highlight"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="l-brand">MOISTURE<br>OYSTER</div>
+                    <div class="l-pf">Preservative Free</div>
+                    <div class="l-type">Lubricating<br>Eye Drops</div>
+                    <div class="l-bot">
+                        <div class="l-vol">0.33 Fl Oz<br>10 Ml</div>
+                        <div class="l-safe">SAFE 90 DAYS</div>
+                        <div class="l-doses">300+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="notes">
+        <div class="note"><h5>Approach</h5><p>The product is about eyes — so eyes ARE the design. Scattered eye cutouts in different sizes, colors, and angles create an editorial collage that's impossible to ignore.</p></div>
+        <div class="note"><h5>Standout</h5><p>No other eye drop brand puts actual eyes on the box. The diversity of eye colors and shapes celebrates every person. Each eye is unique — like the customer.</p></div>
+        <div class="note"><h5>Shelf Disruption</h5><p>A box full of eyes staring back at you from a shelf demands attention. It's bold, slightly surreal, and completely own-able by MO. Becomes instantly recognizable.</p></div>
+        <div class="note"><h5>Best For</h5><p>Art-forward retail, editorial campaigns, viral social content, limited editions with different eye color themes.</p></div>
+    </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ============================================================ -->
+<!-- OPTION 5: BOLD ILLUSTRATION (Luly-inspired)                   -->
+<!-- ============================================================ -->
+<style>
+    .stage-5 {
+        background: linear-gradient(180deg, #F0E8E5 0%, #E5DDD8 100%);
+    }
+
+    .box-5 {
+        background: var(--mo-pink-hot);
+        box-shadow: 20px 20px 60px rgba(0,0,0,0.15), 0 0 0 1px rgba(0,0,0,0.05);
+    }
+    .box-5 .b5-inner {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+        padding: 24px 22px 16px;
+    }
+
+    /* Chunky rounded lowercase wordmark */
+    .box-5 .b5-brand {
+        font-family: 'Unbounded', sans-serif;
+        font-weight: 900;
+        font-size: 2.4rem;
+        line-height: 0.88;
+        letter-spacing: -0.05em;
+        color: var(--mo-pink-light);
+        position: relative;
+        z-index: 2;
+    }
+    .box-5 .b5-tm {
+        font-size: 0.4rem;
+        vertical-align: super;
+        color: rgba(255,255,255,0.5);
+    }
+
+    /* Illustration area */
+    .box-5 .b5-illustration {
+        flex: 1;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 8px 0;
+        z-index: 2;
+    }
+
+    /* Bottom info */
+    .box-5 .b5-bottom-info {
+        position: relative;
+        z-index: 2;
+    }
+    .box-5 .b5-ingredients-row {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 6px;
+    }
+    .box-5 .b5-ingredient {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 0.5rem;
+        color: rgba(255,255,255,0.65);
+        letter-spacing: 0.02em;
+    }
+    .box-5 .b5-product {
+        font-family: 'Sora', sans-serif;
+        font-weight: 700;
+        font-size: 1.15rem;
+        color: white;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+    }
+    .box-5 .b5-sub-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 4px;
+    }
+    .box-5 .b5-sub-left {
+        font-family: 'DM Sans', sans-serif;
+        font-size: 0.5rem;
+        color: rgba(255,255,255,0.5);
+    }
+    .box-5 .b5-sub-right {
+        font-family: 'Sora', sans-serif;
+        font-weight: 600;
+        font-size: 0.5rem;
+        color: rgba(255,255,255,0.5);
+    }
+
+    /* Small claims text on back (shown subtly at very bottom) */
+    .box-5 .b5-micro {
+        margin-top: 8px;
+        padding-top: 8px;
+        border-top: 1px solid rgba(255,255,255,0.15);
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+    .box-5 .b5-micro-line {
+        font-size: 0.4rem;
+        color: rgba(255,255,255,0.35);
+        line-height: 1.3;
+    }
+    .box-5 .b5-micro-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 4px;
+    }
+    .box-5 .b5-doses-badge {
+        font-family: 'Sora', sans-serif;
+        font-weight: 700;
+        font-size: 0.65rem;
+        color: white;
+    }
+    .box-5 .b5-ophth-text {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 0.35rem;
+        color: rgba(255,255,255,0.35);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+    }
+
+    /* Label 5 — bold pink */
+    .label-5 {
+        background: var(--mo-pink-hot);
+        overflow: visible;
+    }
+    .label-5 .l-brand {
+        font-family: 'Unbounded', sans-serif;
+        font-weight: 900;
+        font-size: 0.55rem;
+        color: var(--mo-pink-light);
+        text-align: center;
+        line-height: 0.95;
+        letter-spacing: -0.04em;
+    }
+    /* Tiny illustration on bottle label */
+    .label-5 .l-mini-fig {
+        width: 24px;
+        height: 34px;
+        margin: 2px auto;
+        position: relative;
+    }
+    .label-5 .l-ingredients {
+        display: flex;
+        gap: 4px;
+        justify-content: center;
+        margin-top: 2px;
+    }
+    .label-5 .l-ing {
+        font-family: 'Space Grotesk'; font-size: 0.15rem;
+        color: rgba(255,255,255,0.6);
+    }
+    .label-5 .l-type {
+        font-family: 'Sora'; font-weight: 700; font-size: 0.3rem;
+        color: white; text-align: center; margin-top: 1px;
+        line-height: 1.1;
+    }
+    .label-5 .l-sub {
+        font-family: 'DM Sans'; font-size: 0.16rem;
+        color: rgba(255,255,255,0.45); text-align: center;
+    }
+    .label-5 .l-bot {
+        display: flex; justify-content: space-between; align-items: center;
+        width: 100%; margin-top: auto;
+    }
+    .label-5 .l-vol { font-family: 'Space Grotesk'; font-size: 0.16rem; color: rgba(255,255,255,0.4); }
+    .label-5 .l-safe { font-family: 'Space Grotesk'; font-size: 0.15rem; color: var(--mo-pink-hot); background: white; padding: 1px 2px; border-radius: 1px; font-weight: 600; }
+    .label-5 .l-doses { font-family: 'Sora'; font-weight: 700; font-size: 0.2rem; color: white; }
+</style>
+
+<div class="option">
+    <div class="option-label">
+        <span class="option-num">05</span>
+        <span class="option-name">Bold Illustration</span>
+    </div>
+    <div class="option-desc">Saturated color + playful character art. The box is a poster, not a package.</div>
+
+    <div class="stage stage-5">
+
+        <!-- BOX 5 -->
+        <div class="box box-5">
+            <div class="b5-inner">
+                <!-- Big chunky wordmark at top -->
+                <div class="b5-brand">moisture<br>oyster<span class="b5-tm">&trade;</span></div>
+
+                <!-- Character illustration: person carrying oversized eye drop bottle -->
+                <div class="b5-illustration">
+                    <svg viewBox="0 0 220 240" width="220" height="240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Oversized eye drop bottle being carried -->
+                        <g transform="translate(75, 20) rotate(-15, 50, 80)">
+                            <!-- Bottle body -->
+                            <rect x="20" y="40" width="60" height="110" rx="12" fill="white" opacity="0.9"/>
+                            <rect x="20" y="40" width="60" height="110" rx="12" stroke="rgba(255,255,255,0.5)" stroke-width="1" fill="none"/>
+                            <!-- Cap -->
+                            <rect x="32" y="18" width="36" height="26" rx="4" fill="#7ED4C1"/>
+                            <rect x="36" y="12" width="28" height="10" rx="3" fill="#5BBFAA"/>
+                            <circle cx="50" cy="8" r="4" fill="#5BBFAA"/>
+                            <!-- Label on bottle -->
+                            <rect x="28" y="58" width="44" height="35" rx="3" fill="rgba(255,92,138,0.15)"/>
+                            <text x="50" y="72" text-anchor="middle" font-family="Unbounded" font-weight="800" font-size="5" fill="#FF5C8A">MO</text>
+                            <text x="50" y="80" text-anchor="middle" font-family="Space Grotesk" font-size="3" fill="#FF5C8A" letter-spacing="0.5">EYE DROPS</text>
+                            <!-- Shine line -->
+                            <line x1="30" y1="50" x2="30" y2="100" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round"/>
+                        </g>
+
+                        <!-- Character walking and carrying the bottle -->
+                        <g transform="translate(30, 55)">
+                            <!-- Hair -->
+                            <ellipse cx="72" cy="18" rx="14" ry="16" fill="white" opacity="0.9"/>
+                            <path d="M60 22 Q58 8, 72 4 Q86 0, 86 18" fill="white" opacity="0.9"/>
+                            <!-- Ponytail -->
+                            <path d="M84 12 Q95 8, 92 22 Q90 30, 85 25" fill="white" opacity="0.9"/>
+
+                            <!-- Face -->
+                            <ellipse cx="72" cy="22" rx="10" ry="11" fill="white" opacity="0.9"/>
+                            <!-- Eye (tiny dot) -->
+                            <circle cx="69" cy="21" r="1.2" fill="#FF5C8A"/>
+                            <!-- Nose -->
+                            <path d="M72 23 Q73 25, 71 26" stroke="#FF5C8A" stroke-width="0.6" fill="none" stroke-linecap="round"/>
+                            <!-- Smile -->
+                            <path d="M68 28 Q72 31, 75 28" stroke="#FF5C8A" stroke-width="0.7" fill="none" stroke-linecap="round"/>
+
+                            <!-- Neck -->
+                            <line x1="72" y1="33" x2="72" y2="38" stroke="white" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+
+                            <!-- Body / dress -->
+                            <path d="M58 38 L86 38 L92 120 Q75 125, 58 120 Z" fill="white" opacity="0.9"/>
+                            <!-- Dress detail line -->
+                            <line x1="72" y1="55" x2="72" y2="115" stroke="rgba(255,92,138,0.15)" stroke-width="0.5"/>
+
+                            <!-- Belt -->
+                            <rect x="56" y="60" width="32" height="3" rx="1.5" fill="rgba(255,92,138,0.2)"/>
+
+                            <!-- Arms reaching back to hold bottle -->
+                            <!-- Left arm -->
+                            <path d="M60 42 Q45 55, 52 75 Q55 82, 65 78" stroke="white" stroke-width="4.5" fill="none" stroke-linecap="round" opacity="0.9"/>
+                            <!-- Right arm -->
+                            <path d="M84 42 Q100 50, 105 70 Q108 82, 98 85" stroke="white" stroke-width="4.5" fill="none" stroke-linecap="round" opacity="0.9"/>
+                            <!-- Hands (small circles) -->
+                            <circle cx="65" cy="78" r="3.5" fill="white" opacity="0.9"/>
+                            <circle cx="98" cy="85" r="3.5" fill="white" opacity="0.9"/>
+
+                            <!-- Legs walking -->
+                            <!-- Left leg (forward) -->
+                            <path d="M66 118 L55 160 L50 162" stroke="white" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.9"/>
+                            <!-- Right leg (back) -->
+                            <path d="M78 118 L90 155 L95 157" stroke="white" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.9"/>
+
+                            <!-- Shoes -->
+                            <ellipse cx="48" cy="164" rx="8" ry="3" fill="white" opacity="0.9"/>
+                            <ellipse cx="97" cy="159" rx="8" ry="3" fill="white" opacity="0.9"/>
+                            <!-- Shoe detail -->
+                            <path d="M42 163 Q48 160, 54 163" stroke="rgba(255,92,138,0.25)" stroke-width="0.5" fill="none"/>
+                            <path d="M91 158 Q97 155, 103 158" stroke="rgba(255,92,138,0.25)" stroke-width="0.5" fill="none"/>
+                        </g>
+
+                        <!-- Small drops falling from bottle tip -->
+                        <circle cx="108" cy="35" r="2.5" fill="rgba(126,212,193,0.6)"/>
+                        <circle cx="115" cy="25" r="1.5" fill="rgba(126,212,193,0.4)"/>
+                        <circle cx="103" cy="28" r="1.8" fill="rgba(126,212,193,0.5)"/>
+
+                        <!-- Ground line / puddle -->
+                        <path d="M25 222 Q60 218, 110 222 Q160 226, 195 222" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                        <!-- Small splash marks -->
+                        <path d="M95 218 Q100 212, 105 218" stroke="rgba(255,255,255,0.2)" stroke-width="0.8" fill="none"/>
+                        <path d="M85 220 Q88 216, 91 220" stroke="rgba(255,255,255,0.15)" stroke-width="0.6" fill="none"/>
+                    </svg>
+                </div>
+
+                <!-- Bottom info section -->
+                <div class="b5-bottom-info">
+                    <div class="b5-ingredients-row">
+                        <span class="b5-ingredient">Hyaluronic Acid</span>
+                        <span class="b5-ingredient">Preservative Free</span>
+                    </div>
+                    <div class="b5-product">Lubricating<br>Eye Drops</div>
+                    <div class="b5-sub-row">
+                        <span class="b5-sub-left">PH Balanced &bull; Lens Compatible</span>
+                        <span class="b5-sub-right">0.33 Fl Oz / 10 Ml</span>
+                    </div>
+
+                    <div class="b5-micro">
+                        <div class="b5-micro-line">Contains Sodium Hyaluronate which occurs naturally in tears. Fast acting temporary relief for irritated dry eyes.</div>
+                        <div class="b5-micro-line">Suitable for use before inserting and after removing contact lenses (not a rewetting drop)</div>
+                        <div class="b5-micro-bottom">
+                            <div>
+                                <div class="b5-ophth-text">Ophthalmologist Approved &bull; Sterile</div>
+                            </div>
+                            <div class="b5-doses-badge">300+ doses</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BOTTLE 5 -->
+        <div class="bottle-wrap">
+            <div class="bottle-cap">
+                <div class="cap-nub"></div>
+                <div class="cap-top"></div>
+                <div class="cap-mid"></div>
+                <div class="cap-mid2"></div>
+                <div class="cap-base"></div>
+            </div>
+            <div class="bottle-neck"></div>
+            <div class="bottle-body">
+                <div class="bottle-label label-5">
+                    <div class="l-brand">moisture<br>oyster</div>
+                    <!-- Mini character silhouette -->
+                    <div class="l-mini-fig">
+                        <svg viewBox="0 0 24 38" width="24" height="34" fill="none">
+                            <!-- Tiny person carrying bottle -->
+                            <circle cx="12" cy="4" r="3.5" fill="white" opacity="0.85"/>
+                            <path d="M7 9 L17 9 L19 28 Q12 30, 5 28 Z" fill="white" opacity="0.85"/>
+                            <path d="M8 10 Q3 16, 6 22" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.85"/>
+                            <path d="M16 10 Q21 16, 18 22" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.85"/>
+                            <line x1="9" y1="27" x2="6" y2="36" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.85"/>
+                            <line x1="15" y1="27" x2="18" y2="36" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.85"/>
+                            <!-- Tiny bottle on back -->
+                            <rect x="14" y="2" width="6" height="12" rx="2" fill="rgba(255,255,255,0.4)" transform="rotate(-20, 17, 8)"/>
+                            <rect x="15.5" y="-1" width="3" height="4" rx="1" fill="#7ED4C1" transform="rotate(-20, 17, 1)"/>
+                        </svg>
+                    </div>
+                    <div class="l-ingredients">
+                        <span class="l-ing">Hyaluronic Acid</span>
+                        <span class="l-ing">PF</span>
+                    </div>
+                    <div class="l-type">Lubricating<br>Eye Drops</div>
+                    <div class="l-sub">Preservative Free</div>
+                    <div class="l-bot">
+                        <div class="l-vol">0.33 Fl Oz<br>10 Ml</div>
+                        <div class="l-safe">SAFE 90 DAYS</div>
+                        <div class="l-doses">300+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="notes">
+        <div class="note"><h5>Approach</h5><p>Inspired by Luly supplements — saturated hot pink box with white line-art illustration. The character carries an oversized MO bottle like it's part of their life.</p></div>
+        <div class="note"><h5>Standout</h5><p>Illustration-led packaging is rare in eye care. The character makes the brand human, approachable, and instantly memorable. Works as a poster or social asset.</p></div>
+        <div class="note"><h5>Shelf Disruption</h5><p>A saturated pink box with a walking character will grab attention from 10 feet away. No other eye drop looks like this. It's a lifestyle brand, not pharma.</p></div>
+        <div class="note"><h5>Best For</h5><p>Gen Z retail, viral unboxing content, brand merch potential (the character becomes the mascot), Urban Outfitters / Target beauty aisle.</p></div>
+    </div>
+</div>
+
+<footer>
+    <div class="f-brand">MOISTURE OYSTER</div>
+    Packaging Design Concepts &bull; Confidential
+</footer>
+
+</body>
+</html>

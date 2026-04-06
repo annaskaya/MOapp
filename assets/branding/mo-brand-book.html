@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moisture Oyster — Brand Identity Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600;700;800;900&family=Unbounded:wght@300;400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Primary Palette */
+            --mo-pink: #E8729A;
+            --mo-pink-light: #F4A5C0;
+            --mo-pink-hot: #FF5C8A;
+            --mo-mint: #7ED4C1;
+            --mo-mint-light: #A8E6D8;
+            --mo-teal: #5BBFAA;
+
+            /* Extended Palette */
+            --mo-pearl: #FFF5F7;
+            --mo-cream: #FDF8F5;
+            --mo-shell: #F0E6DF;
+            --mo-lavender: #C8A2E0;
+            --mo-iridescent-1: #D4B8E8;
+            --mo-iridescent-2: #B8D4E8;
+            --mo-gold: #D4B896;
+            --mo-charcoal: #2A2A3D;
+            --mo-midnight: #1A1A2E;
+            --mo-fog: #E8E4F0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--mo-cream);
+            color: var(--mo-charcoal);
+            line-height: 1.6;
+        }
+
+        /* ===== NAV ===== */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 245, 247, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(232, 114, 154, 0.15);
+            padding: 0.75rem 2rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            overflow-x: auto;
+        }
+        nav .brand {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--mo-pink);
+            white-space: nowrap;
+            letter-spacing: -0.02em;
+        }
+        nav a {
+            color: var(--mo-charcoal);
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 500;
+            white-space: nowrap;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+        nav a:hover { opacity: 1; color: var(--mo-pink); }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(
+                180deg,
+                var(--mo-pearl) 0%,
+                #F0E8F5 30%,
+                #E8F0F5 60%,
+                var(--mo-cream) 100%
+            );
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(232,114,154,0.12) 0%, transparent 70%);
+            top: -100px;
+            right: -100px;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(126,212,193,0.12) 0%, transparent 70%);
+            bottom: -100px;
+            left: -100px;
+        }
+        .hero h1 {
+            font-family: 'Unbounded', sans-serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--mo-pink) 0%, var(--mo-lavender) 50%, var(--mo-mint) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero .tagline {
+            font-family: 'Instrument Serif', serif;
+            font-style: italic;
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            color: var(--mo-charcoal);
+            opacity: 0.7;
+            margin-bottom: 2rem;
+        }
+        .hero .version {
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--mo-pink);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        /* ===== SECTIONS ===== */
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+        .section-label {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--mo-pink);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .section-title {
+            font-family: 'Unbounded', sans-serif;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+        }
+        .section-desc {
+            font-size: 1rem;
+            color: #666;
+            max-width: 600px;
+            margin-bottom: 3rem;
+        }
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--mo-pink-light), var(--mo-mint-light), transparent);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* ===== COLOR PALETTES ===== */
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        .palette-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+        .palette-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            padding: 1.25rem 1.5rem 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        .palette-card p {
+            padding: 0 1.5rem 1rem;
+            font-size: 0.85rem;
+            color: #888;
+        }
+        .color-strip {
+            display: flex;
+            height: 120px;
+        }
+        .color-strip > div {
+            flex: 1;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding: 0.5rem 0.25rem;
+            font-size: 0.65rem;
+            font-family: 'Space Grotesk', monospace;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+        }
+        .color-strip .light-text { color: rgba(255,255,255,0.85); }
+        .color-strip .dark-text { color: rgba(0,0,0,0.5); }
+
+        /* Single color swatch */
+        .swatches {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .swatch {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            background: white;
+        }
+        .swatch-color {
+            height: 80px;
+        }
+        .swatch-info {
+            padding: 0.6rem 0.8rem;
+        }
+        .swatch-info .name {
+            font-weight: 600;
+            font-size: 0.8rem;
+            margin-bottom: 0.15rem;
+        }
+        .swatch-info .hex {
+            font-family: 'Space Grotesk', monospace;
+            font-size: 0.7rem;
+            color: #999;
+        }
+
+        /* ===== TYPOGRAPHY ===== */
+        .type-showcase {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+        .type-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+        .type-card .label {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--mo-pink);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+        .type-sample {
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+        .type-meta {
+            font-size: 0.8rem;
+            color: #999;
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .type-meta span { white-space: nowrap; }
+        .type-weights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .type-weights span {
+            font-size: 0.85rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 6px;
+            background: var(--mo-pearl);
+        }
+
+        /* Font pair showcase */
+        .pair-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2rem;
+        }
+        .pair-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+        .pair-header {
+            padding: 2rem 2rem 1.5rem;
+        }
+        .pair-header .pair-label {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.6rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--mo-pink);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .pair-header h3 {
+            font-size: 1.8rem;
+            line-height: 1.15;
+            margin-bottom: 0.5rem;
+        }
+        .pair-header p {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.5;
+        }
+        .pair-footer {
+            padding: 1rem 2rem;
+            background: var(--mo-pearl);
+            font-size: 0.75rem;
+            color: #888;
+            display: flex;
+            justify-content: space-between;
+        }
+        .pair-recommended {
+            border: 2px solid var(--mo-pink);
+        }
+        .pair-recommended .pair-label::after {
+            content: ' — RECOMMENDED';
+            color: var(--mo-pink-hot);
+        }
+
+        /* ===== LOGOS ===== */
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .logo-card {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+        .logo-display {
+            height: 240px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .logo-display .logo-text {
+            text-align: center;
+        }
+        .logo-display .wordmark {
+            display: block;
+            line-height: 1.05;
+        }
+        .logo-display .sub {
+            display: block;
+            margin-top: 0.3rem;
+        }
+        .logo-info {
+            padding: 1.25rem 1.5rem;
+            background: white;
+        }
+        .logo-info h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        .logo-info p {
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        /* Logo mark */
+        .logo-mark {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 800;
+            font-size: 1.4rem;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        /* ===== VISUAL DIRECTION ===== */
+        .mood-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-auto-rows: 160px;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .mood-cell {
+            border-radius: 14px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .mood-cell.span-2 { grid-column: span 2; }
+        .mood-cell.span-3 { grid-column: span 3; }
+        .mood-cell.span-4 { grid-column: span 4; }
+        .mood-cell.row-2 { grid-row: span 2; }
+        .mood-cell .mood-label {
+            position: absolute;
+            bottom: 0.75rem;
+            left: 0.75rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: white;
+            background: rgba(0,0,0,0.35);
+            backdrop-filter: blur(4px);
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+        }
+
+        /* ===== GRADIENT EXAMPLES ===== */
+        .gradient-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .gradient-sample {
+            height: 140px;
+            border-radius: 14px;
+            display: flex;
+            align-items: flex-end;
+            padding: 1rem 1.25rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        }
+        .gradient-sample span {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            color: white;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+
+        /* ===== TEXTURE / PATTERN PREVIEWS ===== */
+        .texture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+        .texture-card {
+            border-radius: 14px;
+            height: 200px;
+            display: flex;
+            align-items: flex-end;
+            padding: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .texture-card span {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: white;
+            background: rgba(0,0,0,0.3);
+            backdrop-filter: blur(4px);
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            z-index: 2;
+        }
+
+        /* ===== APPLICATION MOCKUPS ===== */
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .app-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+        .app-preview {
+            height: 280px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+        }
+        .app-desc {
+            padding: 1.25rem 1.5rem;
+        }
+        .app-desc h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        .app-desc p {
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        /* ===== BOTTLE MOCKUP ===== */
+        .bottle-mockup {
+            width: 60px;
+            height: 120px;
+            border-radius: 8px 8px 12px 12px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .bottle-cap {
+            width: 32px;
+            height: 24px;
+            border-radius: 4px 4px 0 0;
+            background: var(--mo-mint);
+            position: relative;
+            z-index: 2;
+        }
+        .bottle-body {
+            width: 50px;
+            height: 90px;
+            border-radius: 6px 6px 10px 10px;
+            background: rgba(255,255,255,0.6);
+            border: 2px solid rgba(255,255,255,0.8);
+            backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-top: -2px;
+        }
+        .bottle-body .bottle-text {
+            font-family: 'Unbounded', sans-serif;
+            font-size: 0.35rem;
+            font-weight: 700;
+            color: var(--mo-pink);
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        /* ===== SOCIAL POST MOCKUP ===== */
+        .social-mock {
+            width: 180px;
+            height: 220px;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* ===== DO/DON'T ===== */
+        .do-dont-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .do-card, .dont-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+        .do-card { border-top: 4px solid var(--mo-mint); }
+        .dont-card { border-top: 4px solid var(--mo-pink-hot); }
+        .do-card h4, .dont-card h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        .do-card h4 { color: var(--mo-teal); }
+        .dont-card h4 { color: var(--mo-pink-hot); }
+        .do-card ul, .dont-card ul {
+            list-style: none;
+            font-size: 0.85rem;
+            color: #666;
+        }
+        .do-card li::before { content: '\2713  '; color: var(--mo-teal); font-weight: 700; }
+        .dont-card li::before { content: '\2717  '; color: var(--mo-pink-hot); font-weight: 700; }
+        .do-card li, .dont-card li { margin-bottom: 0.5rem; }
+
+        /* ===== FOOTER ===== */
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            font-size: 0.75rem;
+            color: #aaa;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .mood-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-auto-rows: 120px;
+            }
+            .mood-cell.span-2,
+            .mood-cell.span-3,
+            .mood-cell.span-4 { grid-column: span 2; }
+            nav { gap: 1rem; padding: 0.5rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <span class="brand">MO Brand Guide</span>
+    <a href="#color">Color</a>
+    <a href="#typography">Typography</a>
+    <a href="#pairs">Font Pairs</a>
+    <a href="#logos">Logos</a>
+    <a href="#visual">Visual Direction</a>
+    <a href="#gradients">Gradients</a>
+    <a href="#textures">Textures</a>
+    <a href="#applications">Applications</a>
+    <a href="#guidelines">Guidelines</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+    <div class="version">Brand Identity System v1.0</div>
+    <h1>Moisture<br>Oyster</h1>
+    <p class="tagline">Let Your Eyes Shine</p>
+</div>
+
+<!-- ===== 1. COLOR PALETTE ===== -->
+<section id="color">
+    <div class="section-label">01 / Color System</div>
+    <h2 class="section-title">Color Palette</h2>
+    <p class="section-desc">A vibrant, iridescent color system rooted in the brand's oyster-shell origins — pearl pinks, oceanic mints, and ethereal lavenders that evoke moisture, glow, and self-expression.</p>
+
+    <!-- Primary Colors -->
+    <div class="color-grid">
+        <div class="palette-card">
+            <h3>Primary — Shell Pink</h3>
+            <p>The heart of MO. Warm, vibrant, and unapologetically eye-catching. Used for wordmark, CTAs, and key accents.</p>
+            <div class="color-strip">
+                <div style="background:#FF5C8A" class="light-text">#FF5C8A<br>Hot</div>
+                <div style="background:#E8729A" class="light-text">#E8729A<br>Primary</div>
+                <div style="background:#F4A5C0" class="dark-text">#F4A5C0<br>Light</div>
+                <div style="background:#FADCE6" class="dark-text">#FADCE6<br>Blush</div>
+            </div>
+        </div>
+
+        <div class="palette-card">
+            <h3>Primary — Ocean Mint</h3>
+            <p>The refreshing counterpart. Cool, clean, and calming. Used for the cap identity, secondary elements, and balance.</p>
+            <div class="color-strip">
+                <div style="background:#5BBFAA" class="light-text">#5BBFAA<br>Deep</div>
+                <div style="background:#7ED4C1" class="light-text">#7ED4C1<br>Primary</div>
+                <div style="background:#A8E6D8" class="dark-text">#A8E6D8<br>Light</div>
+                <div style="background:#D4F5ED" class="dark-text">#D4F5ED<br>Foam</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="color-grid">
+        <div class="palette-card">
+            <h3>Accent — Iridescent Spectrum</h3>
+            <p>The "shimmer" layer. Inspired by oyster-shell iridescence and the inspo glitter aesthetic. For editorial, packaging interiors, and special campaigns.</p>
+            <div class="color-strip">
+                <div style="background:#C8A2E0" class="light-text">#C8A2E0<br>Lavender</div>
+                <div style="background:#D4B8E8" class="light-text">#D4B8E8<br>Lilac</div>
+                <div style="background:#B8D4E8" class="dark-text">#B8D4E8<br>Ice</div>
+                <div style="background:#D4B896" class="dark-text">#D4B896<br>Gold</div>
+            </div>
+        </div>
+
+        <div class="palette-card">
+            <h3>Neutrals — Pearl &amp; Depth</h3>
+            <p>The foundation. Clean, warm neutrals for backgrounds and body text, with deep tones for contrast and sophistication.</p>
+            <div class="color-strip">
+                <div style="background:#1A1A2E" class="light-text">#1A1A2E<br>Midnight</div>
+                <div style="background:#2A2A3D" class="light-text">#2A2A3D<br>Charcoal</div>
+                <div style="background:#E8E4F0" class="dark-text">#E8E4F0<br>Fog</div>
+                <div style="background:#FFF5F7" class="dark-text">#FFF5F7<br>Pearl</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- All swatches -->
+    <h3 style="font-family:'Space Grotesk',sans-serif; font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; margin-top:2rem; margin-bottom:0.5rem; color:#888;">Full Swatch Reference</h3>
+    <div class="swatches">
+        <div class="swatch"><div class="swatch-color" style="background:#FF5C8A"></div><div class="swatch-info"><div class="name">Hot Pink</div><div class="hex">#FF5C8A</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#E8729A"></div><div class="swatch-info"><div class="name">Shell Pink</div><div class="hex">#E8729A</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#F4A5C0"></div><div class="swatch-info"><div class="name">Blush</div><div class="hex">#F4A5C0</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#FADCE6"></div><div class="swatch-info"><div class="name">Rose Tint</div><div class="hex">#FADCE6</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#5BBFAA"></div><div class="swatch-info"><div class="name">Deep Mint</div><div class="hex">#5BBFAA</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#7ED4C1"></div><div class="swatch-info"><div class="name">Ocean Mint</div><div class="hex">#7ED4C1</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#A8E6D8"></div><div class="swatch-info"><div class="name">Seafoam</div><div class="hex">#A8E6D8</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#D4F5ED"></div><div class="swatch-info"><div class="name">Foam</div><div class="hex">#D4F5ED</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#C8A2E0"></div><div class="swatch-info"><div class="name">Lavender</div><div class="hex">#C8A2E0</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#D4B8E8"></div><div class="swatch-info"><div class="name">Lilac</div><div class="hex">#D4B8E8</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#B8D4E8"></div><div class="swatch-info"><div class="name">Ice Blue</div><div class="hex">#B8D4E8</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#D4B896"></div><div class="swatch-info"><div class="name">Pearl Gold</div><div class="hex">#D4B896</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#1A1A2E"></div><div class="swatch-info"><div class="name">Midnight</div><div class="hex">#1A1A2E</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#2A2A3D"></div><div class="swatch-info"><div class="name">Charcoal</div><div class="hex">#2A2A3D</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#E8E4F0"></div><div class="swatch-info"><div class="name">Fog</div><div class="hex">#E8E4F0</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#FFF5F7"></div><div class="swatch-info"><div class="name">Pearl White</div><div class="hex">#FFF5F7</div></div></div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ===== 2. TYPOGRAPHY ===== -->
+<section id="typography">
+    <div class="section-label">02 / Typography</div>
+    <h2 class="section-title">Type System</h2>
+    <p class="section-desc">Bold, modern, and expressive. The type system balances playful energy with readability — geometric sans for headlines, humanist sans for body, and a serif accent for editorial elegance.</p>
+
+    <div class="type-showcase">
+        <!-- Primary Display -->
+        <div class="type-card">
+            <div class="label">Primary Display — Wordmark &amp; Headlines</div>
+            <div class="type-sample" style="font-family:'Unbounded',sans-serif; font-size:clamp(2rem,5vw,3.5rem); font-weight:800; letter-spacing:-0.03em;">
+                MOISTURE OYSTER
+            </div>
+            <div class="type-sample" style="font-family:'Unbounded',sans-serif; font-size:1.5rem; font-weight:600; letter-spacing:-0.02em; color:#666;">
+                Let Your Eyes Shine
+            </div>
+            <div class="type-meta">
+                <span>Unbounded</span>
+                <span>Google Fonts</span>
+                <span>Geometric, rounded, bold personality</span>
+            </div>
+            <div class="type-weights">
+                <span style="font-family:'Unbounded'; font-weight:300;">Light 300</span>
+                <span style="font-family:'Unbounded'; font-weight:400;">Regular 400</span>
+                <span style="font-family:'Unbounded'; font-weight:600;">SemiBold 600</span>
+                <span style="font-family:'Unbounded'; font-weight:700;">Bold 700</span>
+                <span style="font-family:'Unbounded'; font-weight:800;">ExtraBold 800</span>
+                <span style="font-family:'Unbounded'; font-weight:900;">Black 900</span>
+            </div>
+        </div>
+
+        <!-- Secondary Headlines -->
+        <div class="type-card">
+            <div class="label">Secondary Headlines &amp; UI</div>
+            <div class="type-sample" style="font-family:'Sora',sans-serif; font-size:clamp(1.5rem,3vw,2.5rem); font-weight:700; letter-spacing:-0.02em;">
+                Drop in. Shine on.
+            </div>
+            <div class="type-sample" style="font-family:'Sora',sans-serif; font-size:1.1rem; font-weight:400; color:#666;">
+                Preservative-free formula with hyaluronic acid for screen-weary eyes
+            </div>
+            <div class="type-meta">
+                <span>Sora</span>
+                <span>Google Fonts</span>
+                <span>Clean geometric, excellent for digital</span>
+            </div>
+            <div class="type-weights">
+                <span style="font-family:'Sora'; font-weight:300;">Light 300</span>
+                <span style="font-family:'Sora'; font-weight:400;">Regular 400</span>
+                <span style="font-family:'Sora'; font-weight:600;">SemiBold 600</span>
+                <span style="font-family:'Sora'; font-weight:700;">Bold 700</span>
+                <span style="font-family:'Sora'; font-weight:800;">ExtraBold 800</span>
+            </div>
+        </div>
+
+        <!-- Body Text -->
+        <div class="type-card">
+            <div class="label">Body Text &amp; Long-form</div>
+            <div class="type-sample" style="font-family:'DM Sans',sans-serif; font-size:1.1rem; font-weight:400; line-height:1.65; max-width:600px;">
+                Moisture Oyster is a premium eye drops brand built for a generation that lives on screens and expresses itself visually. Our product transforms eye care into a habitual ritual of self-expression.
+            </div>
+            <div class="type-meta">
+                <span>DM Sans</span>
+                <span>Google Fonts</span>
+                <span>Humanist, warm, highly readable</span>
+            </div>
+            <div class="type-weights">
+                <span style="font-family:'DM Sans'; font-weight:300;">Light 300</span>
+                <span style="font-family:'DM Sans'; font-weight:400;">Regular 400</span>
+                <span style="font-family:'DM Sans'; font-weight:500;">Medium 500</span>
+                <span style="font-family:'DM Sans'; font-weight:600;">SemiBold 600</span>
+                <span style="font-family:'DM Sans'; font-weight:700;">Bold 700</span>
+            </div>
+        </div>
+
+        <!-- Accent Serif -->
+        <div class="type-card">
+            <div class="label">Editorial Accent &amp; Taglines</div>
+            <div class="type-sample" style="font-family:'Instrument Serif',serif; font-style:italic; font-size:clamp(1.5rem,3vw,2.5rem); letter-spacing:-0.01em;">
+                A simple way to refresh your eyes and step back into your glow.
+            </div>
+            <div class="type-meta">
+                <span>Instrument Serif</span>
+                <span>Google Fonts</span>
+                <span>Elegant italic for editorial moments</span>
+            </div>
+        </div>
+
+        <!-- Utility -->
+        <div class="type-card">
+            <div class="label">UI / Labels / Captions</div>
+            <div class="type-sample" style="font-family:'Space Grotesk',sans-serif; font-size:0.8rem; font-weight:600; letter-spacing:0.15em; text-transform:uppercase;">
+                PRESERVATIVE-FREE &bull; HYALURONIC ACID &bull; LENS COMPATIBLE &bull; 8HR COMFORT
+            </div>
+            <div class="type-sample" style="font-family:'Space Grotesk',sans-serif; font-size:1rem; font-weight:400; color:#666; margin-top:0.5rem;">
+                Space Grotesk for labels, metadata, technical specifications, and navigation.
+            </div>
+            <div class="type-meta">
+                <span>Space Grotesk</span>
+                <span>Google Fonts</span>
+                <span>Monospaced feel, great for caps</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ===== 3. FONT PAIRS ===== -->
+<section id="pairs">
+    <div class="section-label">03 / Typography Pairs</div>
+    <h2 class="section-title">Font Pairings</h2>
+    <p class="section-desc">Three curated pairings for different brand contexts — from bold social content to refined editorial and packaging.</p>
+
+    <div class="pair-grid">
+        <!-- Pair 1: RECOMMENDED -->
+        <div class="pair-card pair-recommended">
+            <div class="pair-header">
+                <div class="pair-label">Pair A — Social &amp; Digital</div>
+                <h3 style="font-family:'Unbounded',sans-serif; font-weight:800; font-size:1.6rem; letter-spacing:-0.03em;">
+                    Drop In.<br>Shine On.
+                </h3>
+                <p style="font-family:'DM Sans',sans-serif; font-weight:400; margin-top:0.75rem; color:#666;">
+                    Preservative-free formula with hyaluronic acid. Quickly restores comfort for screen-tired eyes. Your daily ritual of self-expression.
+                </p>
+            </div>
+            <div class="pair-footer">
+                <span>Unbounded 800 + DM Sans 400</span>
+                <span>Best for: Social, ads, web</span>
+            </div>
+        </div>
+
+        <!-- Pair 2: Editorial -->
+        <div class="pair-card">
+            <div class="pair-header">
+                <div class="pair-label">Pair B — Editorial &amp; Campaign</div>
+                <h3 style="font-family:'Instrument Serif',serif; font-style:italic; font-weight:400; font-size:1.6rem;">
+                    A simple way to refresh your eyes
+                </h3>
+                <p style="font-family:'Sora',sans-serif; font-weight:400; margin-top:0.75rem; color:#666; font-size:0.9rem;">
+                    Moisture Oyster transforms eye care into a habitual ritual of self-expression, helping every person feel confident and shine every day.
+                </p>
+            </div>
+            <div class="pair-footer">
+                <span>Instrument Serif Italic + Sora 400</span>
+                <span>Best for: Print, editorial, brand film</span>
+            </div>
+        </div>
+
+        <!-- Pair 3: Packaging -->
+        <div class="pair-card">
+            <div class="pair-header">
+                <div class="pair-label">Pair C — Packaging &amp; Product</div>
+                <h3 style="font-family:'Sora',sans-serif; font-weight:700; font-size:1.5rem; letter-spacing:-0.02em;">
+                    MOISTURE<br>OYSTER
+                </h3>
+                <p style="font-family:'Space Grotesk',sans-serif; font-weight:500; margin-top:0.75rem; color:#888; font-size:0.8rem; letter-spacing:0.08em; text-transform:uppercase;">
+                    Eye Drops &bull; 10ml &bull; Preservative-Free
+                </p>
+            </div>
+            <div class="pair-footer">
+                <span>Sora 700 + Space Grotesk 500</span>
+                <span>Best for: Packaging, labels, merch</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Type Scale -->
+    <div style="margin-top:3rem;">
+        <h3 style="font-family:'Space Grotesk',sans-serif; font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; color:#888; margin-bottom:1.5rem;">Type Scale</h3>
+        <div class="type-card" style="overflow-x:auto;">
+            <table style="width:100%; border-collapse:collapse; font-size:0.85rem;">
+                <thead>
+                    <tr style="border-bottom:2px solid var(--mo-pearl);">
+                        <th style="text-align:left; padding:0.5rem 1rem; font-family:'Space Grotesk'; font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:#888;">Level</th>
+                        <th style="text-align:left; padding:0.5rem 1rem; font-family:'Space Grotesk'; font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:#888;">Font</th>
+                        <th style="text-align:left; padding:0.5rem 1rem; font-family:'Space Grotesk'; font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:#888;">Weight</th>
+                        <th style="text-align:left; padding:0.5rem 1rem; font-family:'Space Grotesk'; font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:#888;">Size</th>
+                        <th style="text-align:left; padding:0.5rem 1rem; font-family:'Space Grotesk'; font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:#888;">Preview</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom:1px solid #f0f0f0;">
+                        <td style="padding:0.75rem 1rem;">Display</td>
+                        <td style="padding:0.75rem 1rem;">Unbounded</td>
+                        <td style="padding:0.75rem 1rem;">800</td>
+                        <td style="padding:0.75rem 1rem;">48–72px</td>
+                        <td style="padding:0.75rem 1rem; font-family:'Unbounded'; font-weight:800; font-size:1.5rem; letter-spacing:-0.03em;">Shine</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid #f0f0f0;">
+                        <td style="padding:0.75rem 1rem;">H1</td>
+                        <td style="padding:0.75rem 1rem;">Unbounded</td>
+                        <td style="padding:0.75rem 1rem;">700</td>
+                        <td style="padding:0.75rem 1rem;">32–40px</td>
+                        <td style="padding:0.75rem 1rem; font-family:'Unbounded'; font-weight:700; font-size:1.2rem;">Your Glow</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid #f0f0f0;">
+                        <td style="padding:0.75rem 1rem;">H2</td>
+                        <td style="padding:0.75rem 1rem;">Sora</td>
+                        <td style="padding:0.75rem 1rem;">600</td>
+                        <td style="padding:0.75rem 1rem;">24–28px</td>
+                        <td style="padding:0.75rem 1rem; font-family:'Sora'; font-weight:600; font-size:1.1rem;">Eye Ritual</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid #f0f0f0;">
+                        <td style="padding:0.75rem 1rem;">H3</td>
+                        <td style="padding:0.75rem 1rem;">Sora</td>
+                        <td style="padding:0.75rem 1rem;">500</td>
+                        <td style="padding:0.75rem 1rem;">18–20px</td>
+                        <td style="padding:0.75rem 1rem; font-family:'Sora'; font-weight:500;">Screen Comfort</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid #f0f0f0;">
+                        <td style="padding:0.75rem 1rem;">Body</td>
+                        <td style="padding:0.75rem 1rem;">DM Sans</td>
+                        <td style="padding:0.75rem 1rem;">400</td>
+                        <td style="padding:0.75rem 1rem;">15–16px</td>
+                        <td style="padding:0.75rem 1rem; font-family:'DM Sans'; font-weight:400;">Daily eye drops that feel alive.</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid #f0f0f0;">
+                        <td style="padding:0.75rem 1rem;">Caption</td>
+                        <td style="padding:0.75rem 1rem;">Space Grotesk</td>
+                        <td style="padding:0.75rem 1rem;">500</td>
+                        <td style="padding:0.75rem 1rem;">11–13px</td>
+                        <td style="padding:0.75rem 1rem; font-family:'Space Grotesk'; font-weight:500; font-size:0.8rem; letter-spacing:0.08em; text-transform:uppercase;">Preservative-free</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:0.75rem 1rem;">Accent</td>
+                        <td style="padding:0.75rem 1rem;">Instrument Serif</td>
+                        <td style="padding:0.75rem 1rem;">400 italic</td>
+                        <td style="padding:0.75rem 1rem;">20–32px</td>
+                        <td style="padding:0.75rem 1rem; font-family:'Instrument Serif'; font-style:italic; font-size:1rem;">effortlessly</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ===== 4. LOGO OPTIONS ===== -->
+<section id="logos">
+    <div class="section-label">04 / Logo System</div>
+    <h2 class="section-title">Logo Options</h2>
+    <p class="section-desc">Flexible logo system designed for social, packaging, web, and merch. The "MO" monogram acts as a compact identifier, while the full wordmark serves as the primary logo.</p>
+
+    <div class="logo-grid">
+        <!-- Option A: Full Wordmark -->
+        <div class="logo-card">
+            <div class="logo-display" style="background:var(--mo-pearl);">
+                <div class="logo-text">
+                    <span class="wordmark" style="font-family:'Unbounded',sans-serif; font-weight:800; font-size:2rem; letter-spacing:-0.03em; color:var(--mo-pink);">MOISTURE<br>OYSTER</span>
+                    <span class="sub" style="font-family:'Space Grotesk',sans-serif; font-weight:500; font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--mo-mint);">EYE DROPS</span>
+                </div>
+            </div>
+            <div class="logo-info">
+                <h4>A. Full Wordmark — Stacked</h4>
+                <p>Primary logo. Packaging, hero banners, brand moments. Unbounded ExtraBold.</p>
+            </div>
+        </div>
+
+        <!-- Option B: Horizontal -->
+        <div class="logo-card">
+            <div class="logo-display" style="background: var(--mo-charcoal);">
+                <div class="logo-text">
+                    <span class="wordmark" style="font-family:'Unbounded',sans-serif; font-weight:700; font-size:1.4rem; letter-spacing:-0.02em; color:white;">MOISTURE OYSTER</span>
+                    <span class="sub" style="font-family:'Space Grotesk',sans-serif; font-weight:500; font-size:0.55rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--mo-mint-light);">EYE DROPS</span>
+                </div>
+            </div>
+            <div class="logo-info">
+                <h4>B. Full Wordmark — Horizontal</h4>
+                <p>Website header, partnerships, wide placements. White on dark or pink on light.</p>
+            </div>
+        </div>
+
+        <!-- Option C: Monogram Pink -->
+        <div class="logo-card">
+            <div class="logo-display" style="background: var(--mo-pearl);">
+                <div style="display:flex; align-items:center; gap:1.5rem;">
+                    <div class="logo-mark" style="background: linear-gradient(135deg, var(--mo-pink) 0%, var(--mo-pink-hot) 100%); width:80px; height:80px; font-size:1.8rem;">
+                        MO
+                    </div>
+                    <div>
+                        <div style="font-family:'Unbounded'; font-weight:700; font-size:0.7rem; letter-spacing:0.05em; color:var(--mo-charcoal);">MOISTURE OYSTER</div>
+                        <div style="font-family:'Space Grotesk'; font-size:0.6rem; letter-spacing:0.15em; color:#999; text-transform:uppercase; margin-top:0.15rem;">Eye Drops</div>
+                    </div>
+                </div>
+            </div>
+            <div class="logo-info">
+                <h4>C. Monogram + Lockup</h4>
+                <p>Social profile, app icon, stickers, merch embroidery. Gradient or flat.</p>
+            </div>
+        </div>
+
+        <!-- Option D: Monogram Gradient -->
+        <div class="logo-card">
+            <div class="logo-display" style="background:linear-gradient(135deg, var(--mo-midnight), #2D2B55);">
+                <div style="display:flex; gap:2rem; align-items:center;">
+                    <div class="logo-mark" style="background: linear-gradient(135deg, var(--mo-pink) 0%, var(--mo-lavender) 50%, var(--mo-mint) 100%); width:80px; height:80px; font-size:1.8rem;">
+                        MO
+                    </div>
+                    <div class="logo-mark" style="background: transparent; border:2px solid rgba(255,255,255,0.5); width:80px; height:80px; font-size:1.8rem; color:rgba(255,255,255,0.9);">
+                        MO
+                    </div>
+                </div>
+            </div>
+            <div class="logo-info">
+                <h4>D. Monogram Variants</h4>
+                <p>Iridescent gradient (campaigns) and outline (dark backgrounds, subtle placements).</p>
+            </div>
+        </div>
+
+        <!-- Option E: Oyster Icon -->
+        <div class="logo-card">
+            <div class="logo-display" style="background: var(--mo-fog);">
+                <div style="text-align:center;">
+                    <svg width="80" height="70" viewBox="0 0 80 70">
+                        <!-- Stylized oyster shell shape -->
+                        <ellipse cx="40" cy="42" rx="36" ry="24" fill="none" stroke="#E8729A" stroke-width="2.5" opacity="0.5"/>
+                        <ellipse cx="40" cy="38" rx="30" ry="20" fill="none" stroke="#7ED4C1" stroke-width="2" opacity="0.6"/>
+                        <ellipse cx="40" cy="35" rx="22" ry="15" fill="none" stroke="#C8A2E0" stroke-width="1.5" opacity="0.5"/>
+                        <!-- Pearl / drop -->
+                        <circle cx="40" cy="36" r="6" fill="url(#pearlGrad)"/>
+                        <defs>
+                            <radialGradient id="pearlGrad" cx="40%" cy="35%">
+                                <stop offset="0%" stop-color="#FFF5F7"/>
+                                <stop offset="50%" stop-color="#F4A5C0"/>
+                                <stop offset="100%" stop-color="#E8729A"/>
+                            </radialGradient>
+                        </defs>
+                    </svg>
+                    <div style="font-family:'Unbounded'; font-weight:700; font-size:0.75rem; letter-spacing:0.02em; color:var(--mo-charcoal); margin-top:0.5rem;">MOISTURE OYSTER</div>
+                </div>
+            </div>
+            <div class="logo-info">
+                <h4>E. Oyster Shell Icon + Wordmark</h4>
+                <p>Premium / editorial contexts. Shell rings evoke oyster layers with pearl center (the drop).</p>
+            </div>
+        </div>
+
+        <!-- Option F: Drop Icon -->
+        <div class="logo-card">
+            <div class="logo-display" style="background: white;">
+                <div style="text-align:center;">
+                    <svg width="60" height="80" viewBox="0 0 60 80">
+                        <!-- Water drop shape -->
+                        <path d="M30 8 C30 8, 8 40, 8 50 C8 62, 18 72, 30 72 C42 72, 52 62, 52 50 C52 40, 30 8, 30 8Z" fill="url(#dropGrad)" opacity="0.9"/>
+                        <!-- MO text inside -->
+                        <text x="30" y="54" text-anchor="middle" font-family="Unbounded" font-weight="800" font-size="14" fill="white">MO</text>
+                        <defs>
+                            <linearGradient id="dropGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#E8729A"/>
+                                <stop offset="50%" stop-color="#C8A2E0"/>
+                                <stop offset="100%" stop-color="#7ED4C1"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <div style="font-family:'Space Grotesk'; font-weight:600; font-size:0.6rem; letter-spacing:0.15em; text-transform:uppercase; color:#999; margin-top:0.25rem;">EYE DROPS</div>
+                </div>
+            </div>
+            <div class="logo-info">
+                <h4>F. Drop Monogram</h4>
+                <p>App icon, favicon, single-color emboss on packaging. The drop = the product.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ===== 5. VISUAL DIRECTION ===== -->
+<section id="visual">
+    <div class="section-label">05 / Visual Direction</div>
+    <h2 class="section-title">Mood &amp; Atmosphere</h2>
+    <p class="section-desc">Iridescent, dewy, alive. The visual world of MO lives where beauty meets tech — glitter-dusted skin, oceanic textures, and pearl-like luminosity. Real faces, real energy, ethereal light.</p>
+
+    <div class="mood-grid">
+        <div class="mood-cell span-3 row-2" style="background: linear-gradient(135deg, #F5E6F0 0%, #E8D4F0 30%, #D4E8F0 60%, #E8F0E6 100%);">
+            <div style="text-align:center; padding:2rem;">
+                <div style="font-family:'Instrument Serif'; font-style:italic; font-size:clamp(1.2rem,2.5vw,2rem); color:var(--mo-charcoal); opacity:0.8;">Iridescent Glow</div>
+                <div style="font-family:'DM Sans'; font-size:0.8rem; color:#888; margin-top:0.5rem;">Oyster-shell shimmer, holographic light play,<br>dewy skin textures</div>
+            </div>
+            <div class="mood-label">CORE AESTHETIC</div>
+        </div>
+        <div class="mood-cell span-3" style="background: linear-gradient(180deg, var(--mo-pink-light), var(--mo-lavender));">
+            <div style="font-family:'Unbounded'; font-weight:800; font-size:1.5rem; color:white; text-shadow:0 2px 10px rgba(0,0,0,0.1);">GLOW</div>
+            <div class="mood-label">WARM TONES</div>
+        </div>
+        <div class="mood-cell span-3" style="background: linear-gradient(180deg, var(--mo-mint-light), var(--mo-iridescent-2));">
+            <div style="font-family:'Unbounded'; font-weight:800; font-size:1.5rem; color:white; text-shadow:0 2px 10px rgba(0,0,0,0.1);">REFRESH</div>
+            <div class="mood-label">COOL TONES</div>
+        </div>
+        <div class="mood-cell span-2" style="background: linear-gradient(135deg, #FFE8F0, #FFF5E8, #E8FFF5); position:relative; overflow:hidden;">
+            <div style="position:absolute; width:200%; height:200%; background: conic-gradient(from 0deg, rgba(232,114,154,0.15), rgba(126,212,193,0.15), rgba(200,162,224,0.15), rgba(212,184,150,0.15), rgba(232,114,154,0.15)); animation: spin 8s linear infinite; top:-50%; left:-50%;"></div>
+            <div style="font-family:'Space Grotesk'; font-weight:600; font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--mo-charcoal); z-index:2;">Holographic</div>
+            <div class="mood-label">SHIMMER EFFECT</div>
+        </div>
+        <div class="mood-cell span-2" style="background: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22><circle cx=%2240%22 cy=%2260%22 r=%2250%22 fill=%22%23F4A5C0%22 opacity=%220.3%22/><circle cx=%22140%22 cy=%2280%22 r=%2270%22 fill=%22%23A8E6D8%22 opacity=%220.3%22/><circle cx=%2290%22 cy=%22150%22 r=%2260%22 fill=%22%23D4B8E8%22 opacity=%220.3%22/></svg>'), #FFF5F7;">
+            <div style="font-family:'Space Grotesk'; font-weight:600; font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--mo-charcoal);">Soft Circles</div>
+            <div class="mood-label">ORGANIC SHAPES</div>
+        </div>
+        <div class="mood-cell span-2" style="background: var(--mo-midnight); display:flex; flex-direction:column; gap:0.3rem;">
+            <div style="font-family:'Unbounded'; font-weight:700; font-size:1rem; background:linear-gradient(90deg, var(--mo-pink), var(--mo-lavender), var(--mo-mint)); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">NEON GLOW</div>
+            <div style="font-family:'DM Sans'; font-size:0.7rem; color:rgba(255,255,255,0.5);">Night mode campaigns</div>
+            <div class="mood-label">DARK MODE</div>
+        </div>
+    </div>
+
+    <style>@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }</style>
+</section>
+
+<div class="divider"></div>
+
+<!-- ===== 6. GRADIENTS ===== -->
+<section id="gradients">
+    <div class="section-label">06 / Gradient System</div>
+    <h2 class="section-title">Signature Gradients</h2>
+    <p class="section-desc">Gradients are core to MO's iridescent identity. Use them for backgrounds, overlays, and accent moments.</p>
+
+    <div class="gradient-row">
+        <div class="gradient-sample" style="background: linear-gradient(135deg, #E8729A 0%, #C8A2E0 50%, #7ED4C1 100%);">
+            <span>Signature Iridescent<br>Pink &rarr; Lavender &rarr; Mint</span>
+        </div>
+        <div class="gradient-sample" style="background: linear-gradient(135deg, #FF5C8A 0%, #F4A5C0 100%);">
+            <span>Blush Glow<br>Hot Pink &rarr; Blush</span>
+        </div>
+        <div class="gradient-sample" style="background: linear-gradient(135deg, #5BBFAA 0%, #A8E6D8 100%);">
+            <span>Ocean Calm<br>Deep Mint &rarr; Seafoam</span>
+        </div>
+    </div>
+    <div class="gradient-row">
+        <div class="gradient-sample" style="background: linear-gradient(135deg, #1A1A2E 0%, #2D2B55 40%, #E8729A 100%);">
+            <span>Midnight Shine<br>For dark-mode hero sections</span>
+        </div>
+        <div class="gradient-sample" style="background: linear-gradient(135deg, #FFF5F7 0%, #E8E4F0 50%, #D4F5ED 100%);">
+            <span style="color:var(--mo-charcoal); text-shadow:none;">Pearl Mist<br>Subtle backgrounds</span>
+        </div>
+        <div class="gradient-sample" style="background: linear-gradient(135deg, #C8A2E0 0%, #B8D4E8 50%, #D4B896 100%);">
+            <span>Shell Shimmer<br>Editorial &amp; special editions</span>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ===== 7. TEXTURES ===== -->
+<section id="textures">
+    <div class="section-label">07 / Texture &amp; Pattern</div>
+    <h2 class="section-title">Surface Language</h2>
+    <p class="section-desc">Tactile, luminous, wet. The brand texture library draws from oyster shells, water droplets, and iridescent surfaces.</p>
+
+    <div class="texture-grid">
+        <div class="texture-card" style="background: linear-gradient(135deg, rgba(244,165,192,0.3) 0%, rgba(168,230,216,0.3) 100%); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.5);">
+            <div style="position:absolute; inset:0; background: radial-gradient(circle at 30% 40%, rgba(255,255,255,0.6) 0%, transparent 50%), radial-gradient(circle at 70% 60%, rgba(255,255,255,0.4) 0%, transparent 50%);"></div>
+            <span>Dewy / Wet Glass</span>
+        </div>
+        <div class="texture-card" style="background: conic-gradient(from 45deg, rgba(232,114,154,0.2), rgba(200,162,224,0.2), rgba(126,212,193,0.2), rgba(212,184,150,0.2), rgba(232,114,154,0.2)); border: 1px solid rgba(255,255,255,0.3);">
+            <span>Holographic Film</span>
+        </div>
+        <div class="texture-card" style="background: repeating-radial-gradient(circle at 50% 50%, transparent 0, transparent 8px, rgba(232,114,154,0.06) 8px, rgba(232,114,154,0.06) 16px); background-color: var(--mo-pearl);">
+            <span>Pearl Rings</span>
+        </div>
+        <div class="texture-card" style="background: linear-gradient(135deg, #F0E6DF 0%, #E8D8D0 100%); position:relative;">
+            <div style="position:absolute; inset:0; background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(244,165,192,0.15) 0%, transparent 60%), radial-gradient(ellipse 100% 80% at 50% 50%, rgba(212,196,180,0.3) 0%, transparent 70%);"></div>
+            <span>Shell Interior</span>
+        </div>
+        <div class="texture-card" style="background: linear-gradient(180deg, rgba(184,212,232,0.4) 0%, rgba(255,245,247,0.8) 100%); border: 1px solid rgba(255,255,255,0.5);">
+            <div style="position:absolute; top:20px; left:30px; width:15px; height:20px; border-radius:50% 50% 50% 50% / 60% 60% 40% 40%; background:rgba(184,212,232,0.4);"></div>
+            <div style="position:absolute; top:40px; right:40px; width:10px; height:14px; border-radius:50% 50% 50% 50% / 60% 60% 40% 40%; background:rgba(200,162,224,0.3);"></div>
+            <div style="position:absolute; bottom:60px; left:50px; width:12px; height:16px; border-radius:50% 50% 50% 50% / 60% 60% 40% 40%; background:rgba(244,165,192,0.3);"></div>
+            <span>Water Drops</span>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ===== 8. APPLICATION ===== -->
+<section id="applications">
+    <div class="section-label">08 / Brand Applications</div>
+    <h2 class="section-title">In Context</h2>
+    <p class="section-desc">How the brand system comes together across key touchpoints.</p>
+
+    <div class="app-grid">
+        <!-- Packaging -->
+        <div class="app-card">
+            <div class="app-preview" style="background: linear-gradient(135deg, #FFF5F7, #E8E4F0, #D4F5ED);">
+                <div class="bottle-mockup">
+                    <div class="bottle-cap"></div>
+                    <div class="bottle-body">
+                        <div class="bottle-text">MOISTURE<br>OYSTER</div>
+                        <div style="font-family:'Space Grotesk'; font-size:0.2rem; color:var(--mo-pink); margin-top:2px; letter-spacing:0.05em;">EYE DROPS</div>
+                    </div>
+                </div>
+                <div style="margin-top:1rem; text-align:center;">
+                    <div style="font-family:'Unbounded'; font-weight:700; font-size:0.6rem; color:var(--mo-pink); letter-spacing:0.02em;">MOISTURE OYSTER</div>
+                    <div style="font-family:'Instrument Serif'; font-style:italic; font-size:0.55rem; color:#888; margin-top:0.2rem;">Let your eyes shine</div>
+                </div>
+            </div>
+            <div class="app-desc">
+                <h4>Product Packaging</h4>
+                <p>Transparent body, mint cap, pink wordmark. Clean exterior, motivational interior with QR code.</p>
+            </div>
+        </div>
+
+        <!-- Social Post -->
+        <div class="app-card">
+            <div class="app-preview" style="background: var(--mo-midnight);">
+                <div style="width:160px; border-radius:12px; overflow:hidden; background: linear-gradient(180deg, #2D2B55 0%, #1A1A2E 100%); padding:1.25rem; text-align:center;">
+                    <div style="font-family:'Space Grotesk'; font-size:0.45rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--mo-mint-light); margin-bottom:0.75rem;">@moistureoyster</div>
+                    <div style="font-family:'Unbounded'; font-weight:800; font-size:0.9rem; line-height:1.15; background:linear-gradient(135deg, var(--mo-pink), var(--mo-lavender), var(--mo-mint)); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">DROP IN.<br>SHINE ON.</div>
+                    <div style="width:30px; height:1px; background:var(--mo-pink); margin:0.75rem auto;"></div>
+                    <div style="font-family:'DM Sans'; font-size:0.4rem; color:rgba(255,255,255,0.5); line-height:1.5;">Your daily ritual of<br>self-expression</div>
+                </div>
+            </div>
+            <div class="app-desc">
+                <h4>Social Media Post</h4>
+                <p>Dark mode with iridescent gradient text. Bold headlines, minimal copy, MO energy.</p>
+            </div>
+        </div>
+
+        <!-- Instagram Story -->
+        <div class="app-card">
+            <div class="app-preview" style="background: linear-gradient(180deg, var(--mo-pink-light) 0%, var(--mo-lavender) 50%, var(--mo-mint) 100%);">
+                <div style="width:110px; height:190px; border-radius:16px; background:rgba(255,255,255,0.15); backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,0.3); display:flex; flex-direction:column; align-items:center; justify-content:center; padding:1rem; text-align:center;">
+                    <div style="font-family:'Unbounded'; font-weight:800; font-size:0.55rem; color:white; text-shadow:0 1px 4px rgba(0,0,0,0.15);">MOISTURE<br>OYSTER</div>
+                    <div style="width:20px; height:35px; border-radius:3px 3px 5px 5px; background:rgba(255,255,255,0.4); border:1px solid rgba(255,255,255,0.6); margin:0.75rem 0;">
+                        <div style="width:12px; height:8px; border-radius:2px 2px 0 0; background:var(--mo-mint); margin:0 auto;"></div>
+                    </div>
+                    <div style="font-family:'Instrument Serif'; font-style:italic; font-size:0.5rem; color:white;">shine from within</div>
+                    <div style="margin-top:auto; background:white; border-radius:20px; padding:0.2rem 0.6rem; font-family:'Space Grotesk'; font-size:0.35rem; font-weight:600; color:var(--mo-pink);">SHOP NOW</div>
+                </div>
+            </div>
+            <div class="app-desc">
+                <h4>Instagram Story</h4>
+                <p>Gradient background with glassmorphism card. Product centered, clear CTA.</p>
+            </div>
+        </div>
+
+        <!-- Box Packaging -->
+        <div class="app-card">
+            <div class="app-preview" style="background: var(--mo-pearl);">
+                <div style="width:140px; height:180px; border-radius:8px; background:white; box-shadow: 8px 8px 0 rgba(232,114,154,0.1), 0 4px 20px rgba(0,0,0,0.08); padding:1.25rem; display:flex; flex-direction:column; justify-content:space-between;">
+                    <div>
+                        <div style="font-family:'Unbounded'; font-weight:800; font-size:0.7rem; color:var(--mo-pink); line-height:1.2;">MOISTURE<br>OYSTER</div>
+                        <div style="font-family:'Space Grotesk'; font-size:0.35rem; color:#999; letter-spacing:0.1em; text-transform:uppercase; margin-top:0.3rem;">Eye Drops &bull; 10ml</div>
+                    </div>
+                    <div>
+                        <div style="width:100%; height:40px; border-radius:4px; background:linear-gradient(135deg, var(--mo-pink-light), var(--mo-lavender), var(--mo-mint-light)); opacity:0.5;"></div>
+                        <div style="font-family:'Instrument Serif'; font-style:italic; font-size:0.4rem; color:#888; margin-top:0.5rem; text-align:center;">Let your eyes shine</div>
+                    </div>
+                </div>
+            </div>
+            <div class="app-desc">
+                <h4>Box / Outer Packaging</h4>
+                <p>Minimalist white with pink wordmark. Iridescent gradient accent strip. Clean and premium.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ===== 9. GUIDELINES ===== -->
+<section id="guidelines">
+    <div class="section-label">09 / Brand Guidelines</div>
+    <h2 class="section-title">Do &amp; Don't</h2>
+    <p class="section-desc">Quick reference for maintaining brand consistency across all touchpoints.</p>
+
+    <div class="do-dont-grid">
+        <div class="do-card">
+            <h4>Do</h4>
+            <ul>
+                <li>Use iridescent gradients for hero moments and key visuals</li>
+                <li>Keep photography natural, dewy, and diverse</li>
+                <li>Use "screen fatigue" instead of "dry eye syndrome"</li>
+                <li>Pair Unbounded for headlines with DM Sans for body</li>
+                <li>Use the pink + mint as the primary color pair</li>
+                <li>Let the bottle serve as a lifestyle accessory in shots</li>
+                <li>Embrace bold color — chartreuse, lavender, coral are friends</li>
+                <li>Speak like a friend, not a pharmacist</li>
+            </ul>
+        </div>
+        <div class="dont-card">
+            <h4>Don't</h4>
+            <ul>
+                <li>Use clinical/medical imagery (lab coats, sterile environments)</li>
+                <li>Apply heavy filters that flatten the iridescent quality</li>
+                <li>Mix more than 3 brand gradients in one composition</li>
+                <li>Use serif fonts for headlines (serif = editorial accent only)</li>
+                <li>Pair pink with red — it reads as "error" not "glow"</li>
+                <li>Show perfect, heavily retouched beauty shots</li>
+                <li>Use complex medical terminology in consumer-facing copy</li>
+                <li>Put the logo on busy, cluttered backgrounds without a backdrop</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Color pairing guide -->
+    <div style="margin-top:3rem;">
+        <h3 style="font-family:'Space Grotesk',sans-serif; font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; color:#888; margin-bottom:1.5rem;">Approved Color Pairings</h3>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:1rem;">
+            <div style="display:flex; height:60px; border-radius:10px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+                <div style="flex:1; background:var(--mo-pink); display:flex; align-items:center; justify-content:center; color:white; font-family:'Space Grotesk'; font-size:0.6rem; font-weight:600;">PINK</div>
+                <div style="flex:1; background:var(--mo-mint); display:flex; align-items:center; justify-content:center; color:white; font-family:'Space Grotesk'; font-size:0.6rem; font-weight:600;">MINT</div>
+            </div>
+            <div style="display:flex; height:60px; border-radius:10px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+                <div style="flex:1; background:var(--mo-pink); display:flex; align-items:center; justify-content:center; color:white; font-family:'Space Grotesk'; font-size:0.6rem; font-weight:600;">PINK</div>
+                <div style="flex:1; background:var(--mo-midnight); display:flex; align-items:center; justify-content:center; color:white; font-family:'Space Grotesk'; font-size:0.6rem; font-weight:600;">MIDNIGHT</div>
+            </div>
+            <div style="display:flex; height:60px; border-radius:10px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+                <div style="flex:1; background:var(--mo-lavender); display:flex; align-items:center; justify-content:center; color:white; font-family:'Space Grotesk'; font-size:0.6rem; font-weight:600;">LAVENDER</div>
+                <div style="flex:1; background:var(--mo-mint); display:flex; align-items:center; justify-content:center; color:white; font-family:'Space Grotesk'; font-size:0.6rem; font-weight:600;">MINT</div>
+            </div>
+            <div style="display:flex; height:60px; border-radius:10px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+                <div style="flex:1; background:var(--mo-pearl); display:flex; align-items:center; justify-content:center; color:var(--mo-charcoal); font-family:'Space Grotesk'; font-size:0.6rem; font-weight:600;">PEARL</div>
+                <div style="flex:1; background:var(--mo-pink); display:flex; align-items:center; justify-content:center; color:white; font-family:'Space Grotesk'; font-size:0.6rem; font-weight:600;">PINK</div>
+            </div>
+            <div style="display:flex; height:60px; border-radius:10px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+                <div style="flex:1; background:var(--mo-charcoal); display:flex; align-items:center; justify-content:center; color:white; font-family:'Space Grotesk'; font-size:0.6rem; font-weight:600;">CHARCOAL</div>
+                <div style="flex:1; background:var(--mo-mint-light); display:flex; align-items:center; justify-content:center; color:var(--mo-charcoal); font-family:'Space Grotesk'; font-size:0.6rem; font-weight:600;">MINT LIGHT</div>
+            </div>
+            <div style="display:flex; height:60px; border-radius:10px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+                <div style="flex:1; background:var(--mo-gold); display:flex; align-items:center; justify-content:center; color:white; font-family:'Space Grotesk'; font-size:0.6rem; font-weight:600;">GOLD</div>
+                <div style="flex:1; background:var(--mo-midnight); display:flex; align-items:center; justify-content:center; color:white; font-family:'Space Grotesk'; font-size:0.6rem; font-weight:600;">MIDNIGHT</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div style="font-family:'Unbounded'; font-weight:700; font-size:0.8rem; color:var(--mo-pink); margin-bottom:0.5rem;">MOISTURE OYSTER</div>
+    <div>Brand Identity Guide v1.0 &bull; Confidential</div>
+</footer>
+
+</body>
+</html>

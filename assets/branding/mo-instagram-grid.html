@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moisture Oyster — Instagram Grid</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=Unbounded:wght@300;400;500;600;700;800;900&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --pink: #FF5C8A;
+            --pink-light: #FF8FB0;
+            --pink-pale: #FFD6E4;
+            --mint: #7ED4C1;
+            --teal: #5BBFAA;
+            --lavender: #C8A2E0;
+            --coral: #FF7F6B;
+            --charcoal: #2A2A3D;
+            --midnight: #1A1A2E;
+            --off-white: #FAFAF8;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #FAFAF8;
+            color: var(--charcoal);
+        }
+
+        /* Phone frame */
+        .phone-frame {
+            width: 390px;
+            margin: 2rem auto;
+            background: white;
+            border-radius: 40px;
+            box-shadow: 0 20px 80px rgba(0,0,0,0.12), 0 0 0 1px rgba(0,0,0,0.04);
+            overflow: hidden;
+            position: relative;
+        }
+        .phone-notch {
+            width: 130px; height: 28px;
+            background: black;
+            border-radius: 0 0 16px 16px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* IG Profile Header */
+        .ig-header {
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #eee;
+        }
+        .ig-header .ig-user {
+            display: flex; align-items: center; gap: 8px;
+        }
+        .ig-avatar {
+            width: 32px; height: 32px; border-radius: 50%;
+            background: var(--pink);
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'Unbounded'; font-weight: 900; font-size: 0.55rem;
+            color: white; text-transform: lowercase;
+        }
+        .ig-handle {
+            font-family: 'Sora'; font-weight: 600; font-size: 0.8rem;
+        }
+
+        .ig-profile {
+            padding: 16px;
+        }
+        .ig-profile-top {
+            display: flex; align-items: center; gap: 20px;
+        }
+        .ig-profile-pic {
+            width: 72px; height: 72px; border-radius: 50%;
+            background: var(--pink);
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'Unbounded'; font-weight: 900; font-size: 1.2rem;
+            color: white; text-transform: lowercase;
+            flex-shrink: 0;
+            border: 3px solid transparent;
+            background-clip: padding-box;
+            box-shadow: 0 0 0 2px var(--pink);
+        }
+        .ig-stats {
+            display: flex; gap: 16px; flex: 1; justify-content: center;
+        }
+        .ig-stat { text-align: center; }
+        .ig-stat-num { font-family: 'Sora'; font-weight: 700; font-size: 0.9rem; }
+        .ig-stat-label { font-size: 0.6rem; color: #888; }
+        .ig-bio {
+            margin-top: 10px;
+        }
+        .ig-bio-name {
+            font-family: 'Sora'; font-weight: 700; font-size: 0.75rem;
+        }
+        .ig-bio-text {
+            font-size: 0.7rem; color: #555; line-height: 1.4; margin-top: 2px;
+        }
+        .ig-bio-link {
+            font-size: 0.7rem; color: var(--teal); font-weight: 600; margin-top: 2px;
+        }
+        .ig-edit-btn {
+            margin-top: 10px;
+            width: 100%;
+            padding: 6px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Sora'; font-weight: 600; font-size: 0.7rem;
+            background: white;
+            text-align: center;
+            color: var(--charcoal);
+        }
+
+        /* Tab bar */
+        .ig-tabs {
+            display: flex;
+            border-bottom: 1px solid #eee;
+            margin-top: 8px;
+        }
+        .ig-tab {
+            flex: 1; text-align: center; padding: 10px 0;
+            font-size: 0.7rem; color: #aaa;
+            border-bottom: 2px solid transparent;
+        }
+        .ig-tab.active {
+            color: var(--charcoal);
+            border-bottom-color: var(--charcoal);
+        }
+
+        /* GRID */
+        .ig-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+        }
+        .ig-cell {
+            aspect-ratio: 1;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+        .ig-cell:hover .cell-overlay {
+            opacity: 1;
+        }
+        .cell-overlay {
+            position: absolute; inset: 0;
+            background: rgba(0,0,0,0.3);
+            display: flex; align-items: center; justify-content: center;
+            opacity: 0; transition: opacity 0.2s;
+            font-family: 'Space Grotesk'; font-size: 0.55rem;
+            color: white; letter-spacing: 0.08em; text-transform: uppercase;
+            font-weight: 600; text-align: center; padding: 0.5rem;
+        }
+        .cell-inner {
+            width: 100%; height: 100%;
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            padding: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* ===== CELL TYPES ===== */
+
+        /* 1. Product hero — oyster shell */
+        .cell-oyster {
+            background: linear-gradient(135deg, #E8DDD4 0%, #D4C8BC 40%, #C8B8A8 100%);
+        }
+        .cell-oyster .shell {
+            width: 100%; height: 100%;
+            position: relative;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .cell-oyster .shell-bg {
+            position: absolute; inset: 0;
+            background:
+                radial-gradient(ellipse 90% 70% at 50% 50%, rgba(255,255,255,0.15) 0%, transparent 60%),
+                radial-gradient(ellipse 80% 90% at 45% 55%, rgba(200,185,170,0.4) 0%, transparent 50%);
+        }
+        .cell-oyster .shell-rings {
+            position: absolute; inset: 0;
+            background:
+                radial-gradient(ellipse 100% 80% at 50% 50%, transparent 30%, rgba(180,160,140,0.15) 32%, transparent 34%),
+                radial-gradient(ellipse 100% 80% at 50% 50%, transparent 45%, rgba(180,160,140,0.1) 47%, transparent 49%),
+                radial-gradient(ellipse 100% 80% at 50% 50%, transparent 60%, rgba(180,160,140,0.08) 62%, transparent 64%);
+        }
+        /* Pearl/bottle in center */
+        .cell-oyster .mini-bottle {
+            position: relative; z-index: 2;
+            display: flex; flex-direction: column; align-items: center;
+        }
+        .cell-oyster .mb-cap {
+            width: 16px; height: 12px; background: var(--mint);
+            border-radius: 3px 3px 0 0;
+        }
+        .cell-oyster .mb-body {
+            width: 28px; height: 42px;
+            border-radius: 4px 4px 8px 8px;
+            background: rgba(255,255,255,0.7);
+            border: 1px solid rgba(255,255,255,0.9);
+            display: flex; align-items: center; justify-content: center;
+            flex-direction: column;
+        }
+        .cell-oyster .mb-label {
+            font-family: 'Unbounded'; font-weight: 900; font-size: 0.18rem;
+            color: var(--pink); text-transform: lowercase; text-align: center;
+            line-height: 1;
+        }
+        .cell-oyster .mb-sub {
+            font-family: 'Space Grotesk'; font-size: 0.1rem; color: var(--pink);
+            text-transform: uppercase; letter-spacing: 0.05em; margin-top: 1px;
+        }
+        /* Wet/dewey effect */
+        .cell-oyster .dew {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+        }
+
+        /* 2. Glitter face — iridescent close-up */
+        .cell-glitter {
+            background: linear-gradient(135deg, #D4C8B8 0%, #C8B8A8 50%, #E0D0C4 100%);
+        }
+        .cell-glitter .face-zone {
+            width: 100%; height: 100%; position: relative;
+            display: flex; align-items: flex-end;
+        }
+        .cell-glitter .skin-base {
+            position: absolute; inset: 0;
+            background: linear-gradient(180deg, #D8C0A8 0%, #E0C8B0 30%, #D4B8A0 60%, #CCB098 100%);
+        }
+        .cell-glitter .shimmer {
+            position: absolute; inset: 0;
+            background:
+                radial-gradient(circle at 30% 25%, rgba(255,220,255,0.3) 0%, transparent 30%),
+                radial-gradient(circle at 65% 40%, rgba(200,255,220,0.2) 0%, transparent 25%),
+                radial-gradient(circle at 50% 60%, rgba(220,200,255,0.25) 0%, transparent 30%),
+                radial-gradient(circle at 75% 20%, rgba(255,240,200,0.2) 0%, transparent 20%);
+        }
+        .cell-glitter .glitter-dots {
+            position: absolute; inset: 0;
+        }
+        .cell-glitter .g-dot {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.7);
+        }
+        .cell-glitter .eye-area {
+            position: absolute;
+            top: 15%;
+            right: 10%;
+        }
+        .cell-glitter .eye-shape-g {
+            width: 40px; height: 18px;
+            border-radius: 50% / 60%;
+            overflow: hidden;
+            position: relative;
+        }
+        .cell-glitter .eye-white { background: #F0EAE4; width: 100%; height: 100%; position: relative; }
+        .cell-glitter .iris-g {
+            position: absolute; width: 12px; height: 12px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #6B8E50 20%, #4A7040 60%, #2A4020 100%);
+            top: 50%; left: 55%; transform: translate(-50%, -50%);
+        }
+        .cell-glitter .pupil-g {
+            position: absolute; width: 5px; height: 5px;
+            border-radius: 50%; background: #111;
+            top: 50%; left: 50%; transform: translate(-50%, -50%);
+        }
+        .cell-glitter .highlight-g {
+            position: absolute; width: 2.5px; height: 2.5px;
+            border-radius: 50%; background: rgba(255,255,255,0.9);
+            top: 30%; left: 60%;
+        }
+        .cell-glitter .lips-area {
+            position: absolute; bottom: 8%; left: 20%;
+        }
+        .cell-glitter .lip-shape {
+            width: 50px; height: 20px;
+            border-radius: 0 0 50% 50% / 0 0 100% 100%;
+            background: linear-gradient(180deg, #D09088, #C08078);
+            position: relative;
+            overflow: hidden;
+        }
+        .cell-glitter .lip-shine {
+            position: absolute; top: 3px; left: 12px;
+            width: 20px; height: 6px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.4);
+        }
+        .cell-glitter .brand-tag {
+            position: absolute; bottom: 8px; left: 8px; z-index: 3;
+            font-family: 'Unbounded'; font-weight: 800; font-size: 0.45rem;
+            color: white; text-transform: lowercase;
+            text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+        }
+
+        /* 3. Pink drip eye */
+        .cell-drip {
+            background: var(--pink-pale);
+        }
+        .cell-drip .drip-inner {
+            width: 100%; height: 100%; position: relative;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .cell-drip .skin-patch {
+            position: absolute; top: 0; left: 0; right: 0; height: 65%;
+            background: linear-gradient(180deg, #E0C0A8 0%, #D8B8A0 100%);
+        }
+        .cell-drip .big-eye {
+            position: relative; z-index: 2; margin-top: -15px;
+        }
+        .cell-drip .drip-lines {
+            position: absolute; top: 55%; left: 0; right: 0; bottom: 0;
+            overflow: hidden;
+        }
+        .cell-drip .drip-line {
+            position: absolute;
+            width: 3px;
+            background: var(--pink);
+            border-radius: 0 0 3px 3px;
+            opacity: 0.6;
+        }
+        .cell-drip .brand-tag {
+            position: absolute; bottom: 8px; right: 8px; z-index: 3;
+            font-family: 'Unbounded'; font-weight: 800; font-size: 0.5rem;
+            color: var(--pink);
+            text-transform: lowercase;
+        }
+
+        /* 4. Bold quote / text post */
+        .cell-quote {
+            background: var(--pink);
+        }
+        .cell-quote .q-text {
+            font-family: 'Unbounded'; font-weight: 900;
+            font-size: 1rem;
+            color: white;
+            text-transform: lowercase;
+            line-height: 1;
+            letter-spacing: -0.04em;
+            text-align: center;
+        }
+        .cell-quote .q-hand {
+            font-family: 'Caveat', cursive;
+            font-size: 0.7rem;
+            color: rgba(255,255,255,0.7);
+            margin-top: 6px;
+            transform: rotate(-2deg);
+            text-align: center;
+        }
+
+        /* 5. Educational carousel */
+        .cell-edu {
+            background: var(--off-white);
+        }
+        .cell-edu .edu-inner {
+            width: 100%; height: 100%;
+            display: flex; flex-direction: column;
+            padding: 14px;
+        }
+        .cell-edu .edu-tag {
+            font-family: 'Space Grotesk'; font-size: 0.4rem;
+            letter-spacing: 0.15em; text-transform: uppercase;
+            color: var(--pink); font-weight: 600;
+            background: var(--pink-pale);
+            padding: 2px 6px; border-radius: 3px;
+            align-self: flex-start;
+        }
+        .cell-edu .edu-title {
+            font-family: 'Unbounded'; font-weight: 800;
+            font-size: 0.7rem; color: var(--charcoal);
+            text-transform: lowercase;
+            letter-spacing: -0.03em;
+            margin-top: 8px;
+            line-height: 1.1;
+        }
+        .cell-edu .edu-items {
+            margin-top: auto;
+            display: flex; flex-direction: column; gap: 4px;
+        }
+        .cell-edu .edu-item {
+            display: flex; align-items: center; gap: 5px;
+            font-size: 0.45rem; color: #888;
+        }
+        .cell-edu .edu-dot {
+            width: 4px; height: 4px; border-radius: 50%; flex-shrink: 0;
+        }
+        .cell-edu .edu-slide {
+            font-family: 'Space Grotesk'; font-size: 0.35rem;
+            color: #bbb; text-align: center; margin-top: 6px;
+            letter-spacing: 0.1em;
+        }
+
+        /* 6. Flat product shot */
+        .cell-flat {
+            background: var(--teal);
+        }
+        .cell-flat .flat-inner {
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            width: 100%; height: 100%;
+        }
+        .cell-flat .flat-bottle {
+            display: flex; flex-direction: column; align-items: center;
+        }
+        .cell-flat .fb-cap { width: 20px; height: 14px; background: rgba(255,255,255,0.8); border-radius: 4px 4px 0 0; }
+        .cell-flat .fb-body {
+            width: 36px; height: 55px; border-radius: 5px 5px 10px 10px;
+            background: rgba(255,255,255,0.25);
+            border: 1.5px solid rgba(255,255,255,0.5);
+            display: flex; align-items: center; justify-content: center;
+            flex-direction: column;
+        }
+        .cell-flat .fb-label {
+            font-family: 'Unbounded'; font-weight: 900; font-size: 0.22rem;
+            color: white; text-transform: lowercase; text-align: center; line-height: 1;
+        }
+        .cell-flat .flat-name {
+            font-family: 'Unbounded'; font-weight: 800; font-size: 0.6rem;
+            color: white; text-transform: lowercase; margin-top: 8px;
+            letter-spacing: -0.03em;
+        }
+        .cell-flat .flat-sub {
+            font-family: 'Space Grotesk'; font-size: 0.35rem;
+            color: rgba(255,255,255,0.6); letter-spacing: 0.1em;
+            text-transform: uppercase; margin-top: 2px;
+        }
+
+        /* 7. UGC / review */
+        .cell-ugc {
+            background: var(--midnight);
+        }
+        .cell-ugc .ugc-inner {
+            width: 100%; height: 100%;
+            display: flex; flex-direction: column;
+            padding: 14px;
+            justify-content: space-between;
+        }
+        .cell-ugc .ugc-stars {
+            display: flex; gap: 2px;
+        }
+        .cell-ugc .star {
+            width: 10px; height: 10px;
+            color: var(--acid-yellow, #E8E050);
+            font-size: 10px;
+            line-height: 1;
+        }
+        .cell-ugc .ugc-quote {
+            font-family: 'Caveat', cursive;
+            font-size: 0.85rem;
+            color: white;
+            line-height: 1.25;
+            margin-top: 6px;
+        }
+        .cell-ugc .ugc-user {
+            font-family: 'Space Grotesk'; font-size: 0.4rem;
+            color: rgba(255,255,255,0.35);
+            letter-spacing: 0.05em; margin-top: auto;
+        }
+        .cell-ugc .ugc-logo {
+            font-family: 'Unbounded'; font-weight: 800; font-size: 0.35rem;
+            color: var(--pink); text-transform: lowercase;
+            margin-top: 6px;
+        }
+
+        /* 8. Ingredients / clean formula */
+        .cell-clean {
+            background: white;
+            border: 1px solid #f0f0f0;
+        }
+        .cell-clean .clean-inner {
+            width: 100%; height: 100%;
+            display: flex; flex-direction: column;
+            padding: 14px;
+            align-items: center;
+            justify-content: center;
+        }
+        .cell-clean .drop-icon {
+            width: 30px; height: 40px;
+            position: relative;
+        }
+        .cell-clean .drop-shape {
+            width: 30px; height: 40px;
+            background: var(--mint);
+            border-radius: 50% 50% 50% 50% / 35% 35% 65% 65%;
+            clip-path: path('M15 2 C15 2, 2 20, 2 26 C2 34, 7 40, 15 40 C23 40, 28 34, 28 26 C28 20, 15 2, 15 2Z');
+        }
+        .cell-clean .clean-title {
+            font-family: 'Unbounded'; font-weight: 800;
+            font-size: 0.55rem; color: var(--charcoal);
+            text-transform: lowercase; margin-top: 8px;
+            text-align: center; letter-spacing: -0.02em;
+        }
+        .cell-clean .clean-list {
+            margin-top: 6px;
+            display: flex; flex-direction: column;
+            align-items: center; gap: 3px;
+        }
+        .cell-clean .clean-item {
+            font-family: 'Space Grotesk'; font-size: 0.38rem;
+            color: #999; letter-spacing: 0.08em; text-transform: uppercase;
+        }
+        .cell-clean .clean-hand {
+            font-family: 'Caveat', cursive; font-size: 0.55rem;
+            color: var(--pink); margin-top: 6px;
+            transform: rotate(-1deg);
+        }
+
+        /* 9. CTA / launch post */
+        .cell-cta {
+            background: var(--lavender);
+        }
+        .cell-cta .cta-inner {
+            width: 100%; height: 100%;
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            text-align: center;
+        }
+        .cell-cta .cta-mo {
+            width: 40px; height: 40px; border-radius: 50%;
+            background: white;
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'Unbounded'; font-weight: 900; font-size: 0.8rem;
+            color: var(--lavender); text-transform: lowercase;
+        }
+        .cell-cta .cta-title {
+            font-family: 'Unbounded'; font-weight: 900;
+            font-size: 0.75rem; color: white;
+            text-transform: lowercase; margin-top: 8px;
+            letter-spacing: -0.03em; line-height: 1;
+        }
+        .cell-cta .cta-hand {
+            font-family: 'Caveat', cursive; font-size: 0.6rem;
+            color: rgba(255,255,255,0.7); margin-top: 4px;
+            transform: rotate(-1.5deg);
+        }
+        .cell-cta .cta-btn {
+            margin-top: 8px;
+            padding: 4px 14px;
+            background: white;
+            border-radius: 20px;
+            font-family: 'Sora'; font-weight: 700; font-size: 0.4rem;
+            color: var(--lavender);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        /* Page wrapper */
+        .page-header {
+            text-align: center;
+            padding: 3rem 2rem 0.5rem;
+        }
+        .page-header .tag {
+            font-family: 'Space Grotesk'; font-size: 0.6rem;
+            letter-spacing: 0.25em; text-transform: uppercase; color: var(--pink);
+        }
+        .page-header h1 {
+            font-family: 'Unbounded'; font-weight: 800;
+            font-size: clamp(1.3rem, 3.5vw, 1.8rem);
+            letter-spacing: -0.03em; color: var(--charcoal);
+            margin-top: 0.5rem;
+        }
+        .page-header p { font-size: 0.8rem; color: #999; margin-top: 0.3rem; }
+
+        /* Legend */
+        .legend {
+            max-width: 420px; margin: 2rem auto;
+            padding: 0 1.5rem 3rem;
+        }
+        .legend h3 {
+            font-family: 'Space Grotesk'; font-size: 0.6rem;
+            letter-spacing: 0.15em; text-transform: uppercase;
+            color: var(--pink); margin-bottom: 0.75rem;
+        }
+        .legend-item {
+            display: flex; align-items: flex-start; gap: 8px;
+            margin-bottom: 0.6rem;
+        }
+        .legend-num {
+            font-family: 'Unbounded'; font-weight: 800; font-size: 0.65rem;
+            color: var(--pink); width: 18px; flex-shrink: 0; text-align: center;
+        }
+        .legend-text {
+            font-size: 0.72rem; color: #888; line-height: 1.35;
+        }
+        .legend-text strong { color: var(--charcoal); font-weight: 600; }
+    </style>
+</head>
+<body>
+
+<div class="page-header">
+    <div class="tag">@moistureoyster</div>
+    <h1>Instagram Grid</h1>
+    <p>9-post grid layout &mdash; read left to right, top to bottom</p>
+</div>
+
+<div class="phone-frame">
+    <div class="phone-notch"></div>
+
+    <!-- IG Profile -->
+    <div class="ig-header">
+        <div class="ig-user">
+            <div class="ig-avatar">mo</div>
+            <div class="ig-handle">moistureoyster</div>
+        </div>
+        <div style="font-size:1.1rem;">+</div>
+    </div>
+
+    <div class="ig-profile">
+        <div class="ig-profile-top">
+            <div class="ig-profile-pic">mo</div>
+            <div class="ig-stats">
+                <div class="ig-stat"><div class="ig-stat-num">9</div><div class="ig-stat-label">Posts</div></div>
+                <div class="ig-stat"><div class="ig-stat-num">12.4K</div><div class="ig-stat-label">Followers</div></div>
+                <div class="ig-stat"><div class="ig-stat-num">284</div><div class="ig-stat-label">Following</div></div>
+            </div>
+        </div>
+        <div class="ig-bio">
+            <div class="ig-bio-name">Moisture Oyster</div>
+            <div class="ig-bio-text">eye drops that get it.<br>preservative-free. hyaluronic acid. screen-proof.<br>your daily eye ritual.</div>
+            <div class="ig-bio-link">moistureoyster.com</div>
+        </div>
+        <div class="ig-edit-btn">Edit Profile</div>
+        <div class="ig-tabs">
+            <div class="ig-tab active">Grid</div>
+            <div class="ig-tab">Reels</div>
+            <div class="ig-tab">Tagged</div>
+        </div>
+    </div>
+
+    <!-- THE GRID -->
+    <div class="ig-grid">
+
+        <!-- Row 1 -->
+
+        <!-- 1. PRODUCT IN OYSTER SHELL (the real photo reference) -->
+        <div class="ig-cell">
+            <div class="cell-inner cell-oyster">
+                <div class="shell">
+                    <div class="shell-bg"></div>
+                    <div class="shell-rings"></div>
+                    <div class="mini-bottle">
+                        <div class="mb-cap"></div>
+                        <div class="mb-body">
+                            <div class="mb-label">moisture<br>oyster</div>
+                            <div class="mb-sub">Eye Drops</div>
+                        </div>
+                    </div>
+                    <!-- Dewey droplets -->
+                    <div class="dew" style="width:4px; height:4px; top:20%; left:25%;"></div>
+                    <div class="dew" style="width:3px; height:3px; top:35%; right:20%;"></div>
+                    <div class="dew" style="width:5px; height:5px; bottom:25%; left:30%;"></div>
+                    <div class="dew" style="width:2px; height:2px; top:50%; right:35%;"></div>
+                    <div class="dew" style="width:3px; height:3px; bottom:35%; right:25%;"></div>
+                </div>
+            </div>
+            <div class="cell-overlay">Product Hero</div>
+        </div>
+
+        <!-- 2. GLITTER FACE (iridescent inspo adapted) -->
+        <div class="ig-cell">
+            <div class="cell-inner cell-glitter">
+                <div class="face-zone">
+                    <div class="skin-base"></div>
+                    <div class="shimmer"></div>
+                    <div class="glitter-dots">
+                        <div class="g-dot" style="width:2px; height:2px; top:15%; left:40%;"></div>
+                        <div class="g-dot" style="width:1.5px; height:1.5px; top:22%; left:55%;"></div>
+                        <div class="g-dot" style="width:2.5px; height:2.5px; top:30%; left:35%;"></div>
+                        <div class="g-dot" style="width:1px; height:1px; top:18%; left:70%;"></div>
+                        <div class="g-dot" style="width:2px; height:2px; top:40%; left:50%;"></div>
+                        <div class="g-dot" style="width:1.5px; height:1.5px; top:35%; left:65%;"></div>
+                        <div class="g-dot" style="width:3px; height:3px; top:25%; left:28%;"></div>
+                        <div class="g-dot" style="width:1px; height:1px; top:45%; left:42%;"></div>
+                        <div class="g-dot" style="width:2px; height:2px; top:50%; left:60%;"></div>
+                    </div>
+                    <div class="eye-area">
+                        <div class="eye-shape-g">
+                            <div class="eye-white">
+                                <div class="iris-g">
+                                    <div class="pupil-g"></div>
+                                    <div class="highlight-g"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lips-area">
+                        <div class="lip-shape">
+                            <div class="lip-shine"></div>
+                        </div>
+                    </div>
+                    <div class="brand-tag">moisture oyster</div>
+                </div>
+            </div>
+            <div class="cell-overlay">Beauty Editorial</div>
+        </div>
+
+        <!-- 3. BOLD QUOTE -->
+        <div class="ig-cell">
+            <div class="cell-inner cell-quote">
+                <div class="q-text">your eyes<br>are working<br>overtime.</div>
+                <div class="q-hand">give them a raise</div>
+            </div>
+            <div class="cell-overlay">Brand Voice</div>
+        </div>
+
+        <!-- Row 2 -->
+
+        <!-- 4. EDUCATIONAL CAROUSEL -->
+        <div class="ig-cell">
+            <div class="cell-inner cell-edu">
+                <div class="edu-inner">
+                    <div class="edu-tag">Did You Know?</div>
+                    <div class="edu-title">3 signs of<br>screen fatigue</div>
+                    <div class="edu-items">
+                        <div class="edu-item"><div class="edu-dot" style="background:var(--pink);"></div>Dry, gritty feeling after 2+ hours</div>
+                        <div class="edu-item"><div class="edu-dot" style="background:var(--teal);"></div>Blurry vision at end of day</div>
+                        <div class="edu-item"><div class="edu-dot" style="background:var(--lavender);"></div>Headaches from eye strain</div>
+                    </div>
+                    <div class="edu-slide">Swipe for solutions &rarr;</div>
+                </div>
+            </div>
+            <div class="cell-overlay">Educational</div>
+        </div>
+
+        <!-- 5. FLAT PRODUCT (Teal bg) -->
+        <div class="ig-cell">
+            <div class="cell-inner cell-flat">
+                <div class="flat-inner">
+                    <div class="flat-bottle">
+                        <div class="fb-cap"></div>
+                        <div class="fb-body">
+                            <div class="fb-label">moisture<br>oyster</div>
+                        </div>
+                    </div>
+                    <div class="flat-name">moisture oyster</div>
+                    <div class="flat-sub">Preservative Free</div>
+                </div>
+            </div>
+            <div class="cell-overlay">Product Flat Lay</div>
+        </div>
+
+        <!-- 6. PINK DRIP EYE (adapted from inspo) -->
+        <div class="ig-cell">
+            <div class="cell-inner cell-drip">
+                <div class="drip-inner">
+                    <div class="skin-patch"></div>
+                    <!-- Big eye SVG -->
+                    <div class="big-eye">
+                        <svg width="90" height="40" viewBox="0 0 90 40">
+                            <defs><clipPath id="gridEye"><ellipse cx="45" cy="20" rx="43" ry="18"/></clipPath></defs>
+                            <g clip-path="url(#gridEye)">
+                                <ellipse cx="45" cy="20" rx="43" ry="18" fill="#D4B8A0"/>
+                                <ellipse cx="45" cy="12" rx="36" ry="14" fill="rgba(180,140,100,0.3)"/>
+                                <ellipse cx="45" cy="21" rx="26" ry="15" fill="#F0EAE4"/>
+                                <circle cx="45" cy="20" r="11" fill="#4A90B0"/>
+                                <circle cx="45" cy="20" r="4.5" fill="#111"/>
+                                <circle cx="49" cy="16" r="2.5" fill="rgba(255,255,255,0.85)"/>
+                                <path d="M6 15 Q22 3, 45 1 Q68 3, 84 15" stroke="rgba(60,35,15,0.5)" stroke-width="2" fill="none"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <!-- Pink drip lines -->
+                    <div class="drip-lines">
+                        <div class="drip-line" style="left:30%; height:45%; top:0;"></div>
+                        <div class="drip-line" style="left:42%; height:60%; top:5%;"></div>
+                        <div class="drip-line" style="left:55%; height:35%; top:0;"></div>
+                        <div class="drip-line" style="left:65%; height:50%; top:8%;"></div>
+                    </div>
+                    <div class="brand-tag">/промпт</div>
+                </div>
+            </div>
+            <div class="cell-overlay">Art Direction</div>
+        </div>
+
+        <!-- Row 3 -->
+
+        <!-- 7. UGC REVIEW -->
+        <div class="ig-cell">
+            <div class="cell-inner cell-ugc">
+                <div class="ugc-inner">
+                    <div class="ugc-stars">
+                        <div class="star">&#9733;</div>
+                        <div class="star">&#9733;</div>
+                        <div class="star">&#9733;</div>
+                        <div class="star">&#9733;</div>
+                        <div class="star">&#9733;</div>
+                    </div>
+                    <div class="ugc-quote">"I use these every day before work. my eyes finally feel alive after 8hrs of screen time"</div>
+                    <div class="ugc-user">@sarahcreates &bull; Verified Purchase</div>
+                    <div class="ugc-logo">moisture oyster</div>
+                </div>
+            </div>
+            <div class="cell-overlay">Social Proof</div>
+        </div>
+
+        <!-- 8. CLEAN FORMULA / INGREDIENTS -->
+        <div class="ig-cell">
+            <div class="cell-inner cell-clean">
+                <div class="clean-inner">
+                    <svg width="30" height="40" viewBox="0 0 30 40">
+                        <path d="M15 2 C15 2, 2 18, 2 24 C2 32, 7 38, 15 38 C23 38, 28 32, 28 24 C28 18, 15 2, 15 2Z" fill="#7ED4C1"/>
+                    </svg>
+                    <div class="clean-title">clean formula</div>
+                    <div class="clean-list">
+                        <div class="clean-item">Sodium Hyaluronate</div>
+                        <div class="clean-item">Preservative Free</div>
+                        <div class="clean-item">PH Balanced</div>
+                        <div class="clean-item">Ophthalmologist Approved</div>
+                    </div>
+                    <div class="clean-hand">nothing to hide</div>
+                </div>
+            </div>
+            <div class="cell-overlay">Transparency</div>
+        </div>
+
+        <!-- 9. CTA / SHOP NOW -->
+        <div class="ig-cell">
+            <div class="cell-inner cell-cta">
+                <div class="cta-inner">
+                    <div class="cta-mo">mo</div>
+                    <div class="cta-title">drop in.<br>shine on.</div>
+                    <div class="cta-hand">available now</div>
+                    <div class="cta-btn">Shop Now</div>
+                </div>
+            </div>
+            <div class="cell-overlay">Call to Action</div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Legend -->
+<div class="legend">
+    <h3>Grid Strategy</h3>
+    <div class="legend-item"><div class="legend-num">1</div><div class="legend-text"><strong>Product in Oyster Shell</strong> — Hero product shot. The original brand image. Texture, moisture, premium.</div></div>
+    <div class="legend-item"><div class="legend-num">2</div><div class="legend-text"><strong>Glitter Face Close-up</strong> — Iridescent beauty editorial. Adapted from inspo. Shimmer, glow, eyes.</div></div>
+    <div class="legend-item"><div class="legend-num">3</div><div class="legend-text"><strong>Bold Quote</strong> — Brand voice in action. Hot pink bg, punchy copy, handwritten accent.</div></div>
+    <div class="legend-item"><div class="legend-num">4</div><div class="legend-text"><strong>Educational Carousel</strong> — "3 Signs of Screen Fatigue." Value-first content that gets saved and shared.</div></div>
+    <div class="legend-item"><div class="legend-num">5</div><div class="legend-text"><strong>Flat Product on Teal</strong> — Clean product shot on brand color. Simple, bold, shoppable.</div></div>
+    <div class="legend-item"><div class="legend-num">6</div><div class="legend-text"><strong>Pink Drip Eye</strong> — Art-directed beauty shot. Adapted from inspo. Editorial, striking, shareable.</div></div>
+    <div class="legend-item"><div class="legend-num">7</div><div class="legend-text"><strong>UGC Review</strong> — Real customer quote on dark bg. Stars, handle, trust signal. Social proof.</div></div>
+    <div class="legend-item"><div class="legend-num">8</div><div class="legend-text"><strong>Clean Formula</strong> — Ingredients transparency. Minimal white, drop icon, handwritten "nothing to hide."</div></div>
+    <div class="legend-item"><div class="legend-num">9</div><div class="legend-text"><strong>CTA / Shop Now</strong> — Lavender bg, MO monogram, "drop in. shine on." Drives to purchase.</div></div>
+</div>
+
+</body>
+</html>

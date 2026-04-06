@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moisture Oyster — Packaging V2: Solid Color + Eye Pattern</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=Unbounded:wght@300;400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --mo-pink: #E8729A;
+            --mo-pink-hot: #FF5C8A;
+            --mo-pink-light: #F4A5C0;
+            --mo-mint: #7ED4C1;
+            --mo-teal: #5BBFAA;
+            --mo-teal-deep: #3DA898;
+            --mo-lavender: #C8A2E0;
+            --mo-charcoal: #2A2A3D;
+            --mo-midnight: #1A1A2E;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #0E0E12;
+            color: #fff;
+            line-height: 1.5;
+        }
+
+        .page-header {
+            text-align: center;
+            padding: 5rem 2rem 2rem;
+        }
+        .page-header .tag {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.6rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--mo-pink);
+        }
+        .page-header h1 {
+            font-family: 'Unbounded', sans-serif;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-top: 0.75rem;
+            color: white;
+        }
+        .page-header p {
+            color: rgba(255,255,255,0.4);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .option {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        .option-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+        .option-num {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 800;
+            font-size: 0.7rem;
+            color: var(--mo-pink);
+            background: rgba(232,114,154,0.1);
+            padding: 0.3rem 0.7rem;
+            border-radius: 4px;
+        }
+        .option-name {
+            font-family: 'Sora', sans-serif;
+            font-weight: 700;
+            font-size: 1.4rem;
+        }
+        .option-desc {
+            font-family: 'Instrument Serif', serif;
+            font-style: italic;
+            font-size: 1rem;
+            color: rgba(255,255,255,0.4);
+            margin-bottom: 2.5rem;
+        }
+
+        .stage {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            gap: 4rem;
+            padding: 4rem 3rem 3rem;
+            border-radius: 24px;
+            position: relative;
+            overflow: hidden;
+            min-height: 620px;
+            flex-wrap: wrap;
+        }
+
+        /* BOX shared */
+        .box {
+            width: 280px;
+            height: 520px;
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+            flex-shrink: 0;
+            transform: perspective(800px) rotateY(-4deg);
+            transition: transform 0.4s ease;
+        }
+        .box:hover { transform: perspective(800px) rotateY(0deg); }
+
+        /* BOTTLE shared */
+        .bottle-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-shrink: 0;
+            transform: perspective(800px) rotateY(4deg);
+            transition: transform 0.4s ease;
+        }
+        .bottle-wrap:hover { transform: perspective(800px) rotateY(0deg); }
+        .bottle-cap {
+            width: 54px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+        .cap-nub { width: 20px; height: 6px; background: var(--mo-teal); border-radius: 3px 3px 0 0; }
+        .cap-top { width: 32px; height: 10px; background: var(--mo-mint); border-radius: 4px 4px 0 0; }
+        .cap-mid { width: 46px; height: 7px; background: var(--mo-mint); border-top: 1px solid rgba(255,255,255,0.3); }
+        .cap-mid2 { width: 50px; height: 7px; background: var(--mo-mint); border-top: 1px solid rgba(255,255,255,0.2); }
+        .cap-base { width: 54px; height: 10px; background: var(--mo-teal); border-radius: 0 0 2px 2px; }
+        .bottle-neck { width: 38px; height: 6px; background: rgba(200,215,225,0.25); }
+        .bottle-body {
+            width: 96px; height: 140px;
+            border-radius: 8px 8px 16px 16px;
+            position: relative; overflow: hidden;
+            background: linear-gradient(150deg, rgba(255,255,255,0.25) 0%, rgba(200,215,230,0.15) 50%, rgba(255,255,255,0.2) 100%);
+            border: 1px solid rgba(255,255,255,0.15);
+            box-shadow: inset -10px 0 20px rgba(200,215,225,0.1), inset 8px 0 15px rgba(255,255,255,0.15), 0 8px 30px rgba(0,0,0,0.2);
+        }
+        .bottle-body::before {
+            content: ''; position: absolute; left: 10px; top: 8px;
+            width: 10px; height: 75%;
+            background: linear-gradient(180deg, rgba(255,255,255,0.35), rgba(255,255,255,0.05));
+            border-radius: 10px;
+        }
+        .bottle-label {
+            position: absolute; left: 6px; right: 6px; top: 12px; bottom: 12px;
+            border-radius: 4px; overflow: hidden;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            padding: 5px;
+        }
+
+        .notes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .note {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+        }
+        .note h5 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.6rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--mo-pink);
+            margin-bottom: 0.4rem;
+        }
+        .note p { font-size: 0.8rem; color: rgba(255,255,255,0.5); line-height: 1.4; }
+
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(232,114,154,0.2), rgba(126,212,193,0.2), transparent);
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        /* =============================================
+           REALISTIC EYE SVG COMPONENTS
+           ============================================= */
+        .eye-cutout {
+            position: absolute;
+            overflow: visible;
+        }
+        .eye-cutout svg {
+            filter: drop-shadow(0 2px 6px rgba(0,0,0,0.1));
+        }
+
+        /* =============================================
+           OPTION A: HOT PINK — bold, Byoma-energy
+           ============================================= */
+        .stage-a { background: #E8E0DA; }
+        .box-a {
+            background: var(--mo-pink-hot);
+            box-shadow: 20px 20px 60px rgba(0,0,0,0.12);
+        }
+        .box-a .inner {
+            height: 100%; display: flex; flex-direction: column;
+            position: relative; overflow: hidden;
+            padding: 24px 22px 16px;
+        }
+        .box-a .brand {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 900;
+            font-size: 2.1rem;
+            line-height: 0.88;
+            letter-spacing: -0.05em;
+            color: white;
+            text-transform: lowercase;
+            position: relative;
+            z-index: 3;
+        }
+        .box-a .tm { font-size: 0.4rem; vertical-align: super; }
+        /* Eye pattern zone */
+        .box-a .eye-zone {
+            flex: 1;
+            position: relative;
+            z-index: 2;
+            margin: 8px 0;
+        }
+        .box-a .info-zone {
+            position: relative; z-index: 3;
+        }
+        .box-a .pf-tag {
+            display: inline-block;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.5rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--mo-pink-hot);
+            background: white;
+            padding: 3px 10px;
+            border-radius: 2px;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+        .box-a .product {
+            font-family: 'Sora', sans-serif;
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: white;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+        .box-a .claims {
+            margin-top: 8px;
+            font-size: 0.52rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.35;
+        }
+        .box-a .footer-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-top: 10px;
+            padding-top: 8px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+        .box-a .meta-left {
+            font-size: 0.4rem;
+            color: rgba(255,255,255,0.45);
+            line-height: 1.4;
+        }
+        .box-a .doses {
+            font-family: 'Unbounded'; font-weight: 800;
+            font-size: 1rem; color: white; line-height: 1;
+        }
+        .box-a .doses-sub {
+            font-family: 'Space Grotesk'; font-size: 0.32rem;
+            color: rgba(255,255,255,0.5); letter-spacing: 0.1em; text-transform: uppercase;
+            text-align: right;
+        }
+
+        /* Label A */
+        .label-a { background: var(--mo-pink-hot); }
+        .label-a .l-brand {
+            font-family: 'Unbounded'; font-weight: 900; font-size: 0.5rem;
+            color: white; text-align: center; line-height: 0.95;
+            text-transform: lowercase; letter-spacing: -0.04em;
+        }
+        .label-a .l-pf-tag {
+            font-family: 'Space Grotesk'; font-size: 0.16rem;
+            color: var(--mo-pink-hot); background: white;
+            padding: 1px 3px; border-radius: 1px; font-weight: 600;
+            margin-top: 3px; letter-spacing: 0.08em; text-transform: uppercase;
+        }
+        .label-a .l-type {
+            font-family: 'Sora'; font-weight: 700; font-size: 0.28rem;
+            color: white; text-align: center; margin-top: 2px; line-height: 1.1;
+        }
+        .label-a .l-bot {
+            display: flex; justify-content: space-between; align-items: center;
+            width: 100%; margin-top: auto;
+        }
+        .label-a .l-vol { font-family: 'Space Grotesk'; font-size: 0.16rem; color: rgba(255,255,255,0.5); }
+        .label-a .l-safe { font-family: 'Space Grotesk'; font-size: 0.15rem; color: var(--mo-pink-hot); background: white; padding: 1px 2px; border-radius: 1px; font-weight: 600; }
+        .label-a .l-doses { font-family: 'Sora'; font-weight: 700; font-size: 0.2rem; color: white; }
+
+        /* =============================================
+           OPTION B: MINT — cool, fresh
+           ============================================= */
+        .stage-b { background: #D8E5E0; }
+        .box-b {
+            background: var(--mo-teal);
+            box-shadow: 20px 20px 60px rgba(0,0,0,0.12);
+        }
+        .box-b .inner {
+            height: 100%; display: flex; flex-direction: column;
+            position: relative; overflow: hidden;
+            padding: 24px 22px 16px;
+        }
+        .box-b .brand {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 900;
+            font-size: 2.1rem;
+            line-height: 0.88;
+            letter-spacing: -0.05em;
+            color: var(--mo-pink-hot);
+            text-transform: lowercase;
+            position: relative; z-index: 3;
+        }
+        .box-b .tm { font-size: 0.4rem; vertical-align: super; }
+        .box-b .eye-zone {
+            flex: 1; position: relative; z-index: 2; margin: 8px 0;
+        }
+        .box-b .info-zone { position: relative; z-index: 3; }
+        .box-b .pf-tag {
+            display: inline-block;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.5rem; letter-spacing: 0.15em; text-transform: uppercase;
+            color: var(--mo-teal); background: white;
+            padding: 3px 10px; border-radius: 2px; font-weight: 600;
+            margin-bottom: 6px;
+        }
+        .box-b .product {
+            font-family: 'Sora'; font-weight: 700; font-size: 1.15rem;
+            color: white; line-height: 1.1; letter-spacing: -0.02em;
+        }
+        .box-b .claims {
+            margin-top: 8px; font-size: 0.52rem;
+            color: rgba(255,255,255,0.65); line-height: 1.35;
+        }
+        .box-b .footer-row {
+            display: flex; justify-content: space-between; align-items: flex-end;
+            margin-top: 10px; padding-top: 8px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+        .box-b .meta-left { font-size: 0.4rem; color: rgba(255,255,255,0.5); line-height: 1.4; }
+        .box-b .doses { font-family: 'Unbounded'; font-weight: 800; font-size: 1rem; color: white; line-height: 1; }
+        .box-b .doses-sub { font-family: 'Space Grotesk'; font-size: 0.32rem; color: rgba(255,255,255,0.5); letter-spacing: 0.1em; text-transform: uppercase; text-align: right; }
+
+        /* Label B */
+        .label-b { background: var(--mo-teal); }
+        .label-b .l-brand {
+            font-family: 'Unbounded'; font-weight: 900; font-size: 0.5rem;
+            color: var(--mo-pink-hot); text-align: center; line-height: 0.95;
+            text-transform: lowercase; letter-spacing: -0.04em;
+        }
+        .label-b .l-pf-tag {
+            font-family: 'Space Grotesk'; font-size: 0.16rem;
+            color: var(--mo-teal); background: white;
+            padding: 1px 3px; border-radius: 1px; font-weight: 600;
+            margin-top: 3px; letter-spacing: 0.08em; text-transform: uppercase;
+        }
+        .label-b .l-type {
+            font-family: 'Sora'; font-weight: 700; font-size: 0.28rem;
+            color: white; text-align: center; margin-top: 2px; line-height: 1.1;
+        }
+        .label-b .l-bot {
+            display: flex; justify-content: space-between; align-items: center;
+            width: 100%; margin-top: auto;
+        }
+        .label-b .l-vol { font-family: 'Space Grotesk'; font-size: 0.16rem; color: rgba(255,255,255,0.5); }
+        .label-b .l-safe { font-family: 'Space Grotesk'; font-size: 0.15rem; color: var(--mo-teal); background: white; padding: 1px 2px; border-radius: 1px; font-weight: 600; }
+        .label-b .l-doses { font-family: 'Sora'; font-weight: 700; font-size: 0.2rem; color: white; }
+
+        /* =============================================
+           OPTION C: WHITE + LARGE EYE — editorial
+           ============================================= */
+        .stage-c { background: #E0DDD8; }
+        .box-c {
+            background: #FFFFFF;
+            box-shadow: 20px 20px 60px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.03);
+        }
+        .box-c .inner {
+            height: 100%; display: flex; flex-direction: column;
+            position: relative; overflow: hidden;
+        }
+        .box-c .top-half {
+            flex: 0 0 55%;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .box-c .brand-overlay {
+            position: absolute;
+            top: 20px; left: 18px;
+            z-index: 3;
+        }
+        .box-c .brand {
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 900;
+            font-size: 1.7rem;
+            line-height: 0.88;
+            letter-spacing: -0.05em;
+            color: var(--mo-pink-hot);
+            text-transform: lowercase;
+        }
+        .box-c .tm { font-size: 0.35rem; vertical-align: super; }
+        /* Big single eye */
+        .box-c .hero-eye {
+            position: relative;
+            z-index: 2;
+            margin-top: 30px;
+        }
+        .box-c .bottom-half {
+            flex: 1;
+            padding: 14px 20px 16px;
+            display: flex;
+            flex-direction: column;
+            border-top: 3px solid var(--mo-pink-hot);
+        }
+        .box-c .pf-tag {
+            font-family: 'Space Grotesk'; font-size: 0.5rem;
+            letter-spacing: 0.15em; text-transform: uppercase;
+            color: var(--mo-pink-hot); font-weight: 600;
+        }
+        .box-c .product {
+            font-family: 'Sora'; font-weight: 700; font-size: 1.1rem;
+            color: var(--mo-charcoal); line-height: 1.1; letter-spacing: -0.02em;
+            margin-top: 2px;
+        }
+        .box-c .claims {
+            margin-top: 8px; font-size: 0.52rem;
+            color: #999; line-height: 1.35;
+        }
+        .box-c .footer-row {
+            display: flex; justify-content: space-between; align-items: flex-end;
+            margin-top: auto; padding-top: 8px;
+            border-top: 1px solid #f0f0f0;
+        }
+        .box-c .meta-left { font-size: 0.4rem; color: #bbb; line-height: 1.4; }
+        .box-c .doses { font-family: 'Unbounded'; font-weight: 800; font-size: 1rem; color: var(--mo-charcoal); line-height: 1; }
+        .box-c .doses-plus { color: var(--mo-pink-hot); }
+        .box-c .doses-sub { font-family: 'Space Grotesk'; font-size: 0.32rem; color: #bbb; letter-spacing: 0.1em; text-transform: uppercase; text-align: right; }
+
+        /* Label C */
+        .label-c { background: white; border: 0.5px solid #eee; }
+        .label-c .l-accent { position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--mo-pink-hot); border-radius: 4px 4px 0 0; }
+        .label-c .l-brand {
+            font-family: 'Unbounded'; font-weight: 900; font-size: 0.48rem;
+            color: var(--mo-pink-hot); text-align: center; line-height: 0.95;
+            text-transform: lowercase; letter-spacing: -0.04em;
+            margin-top: 3px;
+        }
+        .label-c .l-pf {
+            font-family: 'Space Grotesk'; font-size: 0.17rem; color: var(--mo-charcoal);
+            text-align: center; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 2px; font-weight: 500;
+        }
+        .label-c .l-type {
+            font-family: 'Sora'; font-weight: 700; font-size: 0.28rem;
+            color: var(--mo-charcoal); text-align: center; margin-top: 2px; line-height: 1.1;
+        }
+        .label-c .l-bot {
+            display: flex; justify-content: space-between; align-items: center;
+            width: 100%; margin-top: auto;
+        }
+        .label-c .l-vol { font-family: 'Space Grotesk'; font-size: 0.16rem; color: #bbb; }
+        .label-c .l-safe { font-family: 'Space Grotesk'; font-size: 0.15rem; color: white; background: var(--mo-pink-hot); padding: 1px 2px; border-radius: 1px; font-weight: 600; }
+        .label-c .l-doses { font-family: 'Sora'; font-weight: 700; font-size: 0.2rem; color: var(--mo-charcoal); }
+
+        footer {
+            text-align: center;
+            padding: 4rem 2rem 3rem;
+            font-size: 0.7rem;
+            color: rgba(255,255,255,0.2);
+        }
+        footer .f-brand {
+            font-family: 'Unbounded'; font-weight: 700; font-size: 0.8rem;
+            color: var(--mo-pink); margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 800px) {
+            .stage { flex-direction: column; align-items: center; gap: 2rem; padding: 2rem; }
+            .box { transform: none; }
+            .bottle-wrap { transform: none; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-header">
+    <div class="tag">Moisture Oyster &mdash; Packaging V2</div>
+    <h1>Solid Color + Eye Pattern</h1>
+    <p>Bold flat color. Real eye cutouts. No gradients. Maximum shelf impact.</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- OPTION A: HOT PINK                                            -->
+<!-- ============================================================ -->
+<div class="option">
+    <div class="option-label">
+        <span class="option-num">A</span>
+        <span class="option-name">Hot Pink + Eyes</span>
+    </div>
+    <div class="option-desc">Saturated pink, white type, scattered eye cutouts. BYOMA energy meets eye care.</div>
+
+    <div class="stage stage-a">
+        <div class="box box-a">
+            <div class="inner">
+                <div class="brand">moisture<br>oyster<span class="tm">&trade;</span></div>
+
+                <div class="eye-zone">
+                    <!-- Eye 1: Large teal/blue — top right -->
+                    <div class="eye-cutout" style="top:5px; right:-5px; transform:rotate(3deg);">
+                        <svg width="130" height="58" viewBox="0 0 130 58">
+                            <defs><clipPath id="e1a"><ellipse cx="65" cy="29" rx="63" ry="27"/></clipPath></defs>
+                            <g clip-path="url(#e1a)">
+                                <ellipse cx="65" cy="29" rx="63" ry="27" fill="#D4B8A0"/>
+                                <ellipse cx="65" cy="29" rx="63" ry="27" fill="url(#skin1a)" />
+                                <!-- Lid shadow -->
+                                <ellipse cx="65" cy="15" rx="55" ry="20" fill="rgba(180,140,100,0.25)"/>
+                                <!-- White -->
+                                <ellipse cx="65" cy="30" rx="38" ry="22" fill="#F5F0EC"/>
+                                <!-- Iris -->
+                                <circle cx="65" cy="29" r="16" fill="#2D8E9E"/>
+                                <circle cx="65" cy="29" r="16" fill="url(#iris-teal-a)"/>
+                                <!-- Pupil -->
+                                <circle cx="65" cy="29" r="7" fill="#111"/>
+                                <!-- Highlight -->
+                                <circle cx="72" cy="23" r="4" fill="rgba(255,255,255,0.85)"/>
+                                <circle cx="59" cy="34" r="2" fill="rgba(255,255,255,0.5)"/>
+                                <!-- Lash hints -->
+                                <path d="M10 22 Q35 4, 65 2 Q95 4, 120 22" stroke="rgba(80,50,30,0.5)" stroke-width="2.5" fill="none"/>
+                            </g>
+                            <defs>
+                                <radialGradient id="iris-teal-a" cx="50%" cy="50%"><stop offset="10%" stop-color="#3BA8A0"/><stop offset="55%" stop-color="#2D8E80"/><stop offset="100%" stop-color="#1A6058"/></radialGradient>
+                                <linearGradient id="skin1a" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="rgba(190,150,110,0.4)"/><stop offset="100%" stop-color="rgba(210,170,130,0.2)"/></linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+
+                    <!-- Eye 2: Brown — mid left -->
+                    <div class="eye-cutout" style="top:55px; left:-10px; transform:rotate(-4deg);">
+                        <svg width="110" height="48" viewBox="0 0 110 48">
+                            <defs><clipPath id="e2a"><ellipse cx="55" cy="24" rx="53" ry="22"/></clipPath></defs>
+                            <g clip-path="url(#e2a)">
+                                <ellipse cx="55" cy="24" rx="53" ry="22" fill="#C99E80"/>
+                                <ellipse cx="55" cy="12" rx="45" ry="16" fill="rgba(160,120,70,0.25)"/>
+                                <ellipse cx="55" cy="25" rx="32" ry="18" fill="#F2ECE6"/>
+                                <circle cx="55" cy="24" r="13" fill="#7A5A2E"/>
+                                <circle cx="55" cy="24" r="13" fill="url(#iris-brown-a)"/>
+                                <circle cx="55" cy="24" r="5.5" fill="#111"/>
+                                <circle cx="61" cy="19" r="3" fill="rgba(255,255,255,0.8)"/>
+                                <path d="M8 18 Q30 3, 55 1 Q80 3, 102 18" stroke="rgba(60,35,15,0.5)" stroke-width="2" fill="none"/>
+                            </g>
+                            <defs><radialGradient id="iris-brown-a" cx="50%" cy="50%"><stop offset="10%" stop-color="#8B6F3E"/><stop offset="55%" stop-color="#6B5230"/><stop offset="100%" stop-color="#4A3820"/></radialGradient></defs>
+                        </svg>
+                    </div>
+
+                    <!-- Eye 3: Blue — center -->
+                    <div class="eye-cutout" style="top:100px; left:50px; transform:rotate(1deg);">
+                        <svg width="120" height="52" viewBox="0 0 120 52">
+                            <defs><clipPath id="e3a"><ellipse cx="60" cy="26" rx="58" ry="24"/></clipPath></defs>
+                            <g clip-path="url(#e3a)">
+                                <ellipse cx="60" cy="26" rx="58" ry="24" fill="#D8B0A0"/>
+                                <ellipse cx="60" cy="13" rx="50" ry="18" fill="rgba(170,110,100,0.25)"/>
+                                <ellipse cx="60" cy="27" rx="35" ry="20" fill="#F0EAE5"/>
+                                <circle cx="60" cy="26" r="14.5" fill="#3A72B0"/>
+                                <circle cx="60" cy="26" r="14.5" fill="url(#iris-blue-a)"/>
+                                <circle cx="60" cy="26" r="6" fill="#111"/>
+                                <circle cx="67" cy="20" r="3.5" fill="rgba(255,255,255,0.85)"/>
+                                <circle cx="54" cy="31" r="1.8" fill="rgba(255,255,255,0.4)"/>
+                                <path d="M8 20 Q30 4, 60 2 Q90 4, 112 20" stroke="rgba(70,40,30,0.45)" stroke-width="2.2" fill="none"/>
+                            </g>
+                            <defs><radialGradient id="iris-blue-a" cx="50%" cy="50%"><stop offset="10%" stop-color="#4A90C8"/><stop offset="55%" stop-color="#2D6BA0"/><stop offset="100%" stop-color="#1A4570"/></radialGradient></defs>
+                        </svg>
+                    </div>
+
+                    <!-- Eye 4: Small green — top center -->
+                    <div class="eye-cutout" style="top:10px; left:60px; transform:rotate(-2deg);">
+                        <svg width="65" height="28" viewBox="0 0 65 28">
+                            <defs><clipPath id="e4a"><ellipse cx="32.5" cy="14" rx="31" ry="12.5"/></clipPath></defs>
+                            <g clip-path="url(#e4a)">
+                                <ellipse cx="32.5" cy="14" rx="31" ry="12.5" fill="#C8A890"/>
+                                <ellipse cx="32.5" cy="15" rx="18" ry="10" fill="#EDE6E0"/>
+                                <circle cx="32.5" cy="14" r="7.5" fill="#5A8050"/>
+                                <circle cx="32.5" cy="14" r="3" fill="#111"/>
+                                <circle cx="36" cy="11" r="1.8" fill="rgba(255,255,255,0.8)"/>
+                                <path d="M4 10 Q16 3, 32.5 2 Q49 3, 61 10" stroke="rgba(70,40,20,0.4)" stroke-width="1.5" fill="none"/>
+                            </g>
+                        </svg>
+                    </div>
+
+                    <!-- Eye 5: Small closed/winking -->
+                    <div class="eye-cutout" style="bottom:5px; left:5px; transform:rotate(-6deg);">
+                        <svg width="70" height="18" viewBox="0 0 70 18">
+                            <ellipse cx="35" cy="12" rx="32" ry="5" fill="#C8A890"/>
+                            <path d="M5 12 Q35 2, 65 12" stroke="rgba(80,50,25,0.5)" stroke-width="2" fill="none"/>
+                            <path d="M10 11 Q20 6, 25 11" stroke="rgba(80,50,25,0.3)" stroke-width="0.8" fill="none"/>
+                            <path d="M40 11 Q50 6, 55 11" stroke="rgba(80,50,25,0.3)" stroke-width="0.8" fill="none"/>
+                        </svg>
+                    </div>
+
+                    <!-- Eye 6: Hazel — bottom right -->
+                    <div class="eye-cutout" style="bottom:0; right:0; transform:rotate(5deg);">
+                        <svg width="95" height="42" viewBox="0 0 95 42">
+                            <defs><clipPath id="e6a"><ellipse cx="47.5" cy="21" rx="46" ry="19"/></clipPath></defs>
+                            <g clip-path="url(#e6a)">
+                                <ellipse cx="47.5" cy="21" rx="46" ry="19" fill="#CCAA90"/>
+                                <ellipse cx="47.5" cy="11" rx="38" ry="14" fill="rgba(180,140,90,0.3)"/>
+                                <ellipse cx="47.5" cy="22" rx="28" ry="16" fill="#EDE5DD"/>
+                                <circle cx="47.5" cy="21" r="11.5" fill="#6B7840"/>
+                                <circle cx="47.5" cy="21" r="11.5" fill="url(#iris-hazel-a)"/>
+                                <circle cx="47.5" cy="21" r="4.5" fill="#111"/>
+                                <circle cx="53" cy="17" r="2.5" fill="rgba(255,255,255,0.8)"/>
+                                <path d="M6 16 Q25 4, 47.5 2 Q70 4, 89 16" stroke="rgba(70,45,20,0.45)" stroke-width="1.8" fill="none"/>
+                            </g>
+                            <defs><radialGradient id="iris-hazel-a" cx="50%" cy="50%"><stop offset="10%" stop-color="#8A9E50"/><stop offset="55%" stop-color="#6B7840"/><stop offset="100%" stop-color="#4A5530"/></radialGradient></defs>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="info-zone">
+                    <div class="pf-tag">Preservative Free</div>
+                    <div class="product">Lubricating<br>Eye Drops</div>
+                    <div class="claims">PH Balanced &bull; Sodium Hyaluronate &bull; Fast acting relief &bull; Lens compatible</div>
+                    <div class="footer-row">
+                        <div class="meta-left">Ophthalmologist Approved<br>Sterile &bull; 0.33 Fl Oz / 10 Ml<br><span style="font-size:0.35rem;">Suitable for use before inserting and<br>after removing contact lenses</span></div>
+                        <div>
+                            <div class="doses">300+</div>
+                            <div class="doses-sub">Doses</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottle-wrap">
+            <div class="bottle-cap"><div class="cap-nub"></div><div class="cap-top"></div><div class="cap-mid"></div><div class="cap-mid2"></div><div class="cap-base"></div></div>
+            <div class="bottle-neck"></div>
+            <div class="bottle-body">
+                <div class="bottle-label label-a">
+                    <div class="l-brand">moisture<br>oyster</div>
+                    <div class="l-pf-tag">Preservative Free</div>
+                    <div class="l-type">Lubricating<br>Eye Drops</div>
+                    <div class="l-bot">
+                        <div class="l-vol">0.33 Fl Oz<br>10 Ml</div>
+                        <div class="l-safe">SAFE 90 DAYS</div>
+                        <div class="l-doses">300+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="notes">
+        <div class="note"><h5>Approach</h5><p>Solid hot pink. Lowercase white Unbounded wordmark. Realistic eye cutouts scattered like stickers — each a different color: teal, brown, blue, green, hazel.</p></div>
+        <div class="note"><h5>Standout</h5><p>The eyes stare at you from a hot pink field. Bold, confrontational, unforgettable. Feels like a fashion brand, not a pharmacy product.</p></div>
+        <div class="note"><h5>Shelf Impact</h5><p>A wall of pink boxes with eyes looking at you = instant attention. The "being" energy of bold flat color + the eye-care connection.</p></div>
+        <div class="note"><h5>Best For</h5><p>Target, Ulta, TikTok Shop, Gen Z retail. The box becomes content — people will photograph this.</p></div>
+    </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ============================================================ -->
+<!-- OPTION B: MINT/TEAL                                           -->
+<!-- ============================================================ -->
+<div class="option">
+    <div class="option-label">
+        <span class="option-num">B</span>
+        <span class="option-name">Teal + Pink Type</span>
+    </div>
+    <div class="option-desc">Cool teal with hot pink wordmark. The refreshing flip side of Option A.</div>
+
+    <div class="stage stage-b">
+        <div class="box box-b">
+            <div class="inner">
+                <div class="brand">moisture<br>oyster<span class="tm">&trade;</span></div>
+
+                <div class="eye-zone">
+                    <!-- Eye 1: Blue — top right -->
+                    <div class="eye-cutout" style="top:0; right:-8px; transform:rotate(2deg);">
+                        <svg width="125" height="55" viewBox="0 0 125 55">
+                            <defs><clipPath id="e1b"><ellipse cx="62.5" cy="27.5" rx="60" ry="25.5"/></clipPath></defs>
+                            <g clip-path="url(#e1b)">
+                                <ellipse cx="62.5" cy="27.5" rx="60" ry="25.5" fill="#C8A890"/>
+                                <ellipse cx="62.5" cy="14" rx="52" ry="18" fill="rgba(160,120,80,0.25)"/>
+                                <ellipse cx="62.5" cy="28" rx="36" ry="21" fill="#F0EAE5"/>
+                                <circle cx="62.5" cy="27.5" r="15" fill="#3A72B0"/>
+                                <circle cx="62.5" cy="27.5" r="6.5" fill="#111"/>
+                                <circle cx="69" cy="22" r="3.5" fill="rgba(255,255,255,0.85)"/>
+                                <path d="M8 20 Q30 4, 62.5 2 Q95 4, 117 20" stroke="rgba(60,35,15,0.45)" stroke-width="2.2" fill="none"/>
+                            </g>
+                        </svg>
+                    </div>
+
+                    <!-- Eye 2: Amber/brown — center left -->
+                    <div class="eye-cutout" style="top:55px; left:-15px; transform:rotate(-3deg);">
+                        <svg width="115" height="50" viewBox="0 0 115 50">
+                            <defs><clipPath id="e2b"><ellipse cx="57.5" cy="25" rx="55.5" ry="23"/></clipPath></defs>
+                            <g clip-path="url(#e2b)">
+                                <ellipse cx="57.5" cy="25" rx="55.5" ry="23" fill="#D0A080"/>
+                                <ellipse cx="57.5" cy="13" rx="46" ry="16" fill="rgba(180,130,70,0.3)"/>
+                                <ellipse cx="57.5" cy="26" rx="34" ry="19" fill="#EDE5DD"/>
+                                <circle cx="57.5" cy="25" r="14" fill="#A06820"/>
+                                <circle cx="57.5" cy="25" r="5.5" fill="#111"/>
+                                <circle cx="64" cy="20" r="3.2" fill="rgba(255,255,255,0.8)"/>
+                                <path d="M8 19 Q28 4, 57.5 2 Q87 4, 107 19" stroke="rgba(80,50,20,0.45)" stroke-width="2" fill="none"/>
+                            </g>
+                        </svg>
+                    </div>
+
+                    <!-- Eye 3: Green — bottom center -->
+                    <div class="eye-cutout" style="bottom:5px; left:35px; transform:rotate(4deg);">
+                        <svg width="105" height="46" viewBox="0 0 105 46">
+                            <defs><clipPath id="e3b"><ellipse cx="52.5" cy="23" rx="50.5" ry="21"/></clipPath></defs>
+                            <g clip-path="url(#e3b)">
+                                <ellipse cx="52.5" cy="23" rx="50.5" ry="21" fill="#C0A090"/>
+                                <ellipse cx="52.5" cy="12" rx="42" ry="15" fill="rgba(150,110,80,0.25)"/>
+                                <ellipse cx="52.5" cy="24" rx="30" ry="17" fill="#EDE8E2"/>
+                                <circle cx="52.5" cy="23" r="12.5" fill="#4A7D4A"/>
+                                <circle cx="52.5" cy="23" r="5" fill="#111"/>
+                                <circle cx="58" cy="18" r="2.8" fill="rgba(255,255,255,0.8)"/>
+                                <path d="M6 17 Q25 4, 52.5 2 Q80 4, 99 17" stroke="rgba(60,40,20,0.45)" stroke-width="1.8" fill="none"/>
+                            </g>
+                        </svg>
+                    </div>
+
+                    <!-- Eye 4: Small closed -->
+                    <div class="eye-cutout" style="top:50px; right:10px; transform:rotate(-5deg);">
+                        <svg width="55" height="14" viewBox="0 0 55 14">
+                            <ellipse cx="27.5" cy="9" rx="26" ry="4" fill="#C0A890"/>
+                            <path d="M4 9 Q27.5 1, 51 9" stroke="rgba(80,50,25,0.45)" stroke-width="1.5" fill="none"/>
+                        </svg>
+                    </div>
+
+                    <!-- Eye 5: Small gray -->
+                    <div class="eye-cutout" style="top:10px; left:35px; transform:rotate(6deg);">
+                        <svg width="55" height="24" viewBox="0 0 55 24">
+                            <defs><clipPath id="e5b"><ellipse cx="27.5" cy="12" rx="26" ry="10.5"/></clipPath></defs>
+                            <g clip-path="url(#e5b)">
+                                <ellipse cx="27.5" cy="12" rx="26" ry="10.5" fill="#B8A090"/>
+                                <ellipse cx="27.5" cy="12.5" rx="16" ry="9" fill="#EAE4DE"/>
+                                <circle cx="27.5" cy="12" r="6.5" fill="#6A7A90"/>
+                                <circle cx="27.5" cy="12" r="2.5" fill="#111"/>
+                                <circle cx="30" cy="10" r="1.5" fill="rgba(255,255,255,0.8)"/>
+                                <path d="M3 8 Q14 2, 27.5 1 Q41 2, 52 8" stroke="rgba(60,35,15,0.4)" stroke-width="1.2" fill="none"/>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="info-zone">
+                    <div class="pf-tag">Preservative Free</div>
+                    <div class="product">Lubricating<br>Eye Drops</div>
+                    <div class="claims">PH Balanced &bull; Sodium Hyaluronate &bull; Fast acting relief &bull; Lens compatible</div>
+                    <div class="footer-row">
+                        <div class="meta-left">Ophthalmologist Approved<br>Sterile &bull; 0.33 Fl Oz / 10 Ml<br><span style="font-size:0.35rem;">Suitable for use before inserting and<br>after removing contact lenses</span></div>
+                        <div>
+                            <div class="doses">300+</div>
+                            <div class="doses-sub">Doses</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottle-wrap">
+            <div class="bottle-cap"><div class="cap-nub"></div><div class="cap-top"></div><div class="cap-mid"></div><div class="cap-mid2"></div><div class="cap-base"></div></div>
+            <div class="bottle-neck"></div>
+            <div class="bottle-body">
+                <div class="bottle-label label-b">
+                    <div class="l-brand">moisture<br>oyster</div>
+                    <div class="l-pf-tag">Preservative Free</div>
+                    <div class="l-type">Lubricating<br>Eye Drops</div>
+                    <div class="l-bot">
+                        <div class="l-vol">0.33 Fl Oz<br>10 Ml</div>
+                        <div class="l-safe">SAFE 90 DAYS</div>
+                        <div class="l-doses">300+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="notes">
+        <div class="note"><h5>Approach</h5><p>Solid teal background, hot pink wordmark. Same eye collage treatment but cooler mood. The cap color becomes the box color — instant product recognition.</p></div>
+        <div class="note"><h5>Standout</h5><p>Pink-on-teal is the inverse of the product itself (pink label, mint cap). Creates a strong color system for a product line — pink box for original, teal for sensitive, etc.</p></div>
+        <div class="note"><h5>Shelf Impact</h5><p>Teal is WGSN's 2026 Color of the Year. This color feels fresh, clinical-but-not, and stands out from both white pharma and pink beauty aisles.</p></div>
+        <div class="note"><h5>Best For</h5><p>Pharmacy-premium crossover, Boots/CVS beauty sections, wellness-adjacent retail, product line expansion.</p></div>
+    </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ============================================================ -->
+<!-- OPTION C: WHITE + HERO EYE                                    -->
+<!-- ============================================================ -->
+<div class="option">
+    <div class="option-label">
+        <span class="option-num">C</span>
+        <span class="option-name">White + Hero Eye</span>
+    </div>
+    <div class="option-desc">Clean white box with one large, beautiful eye as the hero. The product purpose, front and center.</div>
+
+    <div class="stage stage-c">
+        <div class="box box-c">
+            <div class="inner">
+                <div class="top-half">
+                    <div class="brand-overlay">
+                        <div class="brand">moisture<br>oyster<span class="tm">&trade;</span></div>
+                    </div>
+                    <!-- One big beautiful eye -->
+                    <div class="hero-eye">
+                        <svg width="250" height="110" viewBox="0 0 250 110">
+                            <defs><clipPath id="heroEye"><ellipse cx="125" cy="55" rx="120" ry="50"/></clipPath></defs>
+                            <g clip-path="url(#heroEye)">
+                                <ellipse cx="125" cy="55" rx="120" ry="50" fill="#D4B8A5"/>
+                                <!-- Lid shadow -->
+                                <ellipse cx="125" cy="28" rx="105" ry="35" fill="rgba(180,140,100,0.3)"/>
+                                <!-- Eyeshadow shimmer -->
+                                <ellipse cx="125" cy="25" rx="95" ry="28" fill="rgba(200,162,180,0.15)"/>
+                                <!-- Sclera -->
+                                <ellipse cx="125" cy="57" rx="72" ry="42" fill="#F5F0EC"/>
+                                <!-- Iris -->
+                                <circle cx="125" cy="55" r="30" fill="#2A8E8E"/>
+                                <!-- Iris detail rings -->
+                                <circle cx="125" cy="55" r="28" fill="none" stroke="rgba(60,160,140,0.3)" stroke-width="3"/>
+                                <circle cx="125" cy="55" r="22" fill="none" stroke="rgba(40,120,100,0.2)" stroke-width="2"/>
+                                <!-- Iris spokes -->
+                                <line x1="125" y1="30" x2="125" y2="80" stroke="rgba(20,80,70,0.08)" stroke-width="1"/>
+                                <line x1="100" y1="55" x2="150" y2="55" stroke="rgba(20,80,70,0.08)" stroke-width="1"/>
+                                <line x1="107" y1="37" x2="143" y2="73" stroke="rgba(20,80,70,0.06)" stroke-width="1"/>
+                                <line x1="143" y1="37" x2="107" y2="73" stroke="rgba(20,80,70,0.06)" stroke-width="1"/>
+                                <!-- Gold ring around pupil -->
+                                <circle cx="125" cy="55" r="15" fill="none" stroke="rgba(180,150,60,0.3)" stroke-width="2"/>
+                                <!-- Pupil -->
+                                <circle cx="125" cy="55" r="12" fill="#0A0A0A"/>
+                                <!-- Highlights -->
+                                <circle cx="138" cy="44" r="7" fill="rgba(255,255,255,0.9)"/>
+                                <circle cx="113" cy="64" r="3.5" fill="rgba(255,255,255,0.5)"/>
+                                <!-- Lashes top -->
+                                <path d="M15 40 Q65 8, 125 4 Q185 8, 235 40" stroke="rgba(50,30,15,0.6)" stroke-width="4" fill="none"/>
+                                <!-- Individual lash strands -->
+                                <path d="M30 35 L22 22" stroke="rgba(50,30,15,0.35)" stroke-width="1.5" stroke-linecap="round"/>
+                                <path d="M55 22 L48 8" stroke="rgba(50,30,15,0.35)" stroke-width="1.5" stroke-linecap="round"/>
+                                <path d="M80 14 L76 0" stroke="rgba(50,30,15,0.35)" stroke-width="1.5" stroke-linecap="round"/>
+                                <path d="M110 10 L108 -2" stroke="rgba(50,30,15,0.3)" stroke-width="1.3" stroke-linecap="round"/>
+                                <path d="M140 10 L142 -2" stroke="rgba(50,30,15,0.3)" stroke-width="1.3" stroke-linecap="round"/>
+                                <path d="M170 14 L174 0" stroke="rgba(50,30,15,0.35)" stroke-width="1.5" stroke-linecap="round"/>
+                                <path d="M195 22 L202 8" stroke="rgba(50,30,15,0.35)" stroke-width="1.5" stroke-linecap="round"/>
+                                <path d="M220 35 L228 22" stroke="rgba(50,30,15,0.35)" stroke-width="1.5" stroke-linecap="round"/>
+                                <!-- Bottom lash line -->
+                                <path d="M35 72 Q80 95, 125 98 Q170 95, 215 72" stroke="rgba(50,30,15,0.3)" stroke-width="2" fill="none"/>
+                                <!-- Bottom lash strands -->
+                                <path d="M60 85 L55 95" stroke="rgba(50,30,15,0.2)" stroke-width="1" stroke-linecap="round"/>
+                                <path d="M90 92 L88 102" stroke="rgba(50,30,15,0.2)" stroke-width="1" stroke-linecap="round"/>
+                                <path d="M125 96 L125 106" stroke="rgba(50,30,15,0.15)" stroke-width="1" stroke-linecap="round"/>
+                                <path d="M160 92 L162 102" stroke="rgba(50,30,15,0.2)" stroke-width="1" stroke-linecap="round"/>
+                                <path d="M190 85 L195 95" stroke="rgba(50,30,15,0.2)" stroke-width="1" stroke-linecap="round"/>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="bottom-half">
+                    <div class="pf-tag">Preservative Free</div>
+                    <div class="product">Lubricating Eye Drops</div>
+                    <div class="claims">PH Balanced &bull; Contains Sodium Hyaluronate which occurs naturally in tears &bull; Fast acting temporary relief for irritated dry eyes</div>
+                    <div style="font-size:0.42rem; color:#bbb; margin-top:6px; line-height:1.3;">Suitable for use before inserting and after removing contact lenses (not a rewetting drop)</div>
+                    <div class="footer-row">
+                        <div class="meta-left">Ophthalmologist Approved<br>Sterile &bull; 0.33 Fl Oz / 10 Ml</div>
+                        <div>
+                            <div class="doses">300<span class="doses-plus">+</span></div>
+                            <div class="doses-sub">Doses</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottle-wrap">
+            <div class="bottle-cap"><div class="cap-nub"></div><div class="cap-top"></div><div class="cap-mid"></div><div class="cap-mid2"></div><div class="cap-base"></div></div>
+            <div class="bottle-neck"></div>
+            <div class="bottle-body">
+                <div class="bottle-label label-c">
+                    <div class="l-accent"></div>
+                    <div class="l-brand">moisture<br>oyster</div>
+                    <div class="l-pf">Preservative Free</div>
+                    <div class="l-type">Lubricating<br>Eye Drops</div>
+                    <div class="l-bot">
+                        <div class="l-vol">0.33 Fl Oz<br>10 Ml</div>
+                        <div class="l-safe">SAFE 90 DAYS</div>
+                        <div class="l-doses">300+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="notes">
+        <div class="note"><h5>Approach</h5><p>Clean white box, one large detailed eye as the hero image. Hot pink wordmark overlaid top-left. Bold pink divider line separates visual from info.</p></div>
+        <div class="note"><h5>Standout</h5><p>The eye is so detailed and beautiful it stops you. Unlike scattered collage, this single eye creates an intimate, almost portrait-like connection. It says: "this is about YOUR eyes."</p></div>
+        <div class="note"><h5>Shelf Impact</h5><p>White box with a realistic eye and hot pink type = premium and distinctive. The simplicity means it won't get lost in visual noise. Works at any size.</p></div>
+        <div class="note"><h5>Best For</h5><p>Sephora, dermatologist offices, premium pharmacy, editorial-driven DTC brand. Scales beautifully for limited editions with different eye colors.</p></div>
+    </div>
+</div>
+
+<footer>
+    <div class="f-brand">MOISTURE OYSTER</div>
+    Packaging V2 &bull; Solid Color + Eye Pattern &bull; Confidential
+</footer>
+
+</body>
+</html>

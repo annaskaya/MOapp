@@ -1,12 +1,12 @@
 {
-  "version": "v260401.01 7:04p",
+  "version": "v260406.01 4:10p",
   "release": 1,
-  "sha": "3d68bef",
-  "fullSha": "3d68beff24892cb7e7ffe42b863760b887c15005",
-  "actor": "rsonnad",
+  "sha": "7c03b98",
+  "fullSha": "7c03b9838a55825da45d5615195cc3048215711a",
+  "actor": "annaskaya",
   "source": "github-main-push",
   "model": "ci",
-  "machine": "runnervmrg6be",
-  "pushedAt": "2026-04-01T14:04:02-05:00",
-  "commits": [{"sha":"3d68bef","message":"Sync with alpacapps: admin tabs fix, infra page updates, LLM instructions","author":"Rahul"}]
+  "machine": "runnervm727z3",
+  "pushedAt": "2026-04-06T10:10:28-06:00",
+  "commits": [{"sha":"7c03b98","message":"Add Moisture Oyster branding assets","author":"Julianna Bebre"}]
 }

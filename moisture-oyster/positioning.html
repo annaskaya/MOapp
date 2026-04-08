@@ -1,0 +1,1516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moisture Oyster — Internal Positioning</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --black: #111111;
+      --dark: #1a1a1a;
+      --gray-900: #2a2a2a;
+      --gray-700: #555555;
+      --gray-500: #888888;
+      --gray-300: #cccccc;
+      --gray-200: #e5e5e5;
+      --gray-100: #f3f3f3;
+      --white: #ffffff;
+      --cream: #fafaf8;
+      --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --serif: 'Playfair Display', Georgia, serif;
+    }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      color: var(--dark);
+      background: var(--cream);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ===== NAVIGATION ===== */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250, 250, 248, 0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--gray-200);
+      padding: 0 2rem;
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+    .nav-brand {
+      font-family: var(--sans);
+      font-weight: 600;
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray-700);
+    }
+    .nav-links {
+      display: flex;
+      gap: 0.25rem;
+      list-style: none;
+      overflow-x: auto;
+    }
+    .nav-links a {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--gray-500);
+      text-decoration: none;
+      padding: 0.4rem 0.75rem;
+      border-radius: 6px;
+      transition: all 0.15s;
+      white-space: nowrap;
+    }
+    .nav-links a:hover {
+      color: var(--dark);
+      background: var(--gray-100);
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      padding: 6rem 2rem 4rem;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .hero-badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+      border: 1px solid var(--gray-300);
+      padding: 0.35rem 1rem;
+      border-radius: 100px;
+      margin-bottom: 2rem;
+    }
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.5rem, 5vw, 3.75rem);
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--black);
+      margin-bottom: 1.25rem;
+    }
+    .hero h1 em {
+      font-style: italic;
+    }
+    .hero-sub {
+      font-size: 1.125rem;
+      color: var(--gray-700);
+      line-height: 1.7;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+    .hero-meta {
+      margin-top: 2.5rem;
+      font-size: 0.75rem;
+      color: var(--gray-500);
+      letter-spacing: 0.05em;
+    }
+
+    /* ===== SECTIONS ===== */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    section {
+      padding: 5rem 0;
+      border-top: 1px solid var(--gray-200);
+    }
+
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+      font-weight: 400;
+      line-height: 1.2;
+      color: var(--black);
+      margin-bottom: 1.5rem;
+    }
+
+    .section-prose {
+      font-size: 1.05rem;
+      color: var(--gray-700);
+      line-height: 1.75;
+      max-width: 680px;
+    }
+
+    .section-prose strong {
+      color: var(--dark);
+      font-weight: 600;
+    }
+
+    /* ===== CUSTOMER PROFILE ===== */
+    .customer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .customer-narrative {
+      grid-column: 1 / -1;
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 16px;
+      padding: 2.5rem;
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: var(--gray-900);
+      font-style: italic;
+    }
+    .attr-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 12px;
+      padding: 1.75rem;
+    }
+    .attr-card-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+      margin-bottom: 0.6rem;
+    }
+    .attr-card-value {
+      font-size: 1rem;
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    /* ===== POV SECTION ===== */
+    .pov-block {
+      margin-top: 3rem;
+    }
+    .pov-item {
+      padding: 2rem 0;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .pov-item:last-child { border-bottom: none; }
+    .pov-item-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+      margin-bottom: 0.75rem;
+    }
+    .pov-item-text {
+      font-size: 1.05rem;
+      color: var(--gray-700);
+      line-height: 1.75;
+      max-width: 680px;
+    }
+    .pov-statement {
+      background: var(--black);
+      color: var(--white);
+      border-radius: 16px;
+      padding: 3.5rem;
+      margin-top: 3rem;
+      text-align: center;
+    }
+    .pov-statement-text {
+      font-family: var(--serif);
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      font-weight: 400;
+      line-height: 1.35;
+      font-style: italic;
+    }
+    .pov-statement-caption {
+      margin-top: 1.25rem;
+      font-size: 0.8rem;
+      color: var(--gray-500);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* ===== EMPATHY ===== */
+    .empathy-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 16px;
+      padding: 3rem;
+      margin-top: 2rem;
+      max-width: 720px;
+    }
+    .empathy-card p {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: var(--gray-700);
+      font-style: italic;
+    }
+
+    /* ===== ONLINESS ===== */
+    .onliness-box {
+      background: var(--white);
+      border: 2px solid var(--dark);
+      border-radius: 16px;
+      padding: 3rem;
+      margin-top: 2rem;
+      max-width: 720px;
+    }
+    .onliness-text {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      line-height: 1.6;
+      color: var(--black);
+    }
+    .onliness-source {
+      margin-top: 1rem;
+      font-size: 0.75rem;
+      color: var(--gray-500);
+      letter-spacing: 0.05em;
+    }
+
+    /* ===== POSITIONING ===== */
+    .pos-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 2.5rem;
+    }
+    .pos-col {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 12px;
+      padding: 2rem;
+    }
+    .pos-col--avoid {
+      opacity: 0.6;
+    }
+    .pos-col h3 {
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .pos-col--own h3 { color: var(--dark); }
+    .pos-col--avoid h3 { color: var(--gray-500); }
+    .pos-col p {
+      font-size: 1rem;
+      color: var(--gray-700);
+      line-height: 1.7;
+    }
+
+    /* ===== BRANDSCRIPT ===== */
+    .bs-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1px;
+      margin-top: 3rem;
+      background: var(--gray-200);
+      border: 1px solid var(--gray-200);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .bs-item {
+      background: var(--white);
+      padding: 2rem 2.5rem;
+    }
+    .bs-item-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--gray-100);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--gray-700);
+      margin-bottom: 0.75rem;
+    }
+    .bs-item-title {
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+      margin-bottom: 0.5rem;
+    }
+    .bs-item-content {
+      font-size: 1rem;
+      color: var(--gray-700);
+      line-height: 1.7;
+    }
+    .bs-item-content strong { color: var(--dark); }
+
+    /* Problem sub-grid */
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1rem;
+    }
+    .problem-card {
+      background: var(--gray-100);
+      border-radius: 8px;
+      padding: 1.25rem;
+    }
+    .problem-card-label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+      margin-bottom: 0.4rem;
+    }
+    .problem-card-text {
+      font-size: 0.9rem;
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    /* Plan steps */
+    .plan-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 1rem;
+    }
+    .plan-step {
+      background: var(--gray-100);
+      border-radius: 8px;
+      padding: 1.25rem;
+      text-align: center;
+    }
+    .plan-step-num {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--gray-500);
+      margin-bottom: 0.4rem;
+    }
+    .plan-step-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--dark);
+      margin-bottom: 0.3rem;
+    }
+    .plan-step-desc {
+      font-size: 0.85rem;
+      color: var(--gray-700);
+      line-height: 1.5;
+    }
+
+    /* Transformation table */
+    .transform-grid {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 1rem;
+      align-items: start;
+      margin-top: 1rem;
+    }
+    .transform-col { list-style: none; }
+    .transform-col li {
+      font-size: 0.9rem;
+      color: var(--gray-700);
+      padding: 0.5rem 0;
+      line-height: 1.5;
+    }
+    .transform-arrow {
+      font-size: 1.25rem;
+      color: var(--gray-300);
+      padding-top: 0.5rem;
+    }
+
+    /* ===== MANIFESTO ===== */
+    .manifesto-block {
+      background: var(--dark);
+      color: var(--white);
+      border-radius: 20px;
+      padding: 4rem 3.5rem;
+      margin-top: 2.5rem;
+      max-width: 800px;
+    }
+    .manifesto-block p {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      line-height: 2;
+      color: rgba(255,255,255,0.88);
+      margin-bottom: 1.5rem;
+    }
+    .manifesto-block p:last-child { margin-bottom: 0; }
+    .manifesto-block strong {
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    /* ===== ENEMY ===== */
+    .enemy-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 16px;
+      padding: 2.5rem;
+      margin-top: 2rem;
+      max-width: 720px;
+    }
+    .enemy-items {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .enemy-item {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 1.25rem;
+      align-items: start;
+    }
+    .enemy-item-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+      padding-top: 0.2rem;
+    }
+    .enemy-item-text {
+      font-size: 1rem;
+      color: var(--gray-700);
+      line-height: 1.7;
+    }
+
+    /* ===== COMPETITIVE LANDSCAPE ===== */
+    .landscape-matrix {
+      margin-top: 3rem;
+      position: relative;
+      width: 100%;
+      max-width: 680px;
+      aspect-ratio: 1 / 1;
+      border: 1px solid var(--gray-200);
+      border-radius: 16px;
+      background: var(--white);
+      overflow: hidden;
+    }
+    .landscape-matrix::before,
+    .landscape-matrix::after {
+      content: '';
+      position: absolute;
+      background: var(--gray-200);
+    }
+    .landscape-matrix::before {
+      width: 1px;
+      height: 100%;
+      left: 50%;
+      top: 0;
+    }
+    .landscape-matrix::after {
+      height: 1px;
+      width: 100%;
+      top: 50%;
+      left: 0;
+    }
+    .matrix-label {
+      position: absolute;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+    }
+    .matrix-label--top { top: 12px; left: 50%; transform: translateX(-50%); }
+    .matrix-label--bottom { bottom: 12px; left: 50%; transform: translateX(-50%); }
+    .matrix-label--left { left: 12px; top: 50%; transform: translateY(-50%) rotate(-90deg); }
+    .matrix-label--right { right: 12px; top: 50%; transform: translateY(-50%) rotate(90deg); }
+    .matrix-dot {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+    .matrix-dot-circle {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--gray-400);
+      margin: 0 auto 4px;
+    }
+    .matrix-dot-circle--you {
+      width: 16px;
+      height: 16px;
+      background: var(--black);
+      box-shadow: 0 0 0 4px rgba(0,0,0,0.1);
+    }
+    .matrix-dot-name {
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: var(--gray-700);
+      white-space: nowrap;
+    }
+    .matrix-dot-name--you {
+      font-weight: 700;
+      color: var(--black);
+    }
+    .landscape-insight {
+      margin-top: 1.5rem;
+      max-width: 680px;
+    }
+    .landscape-insight p {
+      font-size: 0.95rem;
+      color: var(--gray-700);
+      line-height: 1.7;
+    }
+
+    /* ===== PERSONALITY / TONE ===== */
+    .tone-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      margin-top: 3rem;
+      background: var(--gray-200);
+      border: 1px solid var(--gray-200);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .tone-item {
+      background: var(--white);
+      padding: 2rem;
+    }
+    .tone-trait {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      color: var(--black);
+      margin-bottom: 0.5rem;
+    }
+    .tone-desc {
+      font-size: 0.9rem;
+      color: var(--gray-700);
+      line-height: 1.6;
+      margin-bottom: 0.75rem;
+    }
+    .tone-spectrum {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+    }
+    .tone-spectrum-bar {
+      flex: 1;
+      height: 3px;
+      background: var(--gray-200);
+      border-radius: 2px;
+      position: relative;
+    }
+    .tone-spectrum-fill {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      background: var(--black);
+      border-radius: 2px;
+    }
+    .tone-we-are { color: var(--dark); font-weight: 600; }
+    .tone-not { color: var(--gray-400); }
+
+    /* ===== PILLARS ===== */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      margin-top: 3rem;
+      background: var(--gray-200);
+      border: 1px solid var(--gray-200);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .pillar-item {
+      background: var(--white);
+      padding: 2rem;
+    }
+    .pillar-number {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--gray-400);
+      margin-bottom: 0.75rem;
+    }
+    .pillar-title {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      color: var(--black);
+      margin-bottom: 0.5rem;
+    }
+    .pillar-desc {
+      font-size: 0.88rem;
+      color: var(--gray-700);
+      line-height: 1.6;
+    }
+    .pillar-examples {
+      margin-top: 1rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--gray-100);
+      font-size: 0.78rem;
+      color: var(--gray-500);
+      line-height: 1.6;
+    }
+
+    /* ===== RTB ===== */
+    .rtb-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .rtb-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 12px;
+      padding: 2rem;
+    }
+    .rtb-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+    .rtb-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--dark);
+      margin-bottom: 0.4rem;
+    }
+    .rtb-text {
+      font-size: 0.88rem;
+      color: var(--gray-700);
+      line-height: 1.6;
+    }
+    .rtb-proof {
+      margin-top: 0.75rem;
+      padding-top: 0.6rem;
+      border-top: 1px solid var(--gray-100);
+      font-size: 0.75rem;
+      color: var(--gray-500);
+      font-style: italic;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      padding: 3rem 2rem;
+      text-align: center;
+      border-top: 1px solid var(--gray-200);
+      margin-top: 2rem;
+    }
+    .footer p {
+      font-size: 0.75rem;
+      color: var(--gray-500);
+      line-height: 1.8;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .customer-grid { grid-template-columns: 1fr; }
+      .pos-columns { grid-template-columns: 1fr; }
+      .plan-steps { grid-template-columns: 1fr; }
+      .transform-grid { grid-template-columns: 1fr; }
+      .transform-arrow { display: none; }
+      .tone-grid { grid-template-columns: 1fr; }
+      .pillars-grid { grid-template-columns: 1fr 1fr; }
+      .rtb-grid { grid-template-columns: 1fr; }
+      .enemy-item { grid-template-columns: 1fr; gap: 0.25rem; }
+      .manifesto-block { padding: 2.5rem 2rem; }
+      .landscape-matrix { aspect-ratio: auto; min-height: 420px; }
+      .nav-links { display: none; }
+      .hero { padding: 4rem 1.5rem 3rem; }
+      section { padding: 3rem 0; }
+    }
+
+    /* ===== PRINT ===== */
+    @media print {
+      .nav { display: none; }
+      body { background: white; }
+      section { break-inside: avoid; padding: 2rem 0; }
+      .pov-statement { background: white; color: black; border: 2px solid black; }
+      .pov-statement-caption { color: #555; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PASSWORD GATE -->
+  <div id="passGate" style="position:fixed;inset:0;z-index:9999;background:#fafaf8;display:flex;align-items:center;justify-content:center;flex-direction:column;">
+    <div style="text-align:center;max-width:360px;padding:2rem;">
+      <p style="font-family:'Inter',sans-serif;font-size:0.7rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#888;margin-bottom:2rem;">Moisture Oyster</p>
+      <p style="font-family:'Playfair Display',Georgia,serif;font-size:1.75rem;color:#111;margin-bottom:0.5rem;">Internal Document</p>
+      <p style="font-family:'Inter',sans-serif;font-size:0.9rem;color:#888;margin-bottom:2rem;">Enter the access code to continue.</p>
+      <input id="passInput" type="password" placeholder="Access code" autocomplete="off" style="font-family:'Inter',sans-serif;width:100%;padding:0.85rem 1rem;font-size:1rem;border:1px solid #e5e5e5;border-radius:10px;background:#fff;outline:none;text-align:center;letter-spacing:0.15em;transition:border-color 0.15s;" onfocus="this.style.borderColor='#111'" onblur="this.style.borderColor='#e5e5e5'">
+      <button id="passBtn" style="font-family:'Inter',sans-serif;width:100%;margin-top:0.75rem;padding:0.85rem;font-size:0.85rem;font-weight:600;letter-spacing:0.05em;background:#111;color:#fff;border:none;border-radius:10px;cursor:pointer;transition:opacity 0.15s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">Enter</button>
+      <p id="passError" style="font-family:'Inter',sans-serif;font-size:0.8rem;color:#c44;margin-top:0.75rem;display:none;">Incorrect code. Try again.</p>
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    // Simple hash check — not military-grade, just keeps it from being casually viewable
+    const CODE_HASH = '31bb9529338de24088742ffcdc2eadd5b35562e262c4b146a278287fc044210a'; // "moisture"
+    async function sha256(str){
+      const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+      return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join('');
+    }
+    const gate = document.getElementById('passGate');
+    const input = document.getElementById('passInput');
+    const btn = document.getElementById('passBtn');
+    const err = document.getElementById('passError');
+
+    // Check if already unlocked this session
+    if(sessionStorage.getItem('mo-pos-unlocked')==='1'){
+      gate.style.display='none';
+    }
+
+    async function tryUnlock(){
+      const h = await sha256(input.value.trim());
+      if(h===CODE_HASH){
+        sessionStorage.setItem('mo-pos-unlocked','1');
+        gate.style.opacity='0';
+        gate.style.transition='opacity 0.3s';
+        setTimeout(()=>gate.style.display='none',300);
+      } else {
+        err.style.display='block';
+        input.value='';
+        input.focus();
+        input.style.borderColor='#c44';
+        setTimeout(()=>input.style.borderColor='#e5e5e5',1500);
+      }
+    }
+    btn.addEventListener('click', tryUnlock);
+    input.addEventListener('keydown', e=>{ if(e.key==='Enter') tryUnlock(); });
+    input.focus();
+  })();
+  </script>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <span class="nav-brand">Moisture Oyster &middot; Positioning</span>
+      <ul class="nav-links">
+        <li><a href="#customer">Customer</a></li>
+        <li><a href="#enemy">Enemy</a></li>
+        <li><a href="#pov">Point of View</a></li>
+        <li><a href="#empathy">Empathy</a></li>
+        <li><a href="#onliness">Onliness</a></li>
+        <li><a href="#positioning">Positioning</a></li>
+        <li><a href="#landscape">Landscape</a></li>
+        <li><a href="#personality">Tone</a></li>
+        <li><a href="#pillars">Pillars</a></li>
+        <li><a href="#rtb">RTBs</a></li>
+        <li><a href="#brandscript">BrandScript</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-badge">Internal Document &middot; Confidential</div>
+    <h1>Brand <em>Positioning</em></h1>
+    <p class="hero-sub">
+      The strategic foundation for Moisture Oyster.
+      Who we are, who we serve, and the space we own —
+      before a single pixel of branding is designed.
+    </p>
+    <p class="hero-meta">Slayers Team &middot; April 2026 &middot; v1.0</p>
+  </header>
+
+
+  <!-- ============================================ -->
+  <!-- PRIMARY CUSTOMER -->
+  <!-- ============================================ -->
+  <section id="customer">
+    <div class="container">
+      <p class="section-label">01 &mdash; Who She Is</p>
+      <h2 class="section-title">The Screen-Native Professional</h2>
+      <p class="section-prose">
+        Our primary customer, defined by Google Trends data, market analysis, and consumer behavior research.
+      </p>
+
+      <div class="customer-grid">
+        <div class="customer-narrative">
+          She's 25&ndash;38, urban, and stares at screens 8&ndash;12 hours a day. She's discovering she has dry eyes but doesn't think of herself as someone with a medical condition&nbsp;&mdash; she thinks of herself as someone who works hard and takes care of herself. She buys Glossier and Aesop. She'd never put a clinical-looking bottle on her desk. She doesn't know Moisture exists yet. But when she sees it, she'll immediately know it's for her.
+        </div>
+
+        <div class="attr-card">
+          <p class="attr-card-label">Demographics</p>
+          <p class="attr-card-value">
+            Female skew, 25&ndash;38<br>
+            Urban: LA, NYC, Miami, Chicago<br>
+            Knowledge worker, screen-heavy career
+          </p>
+        </div>
+
+        <div class="attr-card">
+          <p class="attr-card-label">Psychographics</p>
+          <p class="attr-card-value">
+            Design-conscious, intentional about self-care<br>
+            Curates her environment and routine<br>
+            DTC-fluent (subscribes, shares, reviews)
+          </p>
+        </div>
+
+        <div class="attr-card">
+          <p class="attr-card-label">Her World</p>
+          <p class="attr-card-value">
+            Shops Glossier, Aesop, Drunk Elephant<br>
+            Drinks AG1, uses a nice water bottle<br>
+            Has opinions about fonts
+          </p>
+        </div>
+
+        <div class="attr-card">
+          <p class="attr-card-label">Her Pain</p>
+          <p class="attr-card-value">
+            Dry, tired eyes by mid-afternoon<br>
+            Won't reach for something that looks clinical<br>
+            Ignoring the problem because the solutions feel wrong
+          </p>
+        </div>
+
+        <div class="attr-card">
+          <p class="attr-card-label">Search Behavior</p>
+          <p class="attr-card-value">
+            "Best dry eye drops" &mdash; not "cheap dry eye drops"<br>
+            "Preservative-free," "natural," "vegan," "cruelty free"<br>
+            "Digital eye strain" (+24% growth)
+          </p>
+        </div>
+
+        <div class="attr-card">
+          <p class="attr-card-label">Why Her First</p>
+          <p class="attr-card-value">
+            Buys fast. Pays premium. Tells everyone.<br>
+            Completely underserved by every existing brand.<br>
+            Sharing is her default behavior.
+          </p>
+        </div>
+      </div>
+
+      <!-- WHY THIS AUDIENCE — Strategic Case -->
+      <div style="margin-top: 3.5rem; padding-top: 3rem; border-top: 1px solid var(--gray-200);">
+        <p class="section-label">Why This Audience Over All Others</p>
+        <h3 style="font-family: var(--serif); font-size: 1.5rem; font-weight: 400; color: var(--black); margin-bottom: 1rem; line-height: 1.3;">She's the only audience that scores high on all five &ldquo;who cares most&rdquo; criteria simultaneously.</h3>
+        <p class="section-prose" style="margin-bottom: 2.5rem;">No other segment does. Here's the proof.</p>
+
+        <div style="display: flex; flex-direction: column; gap: 1px; background: var(--gray-200); border: 1px solid var(--gray-200); border-radius: 16px; overflow: hidden;">
+
+          <div style="background: var(--white); padding: 2rem 2.5rem;">
+            <p style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray-500); margin-bottom: 0.5rem;">1. She Buys Fast</p>
+            <p style="font-size: 1rem; color: var(--gray-700); line-height: 1.7;">She's already a DTC buyer. She subscribes to skincare, orders supplements online, buys from Instagram ads. The purchase motion is muscle memory. A Gen&nbsp;Z student browses and forgets. A 45-year-old man goes to CVS out of habit. <strong style="color: var(--dark);">She converts.</strong></p>
+          </div>
+
+          <div style="background: var(--white); padding: 2rem 2.5rem;">
+            <p style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray-500); margin-bottom: 0.5rem;">2. She Pays Full Price</p>
+            <p style="font-size: 1rem; color: var(--gray-700); line-height: 1.7;">Google Trends confirmed it: &ldquo;best dry eye drops&rdquo; (interest: 70) crushes &ldquo;cheap dry eye drops&rdquo; (interest: 17). She already pays $28 for Drunk Elephant, $35 for AG1, $22 for Aesop hand wash. A $24 eye drop is not a price conversation&nbsp;&mdash; it's a value conversation. <strong style="color: var(--dark);">She pays premium without flinching.</strong></p>
+          </div>
+
+          <div style="background: var(--white); padding: 2rem 2.5rem;">
+            <p style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray-500); margin-bottom: 0.5rem;">3. She Tells Everyone</p>
+            <p style="font-size: 1rem; color: var(--gray-700); line-height: 1.7;">She posts routines on TikTok, photographs her desk for Instagram, sends links with &ldquo;you NEED this.&rdquo; Topicals and Dieux eye patches hit BREAKOUT growth almost entirely through this woman sharing with other women like her. A male developer with dry eyes uses the product silently. <strong style="color: var(--dark);">She is your free marketing engine.</strong></p>
+          </div>
+
+          <div style="background: var(--white); padding: 2rem 2.5rem;">
+            <p style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray-500); margin-bottom: 0.5rem;">4. She's Completely Underserved</p>
+            <p style="font-size: 1rem; color: var(--gray-700); line-height: 1.7;">Systane, Refresh, TheraTears, Visine&nbsp;&mdash; all talk to her like she's a patient. Their packaging would embarrass her on a Zoom call. The beauty world is entering the eye space (Topicals, Dieux, Cosrx&nbsp;&mdash; all BREAKOUT) but only with patches. <strong style="color: var(--dark);">Nobody has claimed the eye drop position in her world. You're first.</strong></p>
+          </div>
+
+          <div style="background: var(--white); padding: 2rem 2.5rem;">
+            <p style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray-500); margin-bottom: 0.5rem;">5. Your Entire Zag Lands Perfectly</p>
+            <p style="font-size: 1rem; color: var(--gray-700); line-height: 1.7;">The positioning&nbsp;&mdash; &ldquo;designed for screen life, not the pharmacy aisle&rdquo;&nbsp;&mdash; only works if the customer cares about design, has a curated routine, and finds pharmacy products unacceptable. A 55-year-old doesn't care what the bottle looks like. A Gen&nbsp;Z teen can't afford it. <strong style="color: var(--dark);">She is the only person for whom your differentiation is the primary reason to buy.</strong></p>
+          </div>
+
+        </div>
+
+        <!-- Expansion logic -->
+        <div style="margin-top: 2.5rem; background: var(--white); border: 1px solid var(--gray-200); border-radius: 12px; padding: 2rem 2.5rem;">
+          <p style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray-500); margin-bottom: 1rem;">The Expansion Path</p>
+          <p style="font-size: 0.95rem; color: var(--gray-700); line-height: 1.7; margin-bottom: 1.25rem;">Starting with her doesn't mean staying with her. She's the <strong style="color: var(--dark);">wedge</strong>&nbsp;&mdash; the audience that builds the brand for you.</p>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem;">
+            <div style="background: var(--gray-100); border-radius: 8px; padding: 1.25rem;">
+              <p style="font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-500); margin-bottom: 0.4rem;">Launch</p>
+              <p style="font-size: 0.88rem; color: var(--dark); line-height: 1.5;">Screen-native professional women, 25&ndash;35. She buys, shares, and builds the brand for you.</p>
+            </div>
+            <div style="background: var(--gray-100); border-radius: 8px; padding: 1.25rem;">
+              <p style="font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-500); margin-bottom: 0.4rem;">Year 1</p>
+              <p style="font-size: 0.88rem; color: var(--dark); line-height: 1.5;">Broader screen workers (male, 25&ndash;40). They see it on her desk. The positioning pulls them in.</p>
+            </div>
+            <div style="background: var(--gray-100); border-radius: 8px; padding: 1.25rem;">
+              <p style="font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-500); margin-bottom: 0.4rem;">Year 2+</p>
+              <p style="font-size: 0.88rem; color: var(--dark); line-height: 1.5;">Contact lens wearers, Gen&nbsp;Z. Brand trust is built. They come because it already means something.</p>
+            </div>
+          </div>
+          <p style="font-size: 0.95rem; color: var(--dark); line-height: 1.7; margin-top: 1.25rem; font-weight: 500;">She's not the biggest market. She's the most <em>leverage</em>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================ -->
+  <!-- THE ENEMY -->
+  <!-- ============================================ -->
+  <section id="enemy">
+    <div class="container">
+      <p class="section-label">02 &mdash; What We Stand Against</p>
+      <h2 class="section-title">The Enemy</h2>
+      <p class="section-prose">
+        Every iconic brand has a clear adversary. Not a competitor&nbsp;&mdash; a worldview. This is what Moisture exists to fight.
+      </p>
+
+      <div class="enemy-card">
+        <p class="section-prose" style="margin-bottom: 0; font-size: 1.1rem; color: var(--dark);">
+          <strong>We stand against the idea that taking care of your eyes has to feel medical, ugly, or embarrassing.</strong>
+        </p>
+
+        <div class="enemy-items">
+          <div class="enemy-item">
+            <span class="enemy-item-label">The old model</span>
+            <span class="enemy-item-text">Eye care has been trapped in the pharmacy aisle for 40 years. White boxes, clinical language, forgettable brands. It treats dry eyes like a diagnosis, not a daily reality of modern life.</span>
+          </div>
+          <div class="enemy-item">
+            <span class="enemy-item-label">The assumption</span>
+            <span class="enemy-item-text">That people will put up with ugly, clinical products because "it's just eye drops." That no one cares what the bottle looks like. That function is enough.</span>
+          </div>
+          <div class="enemy-item">
+            <span class="enemy-item-label">The gap</span>
+            <span class="enemy-item-text">Skincare evolved from medicine to self-care. Supplements evolved from pharmacy to wellness. Oral care evolved from clinical to design-led. Eye care never did. We're here to close that gap.</span>
+          </div>
+          <div class="enemy-item">
+            <span class="enemy-item-label">We are not against</span>
+            <span class="enemy-item-text">Clinical science, ophthalmology, or medical eye care. We respect and build on the science. We're against the <em>experience</em> being stuck in the past while everything else in self-care moved forward.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================ -->
+  <!-- BRAND POINT OF VIEW -->
+  <!-- ============================================ -->
+  <section id="pov">
+    <div class="container">
+      <p class="section-label">03 &mdash; What We Believe</p>
+      <h2 class="section-title">Brand Point of View</h2>
+
+      <div class="pov-block">
+        <div class="pov-item">
+          <p class="pov-item-label">The Cultural Tension</p>
+          <p class="pov-item-text">
+            Screens gave us everything&nbsp;&mdash; careers, connection, creativity. And they're quietly destroying our eyes. Nobody is talking about this in a way that feels real, cool, or urgent.
+          </p>
+        </div>
+
+        <div class="pov-item">
+          <p class="pov-item-label">The Belief</p>
+          <p class="pov-item-text">
+            Your eyes are part of your body. They deserve the same care and intention you give your skin, your gut, your mind. The clinical eye care industry has treated them like a medical problem. We treat them like something worth taking care of&nbsp;&mdash; <strong>beautifully</strong>.
+          </p>
+        </div>
+
+        <div class="pov-item">
+          <p class="pov-item-label">The Zag</p>
+          <p class="pov-item-text">
+            Every competitor says "relief." We say <strong>identity</strong>.
+          </p>
+        </div>
+      </div>
+
+      <div class="pov-statement">
+        <p class="pov-statement-text">
+          &ldquo;Moisture is for people who live on screens<br>and refuse to let it show.&rdquo;
+        </p>
+        <p class="pov-statement-caption">One-Sentence Point of View</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================ -->
+  <!-- EMPATHY STATEMENT -->
+  <!-- ============================================ -->
+  <section id="empathy">
+    <div class="container">
+      <p class="section-label">04 &mdash; How We Speak</p>
+      <h2 class="section-title">Empathy Statement</h2>
+      <p class="section-prose">
+        This is the guide's voice. How Moisture talks to her customer&nbsp;&mdash; as someone who understands, not someone who diagnoses.
+      </p>
+
+      <div class="empathy-card">
+        <p>
+          &ldquo;We get it. You're not sick. You're just living on screens&nbsp;&mdash; and your eyes are paying for it. We built Moisture because we were tired of reaching for bottles that made us feel like something was wrong with us.&rdquo;
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================ -->
+  <!-- ONLINESS STATEMENT -->
+  <!-- ============================================ -->
+  <section id="onliness">
+    <div class="container">
+      <p class="section-label">05 &mdash; Our Only</p>
+      <h2 class="section-title">Onliness Statement</h2>
+      <p class="section-prose">
+        From Marty Neumeier's <em>Zag</em>&nbsp;&mdash; if you can't use the word "only," you don't have a differentiation. We can.
+      </p>
+
+      <div class="onliness-box">
+        <p class="onliness-text">
+          &ldquo;Moisture Oyster is the <strong>only</strong> eye drop brand designed for the screen generation's self-care routine&nbsp;&mdash; not the pharmacy aisle.&rdquo;
+        </p>
+        <p class="onliness-source">Framework: Zag, Checkpoint 6 &mdash; Marty Neumeier</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================ -->
+  <!-- POSITIONING STRATEGY -->
+  <!-- ============================================ -->
+  <section id="positioning">
+    <div class="container">
+      <p class="section-label">06 &mdash; Where We Play</p>
+      <h2 class="section-title">Positioning Strategy</h2>
+      <p class="section-prose">
+        <strong>Big Fish, Small Pond.</strong> We don't fight Systane for the pharmacy shelf. We create and dominate an entirely new mental category.
+      </p>
+
+      <div class="pos-columns">
+        <div class="pos-col pos-col--own">
+          <h3>We Own This Pond</h3>
+          <p>
+            The first beautiful, clean eye drop for women who care about what's on their shelf.<br><br>
+            The eye drop that belongs in a skincare routine&nbsp;&mdash; next to Glossier and Aesop, not Systane and Visine.<br><br>
+            The brand that names and owns the screen-generation eye care moment.
+          </p>
+        </div>
+        <div class="pos-col pos-col--avoid">
+          <h3>We Don't Compete Here</h3>
+          <p>
+            "Dry eye drops" &mdash; that's Systane's pond (avg interest 82, established incumbents, pharmacy distribution).<br><br>
+            Clinical/medical positioning &mdash; we are wellness, not treatment.<br><br>
+            Price competition &mdash; she searches "best," not "cheap." We are premium by design.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================ -->
+  <!-- COMPETITIVE LANDSCAPE -->
+  <!-- ============================================ -->
+  <section id="landscape">
+    <div class="container">
+      <p class="section-label">07 &mdash; The Whitespace</p>
+      <h2 class="section-title">Competitive Landscape</h2>
+      <p class="section-prose">
+        Where every player sits&nbsp;&mdash; and the quadrant we own alone. Share this with anyone who asks &ldquo;how are you different?&rdquo;
+      </p>
+
+      <div class="landscape-matrix">
+        <span class="matrix-label matrix-label--top">Premium</span>
+        <span class="matrix-label matrix-label--bottom">Mass / Value</span>
+        <span class="matrix-label matrix-label--left">Clinical</span>
+        <span class="matrix-label matrix-label--right">Lifestyle</span>
+
+        <!-- Top-left: Premium + Clinical -->
+        <div class="matrix-dot" style="top: 22%; left: 28%;">
+          <div class="matrix-dot-circle"></div>
+          <span class="matrix-dot-name">TheraTears</span>
+        </div>
+        <div class="matrix-dot" style="top: 28%; left: 35%;">
+          <div class="matrix-dot-circle"></div>
+          <span class="matrix-dot-name">Refresh Optive</span>
+        </div>
+        <div class="matrix-dot" style="top: 18%; left: 40%;">
+          <div class="matrix-dot-circle"></div>
+          <span class="matrix-dot-name">Lumify</span>
+        </div>
+
+        <!-- Bottom-left: Mass + Clinical -->
+        <div class="matrix-dot" style="top: 60%; left: 25%;">
+          <div class="matrix-dot-circle"></div>
+          <span class="matrix-dot-name">Systane</span>
+        </div>
+        <div class="matrix-dot" style="top: 68%; left: 30%;">
+          <div class="matrix-dot-circle"></div>
+          <span class="matrix-dot-name">Visine</span>
+        </div>
+        <div class="matrix-dot" style="top: 72%; left: 20%;">
+          <div class="matrix-dot-circle"></div>
+          <span class="matrix-dot-name">Clear Eyes</span>
+        </div>
+
+        <!-- Bottom-right: Mass + Lifestyle -->
+        <div class="matrix-dot" style="top: 62%; left: 65%;">
+          <div class="matrix-dot-circle"></div>
+          <span class="matrix-dot-name">Rohto</span>
+        </div>
+
+        <!-- Adjacent lifestyle brands (not eye drops) -->
+        <div class="matrix-dot" style="top: 30%; left: 75%;">
+          <div class="matrix-dot-circle" style="background: var(--gray-300);"></div>
+          <span class="matrix-dot-name" style="color: var(--gray-500);">Topicals*</span>
+        </div>
+        <div class="matrix-dot" style="top: 25%; left: 82%;">
+          <div class="matrix-dot-circle" style="background: var(--gray-300);"></div>
+          <span class="matrix-dot-name" style="color: var(--gray-500);">Dieux*</span>
+        </div>
+
+        <!-- YOU: Top-right — Premium + Lifestyle (ALONE) -->
+        <div class="matrix-dot" style="top: 16%; left: 76%;">
+          <div class="matrix-dot-circle matrix-dot-circle--you"></div>
+          <span class="matrix-dot-name matrix-dot-name--you">MOISTURE<br>OYSTER</span>
+        </div>
+      </div>
+      <p style="font-size: 0.72rem; color: var(--gray-400); margin-top: 0.6rem; max-width: 680px;">* Adjacent brands (eye patches, not drops) &mdash; shown to illustrate the lifestyle beauty movement entering the eye space.</p>
+
+      <div class="landscape-insight" style="margin-top: 2rem;">
+        <p>
+          <strong>The insight:</strong> Every existing eye drop brand lives in the left half of this map&nbsp;&mdash; clinical positioning, clinical packaging, clinical language. The entire Premium + Lifestyle quadrant is empty. That's not a gap in the market. That's a missing market. Moisture Oyster creates it.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================ -->
+  <!-- BRAND PERSONALITY & TONE -->
+  <!-- ============================================ -->
+  <section id="personality">
+    <div class="container">
+      <p class="section-label">08 &mdash; How We Sound</p>
+      <h2 class="section-title">Brand Personality &amp; Tone of Voice</h2>
+      <p class="section-prose">
+        Four traits that guide every word we write, every image we choose, every interaction we design. Each comes with a guardrail to keep us honest.
+      </p>
+
+      <div class="tone-grid">
+        <div class="tone-item">
+          <p class="tone-trait">Confident</p>
+          <p class="tone-desc">We know what we are and we don't apologize for it. We speak with quiet authority&nbsp;&mdash; the authority of a brand that's done its homework and made real choices.</p>
+          <div class="tone-spectrum">
+            <span class="tone-we-are">Confident</span>
+            <div class="tone-spectrum-bar"><div class="tone-spectrum-fill" style="width: 65%;"></div></div>
+            <span class="tone-not">not Cocky</span>
+          </div>
+        </div>
+
+        <div class="tone-item">
+          <p class="tone-trait">Warm</p>
+          <p class="tone-desc">We talk like a smart friend, not a brand. Approachable, empathetic, human. We acknowledge real feelings without being sentimental or patronizing.</p>
+          <div class="tone-spectrum">
+            <span class="tone-we-are">Warm</span>
+            <div class="tone-spectrum-bar"><div class="tone-spectrum-fill" style="width: 60%;"></div></div>
+            <span class="tone-not">not Cheesy</span>
+          </div>
+        </div>
+
+        <div class="tone-item">
+          <p class="tone-trait">Knowing</p>
+          <p class="tone-desc">We understand her world&nbsp;&mdash; the screen fatigue, the curated shelf, the 3pm slump. We reference her reality without over-explaining it. She reads our copy and thinks: &ldquo;they get me.&rdquo;</p>
+          <div class="tone-spectrum">
+            <span class="tone-we-are">Knowing</span>
+            <div class="tone-spectrum-bar"><div class="tone-spectrum-fill" style="width: 70%;"></div></div>
+            <span class="tone-not">not Clinical</span>
+          </div>
+        </div>
+
+        <div class="tone-item">
+          <p class="tone-trait">Minimal</p>
+          <p class="tone-desc">We say more with less. Short sentences. White space. No jargon, no filler, no exclamation marks. The design and copy feel edited, intentional, curated&nbsp;&mdash; just like her.</p>
+          <div class="tone-spectrum">
+            <span class="tone-we-are">Minimal</span>
+            <div class="tone-spectrum-bar"><div class="tone-spectrum-fill" style="width: 55%;"></div></div>
+            <span class="tone-not">not Cold</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 2.5rem; max-width: 680px;">
+        <p class="section-label" style="margin-bottom: 1rem;">Words We Use</p>
+        <p style="font-size: 0.95rem; color: var(--gray-700); line-height: 2;">
+          screen life &middot; routine &middot; refresh &middot; daily ritual &middot; clean &middot; designed &middot; intentional &middot; your eyes &middot; feel good &middot; self-care &middot; comfort &middot; clarity &middot; hydration
+        </p>
+        <p class="section-label" style="margin-bottom: 1rem; margin-top: 1.5rem;">Words We Never Use</p>
+        <p style="font-size: 0.95rem; color: var(--gray-400); line-height: 2;">
+          <s>dry eye syndrome</s> &middot; <s>treatment</s> &middot; <s>remedy</s> &middot; <s>relief</s> &middot; <s>symptoms</s> &middot; <s>patients</s> &middot; <s>clinically proven</s> &middot; <s>doctor recommended</s> &middot; <s>soothing</s> &middot; <s>irritation</s>
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================ -->
+  <!-- MESSAGING PILLARS -->
+  <!-- ============================================ -->
+  <section id="pillars">
+    <div class="container">
+      <p class="section-label">09 &mdash; What We Always Say</p>
+      <h2 class="section-title">Key Messaging Pillars</h2>
+      <p class="section-prose">
+        Four repeatable themes that every piece of communication&nbsp;&mdash; ads, packaging, social, email, PR&nbsp;&mdash; should ladder up to. If a message doesn't connect to one of these, it doesn't go out.
+      </p>
+
+      <div class="pillars-grid">
+        <div class="pillar-item">
+          <p class="pillar-number">Pillar 01</p>
+          <p class="pillar-title">Screen-Era Self-Care</p>
+          <p class="pillar-desc">Your eyes are part of your body. In a world of 8-12 hour screen days, eye care isn't optional&nbsp;&mdash; it's the missing step in your routine.</p>
+          <p class="pillar-examples">
+            <strong>Use in:</strong> Hero copy, awareness ads, PR angles, content marketing, social captions
+          </p>
+        </div>
+
+        <div class="pillar-item">
+          <p class="pillar-number">Pillar 02</p>
+          <p class="pillar-title">Clean Without Compromise</p>
+          <p class="pillar-desc">Preservative-free. Hyaluronic acid. Ingredients you can read and trust. The same standard you hold your skincare to&nbsp;&mdash; applied to your eyes.</p>
+          <p class="pillar-examples">
+            <strong>Use in:</strong> Product pages, packaging, Amazon listings, ingredient stories, trust-building content
+          </p>
+        </div>
+
+        <div class="pillar-item">
+          <p class="pillar-number">Pillar 03</p>
+          <p class="pillar-title">Designed to Be Seen</p>
+          <p class="pillar-desc">This is not a bottle you hide in a drawer. It belongs on your desk, in your bag, on your shelf&nbsp;&mdash; because eye care should be as considered as everything else in your life.</p>
+          <p class="pillar-examples">
+            <strong>Use in:</strong> Packaging design, unboxing content, lifestyle photography, brand partnerships, UGC
+          </p>
+        </div>
+
+        <div class="pillar-item">
+          <p class="pillar-number">Pillar 04</p>
+          <p class="pillar-title">Your Eyes, Your Routine</p>
+          <p class="pillar-desc">Not a fix. Not medicine. A daily habit&nbsp;&mdash; like your morning skincare or your evening wind-down. Drop in when you need it. Make it yours.</p>
+          <p class="pillar-examples">
+            <strong>Use in:</strong> How-to content, routine-building campaigns, subscription messaging, email nurture
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================ -->
+  <!-- REASONS TO BELIEVE -->
+  <!-- ============================================ -->
+  <section id="rtb">
+    <div class="container">
+      <p class="section-label">10 &mdash; Why They Should Believe Us</p>
+      <h2 class="section-title">Product Truths &amp; Reasons to Believe</h2>
+      <p class="section-prose">
+        The functional proof points behind the brand promise. Use these on product pages, packaging, Amazon listings, and anywhere the customer needs to move from &ldquo;I want this&rdquo; to &ldquo;I trust this.&rdquo;
+      </p>
+
+      <div class="rtb-grid">
+        <div class="rtb-card">
+          <div class="rtb-icon">&minus;</div>
+          <p class="rtb-title">Preservative-Free</p>
+          <p class="rtb-text">No BAK, no harsh preservatives. Gentle enough for daily use, sensitive eyes, and contact lens wearers.</p>
+          <p class="rtb-proof">Google Trends: "preservative-free eye drops" = highest-volume product feature search</p>
+        </div>
+
+        <div class="rtb-card">
+          <div class="rtb-icon">&bull;</div>
+          <p class="rtb-title">Hyaluronic Acid</p>
+          <p class="rtb-text">The same hydration molecule trusted in premium skincare. Deep, lasting moisture that your eyes actually hold onto.</p>
+          <p class="rtb-proof">Primary driver of premium segment growth in the eye care category</p>
+        </div>
+
+        <div class="rtb-card">
+          <div class="rtb-icon">&#9702;</div>
+          <p class="rtb-title">Ophthalmologist-Informed</p>
+          <p class="rtb-text">Formulated with input from eye care professionals. We respect the science&nbsp;&mdash; we just don't let it dictate the experience.</p>
+          <p class="rtb-proof">Clinical credibility without clinical coldness&nbsp;&mdash; the "back layer" that builds trust</p>
+        </div>
+
+        <div class="rtb-card">
+          <div class="rtb-icon">&#10003;</div>
+          <p class="rtb-title">Contact Lens Compatible</p>
+          <p class="rtb-text">Safe to use with all types of contact lenses. No need to remove them. Fits seamlessly into your day.</p>
+          <p class="rtb-proof">Google Trends: "contact lenses dry eyes" is a consistently high-volume search</p>
+        </div>
+
+        <div class="rtb-card">
+          <div class="rtb-icon">&#9656;</div>
+          <p class="rtb-title">Designed for Screen Fatigue</p>
+          <p class="rtb-text">Specifically formulated for the kind of dryness caused by long screen sessions&nbsp;&mdash; not allergies, not weather, not aging. Your problem, addressed directly.</p>
+          <p class="rtb-proof">Screen-related search cluster growing at +24% YoY, outpacing general "dry eye" growth</p>
+        </div>
+
+        <div class="rtb-card">
+          <div class="rtb-icon">&#9678;</div>
+          <p class="rtb-title">Clean &amp; Vegan</p>
+          <p class="rtb-text">Cruelty-free, vegan, no unnecessary additives. The same ingredient standards you already hold for your skincare and supplements.</p>
+          <p class="rtb-proof">"Natural," "organic," "vegan," "cruelty free" eye drops all showing active search interest</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================ -->
+  <!-- BRANDSCRIPT -->
+  <!-- ============================================ -->
+  <section id="brandscript">
+    <div class="container">
+      <p class="section-label">11 &mdash; The Story We Tell</p>
+      <h2 class="section-title">StoryBrand BrandScript</h2>
+      <p class="section-prose">
+        The 7-part messaging framework. She is the hero. We are the guide. Every piece of copy, every ad, every page should map back to this script.
+      </p>
+
+      <div class="bs-grid">
+        <!-- 1. Character -->
+        <div class="bs-item">
+          <div class="bs-item-number">1</div>
+          <p class="bs-item-title">A Character</p>
+          <p class="bs-item-content">
+            A <strong>25&ndash;38 year old screen-native professional woman</strong>. She's ambitious, design-conscious, and intentional about self-care. She spends 8&ndash;12 hours on screens daily. She's starting to feel the dryness, the fatigue, the end-of-day burn. She wants <strong>to feel fresh and taken care of despite her screen-heavy life</strong>.
+          </p>
+        </div>
+
+        <!-- 2. Problem -->
+        <div class="bs-item">
+          <div class="bs-item-number">2</div>
+          <p class="bs-item-title">Has a Problem</p>
+          <div class="problem-grid">
+            <div class="problem-card">
+              <p class="problem-card-label">Villain</p>
+              <p class="problem-card-text">The screen-life tradeoff&nbsp;&mdash; the unspoken toll modern work takes on your eyes</p>
+            </div>
+            <div class="problem-card">
+              <p class="problem-card-label">External</p>
+              <p class="problem-card-text">Her eyes are dry, tired, and strained by 3pm every day</p>
+            </div>
+            <div class="problem-card">
+              <p class="problem-card-label">Internal</p>
+              <p class="problem-card-text">&ldquo;Why does taking care of my eyes have to feel so... medical?&rdquo;</p>
+            </div>
+            <div class="problem-card">
+              <p class="problem-card-label">Philosophical</p>
+              <p class="problem-card-text">It's wrong that a generation is damaging their eyes and the only options look like they belong in a hospital</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Guide -->
+        <div class="bs-item">
+          <div class="bs-item-number">3</div>
+          <p class="bs-item-title">And Meets a Guide</p>
+          <p class="bs-item-content">
+            <strong>Empathy:</strong> &ldquo;We get it. You're not sick. You're just living on screens.&rdquo;<br><br>
+            <strong>Authority:</strong> Clean, preservative-free formulation. Designed in LA. Ophthalmologist-informed. Featured in beauty and lifestyle press.
+          </p>
+        </div>
+
+        <!-- 4. Plan -->
+        <div class="bs-item">
+          <div class="bs-item-number">4</div>
+          <p class="bs-item-title">Who Gives Them a Plan</p>
+          <div class="plan-steps">
+            <div class="plan-step">
+              <p class="plan-step-num">Step 1</p>
+              <p class="plan-step-title">Choose your drop</p>
+              <p class="plan-step-desc">Pick the formula that fits your screen life</p>
+            </div>
+            <div class="plan-step">
+              <p class="plan-step-num">Step 2</p>
+              <p class="plan-step-title">Build it into your routine</p>
+              <p class="plan-step-desc">Morning, midday reset, evening wind-down</p>
+            </div>
+            <div class="plan-step">
+              <p class="plan-step-num">Step 3</p>
+              <p class="plan-step-title">Feel the difference</p>
+              <p class="plan-step-desc">Fresh eyes, less fatigue, a product you're proud of</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. CTA -->
+        <div class="bs-item">
+          <div class="bs-item-number">5</div>
+          <p class="bs-item-title">And Calls Them to Action</p>
+          <p class="bs-item-content">
+            <strong>Direct:</strong> &ldquo;Get Moisture&rdquo; &mdash; prominent, everywhere<br><br>
+            <strong>Transitional:</strong> &ldquo;Take the Screen Strain Quiz&rdquo; &mdash; 60-second quiz that segments, captures email, and delivers a personalized recommendation
+          </p>
+        </div>
+
+        <!-- 6. Failure -->
+        <div class="bs-item">
+          <div class="bs-item-number">6</div>
+          <p class="bs-item-title">That Helps Them Avoid Failure</p>
+          <p class="bs-item-content">
+            The daily dryness gets worse. The tired-eye look becomes permanent. She's spending $200/month on skincare but ignoring the most expressive part of her face. Her eyes age faster than the rest of her&nbsp;&mdash; and by the time she notices, she's playing catch-up.
+          </p>
+        </div>
+
+        <!-- 7. Success -->
+        <div class="bs-item">
+          <div class="bs-item-number">7</div>
+          <p class="bs-item-title">And Ends in Success</p>
+          <div class="transform-grid">
+            <ul class="transform-col">
+              <li>Dry, tired eyes by 3pm</li>
+              <li>Embarrassed by a clinical bottle</li>
+              <li>Ignoring her eye health</li>
+              <li>Feels like something is wrong</li>
+            </ul>
+            <div class="transform-arrow">&rarr;<br>&rarr;<br>&rarr;<br>&rarr;</div>
+            <ul class="transform-col">
+              <li><strong>Fresh and hydrated all day</strong></li>
+              <li><strong>Proud of a beautiful product in her routine</strong></li>
+              <li><strong>Intentionally caring for her whole self</strong></li>
+              <li><strong>Feels ahead of the curve</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>
+      Moisture Oyster &middot; Internal Positioning Document &middot; Confidential<br>
+      Frameworks: StoryBrand (Miller) &middot; Zag &amp; The Brand Gap (Neumeier) &middot; Obviously Awesome (Dunford) &middot; Influence (Cialdini) &middot; Contagious (Berger) &middot; Alchemy (Sutherland) &middot; Lovemarks (Roberts) &middot; Superfans (Flynn)<br>
+      Slayers Team &middot; April 2026
+    </p>
+  </footer>
+
+</body>
+</html>

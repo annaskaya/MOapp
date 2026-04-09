@@ -88,6 +88,24 @@ a:hover{opacity:0.8}
 .footer__link{font-size:0.65rem;font-weight:400;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.3)}
 .footer__copy{font-size:0.6rem;font-weight:300;letter-spacing:0.1em;color:rgba(255,255,255,0.15)}
 
+/* Product cards */
+.products{padding:clamp(60px,10vw,140px) clamp(40px,6vw,100px)}
+.products__label{font-size:0.65rem;font-weight:500;letter-spacing:0.3em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:24px}
+.products__title{font-weight:900;font-size:clamp(3rem,7vw,7rem);line-height:0.88;letter-spacing:-0.04em;text-transform:uppercase;margin-bottom:64px}
+.products__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.product-card{position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;min-height:clamp(400px,50vw,600px);padding:clamp(28px,3vw,48px);transition:transform 0.3s}
+.product-card:hover{transform:scale(1.01)}
+.product-card__bg{position:absolute;inset:0;transition:transform 0.6s}
+.product-card:hover .product-card__bg{transform:scale(1.04)}
+.product-card__overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,0.75) 0%,rgba(0,0,0,0.1) 50%,transparent 100%)}
+.product-card__content{position:relative;z-index:1}
+.product-card__tag{display:inline-block;font-size:0.55rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;padding:6px 14px;border-radius:20px;margin-bottom:16px}
+.product-card__name{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.8rem);font-style:italic;line-height:1.05;margin-bottom:8px}
+.product-card__desc{font-size:0.85rem;font-weight:300;line-height:1.6;color:rgba(255,255,255,0.55);max-width:300px;margin-bottom:20px}
+.product-card__price{font-size:0.8rem;font-weight:700;letter-spacing:0.05em;margin-bottom:20px;color:rgba(255,255,255,0.8)}
+.product-card__btn{display:inline-block;font-size:0.6rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;padding:12px 28px;border-radius:30px;text-decoration:none;transition:transform 0.2s}
+.product-card__btn:hover{transform:scale(1.05);opacity:1}
+
 /* Responsive */
 @media(max-width:900px){
   .nav{padding:20px 24px}
@@ -97,6 +115,7 @@ a:hover{opacity:0.8}
   .split{grid-template-columns:1fr}
   .split__img{min-height:50vh}
   .footer{padding:24px}
+  .products__grid{grid-template-columns:1fr}
 }
 @media(max-width:600px){
   .nav__link{display:none}
@@ -127,7 +146,7 @@ a:hover{opacity:0.8}
   <div class="hero__content">
     <p class="hero__label fade-up">Screen-Era Self-Care</p>
     <h1 class="hero__title fade-up-d1">Your Eyes.<br>Your<br>Routine.</h1>
-    <p class="hero__desc fade-up-d2">Preservative-free eye drops with hyaluronic acid. Designed for the screen generation.</p>
+    <p class="hero__desc fade-up-d2">Eye drops. Eye vitamins. Hydration beauty mix. The complete screen-era self-care ritual.</p>
     <div class="hero__actions fade-up-d3">
       <a class="btn btn--iridescent" href="#">Get Moisture</a>
       <a class="btn btn--outline" href="#">Take the Quiz</a>
@@ -147,16 +166,16 @@ a:hover{opacity:0.8}
 <!-- FEATURES -->
 <div class="features">
   <div class="feature">
-    <p class="feature__title" style="color:#e8b4c8">Preservative-Free</p>
-    <p class="feature__desc">No BAK. Gentle enough for daily use and sensitive eyes.</p>
+    <p class="feature__title" style="color:#9bc4ab">Drops</p>
+    <p class="feature__desc">Preservative-free eye drops with hyaluronic acid. Instant refresh.</p>
   </div>
   <div class="feature">
-    <p class="feature__title" style="color:#9bc4ab">Hyaluronic Acid</p>
-    <p class="feature__desc">Premium skincare's star hydration molecule. For your eyes.</p>
+    <p class="feature__title" style="color:#c9a96e">Vitamins</p>
+    <p class="feature__desc">Lutein, zeaxanthin &amp; bilberry. Daily eye nutrition from the inside.</p>
   </div>
   <div class="feature">
-    <p class="feature__title" style="color:#c9a96e">Screen Formula</p>
-    <p class="feature__desc">Built specifically for 8&ndash;12 hour screen days.</p>
+    <p class="feature__title" style="color:#e8b4c8">Glow Mix</p>
+    <p class="feature__desc">Skin hydration beauty mix. HA, vitamin C &amp; marine collagen sticks.</p>
   </div>
 </div>
 
@@ -185,13 +204,52 @@ a:hover{opacity:0.8}
 </section>
 
 
-<!-- PRODUCT HERO -->
-<section class="product-hero" style="background-image:url('https://i.pinimg.com/736x/3b/d8/84/3bd884e35e62e713a4f91ee5dae66526.jpg')">
-  <div class="product-hero__overlay"></div>
-  <div class="product-hero__content">
-    <p class="product-hero__title">Coming Soon</p>
-    <p class="product-hero__sub">Join the waitlist</p>
-    <a class="btn btn--iridescent" href="#" style="margin-top:40px">Notify Me</a>
+<!-- PRODUCTS -->
+<section class="products">
+  <p class="products__label">The Collection</p>
+  <h2 class="products__title">Three<br>Rituals.</h2>
+
+  <div class="products__grid">
+
+    <!-- 01: Eye Drops (original) -->
+    <div class="product-card">
+      <div class="product-card__bg" style="background:url('https://i.pinimg.com/736x/3b/d8/84/3bd884e35e62e713a4f91ee5dae66526.jpg') center/cover"></div>
+      <div class="product-card__overlay"></div>
+      <div class="product-card__content">
+        <span class="product-card__tag" style="background:#9bc4ab;color:#000">Eye Drops</span>
+        <p class="product-card__name">Screen-Life Drops</p>
+        <p class="product-card__desc">Preservative-free eye drops with hyaluronic acid. The original. The one that started it all.</p>
+        <p class="product-card__price">$24</p>
+        <a class="product-card__btn" href="#" style="background:#fff;color:#000">Shop Drops</a>
+      </div>
+    </div>
+
+    <!-- 02: Eye Vitamins (NEW) -->
+    <div class="product-card">
+      <div class="product-card__bg" style="background:linear-gradient(160deg,#1a1216 0%,#2a1f23 40%,#3a2833 100%)"></div>
+      <div class="product-card__overlay" style="background:none"></div>
+      <div class="product-card__content" style="display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;height:100%">
+        <span class="product-card__tag" style="background:#c9a96e;color:#000">New</span>
+        <p class="product-card__name">Eye Vitamins</p>
+        <p class="product-card__desc">Daily eye nutrition. Lutein, zeaxanthin, and bilberry extract in a clean, vegan capsule. Screen protection from the inside out.</p>
+        <p class="product-card__price" style="color:#c9a96e">Coming Soon</p>
+        <a class="product-card__btn" href="#" style="background:linear-gradient(135deg,#c9a96e,#e8b4c8);color:#000">Join Waitlist</a>
+      </div>
+    </div>
+
+    <!-- 03: Hydration Beauty Mix (NEW, k2o-style) -->
+    <div class="product-card">
+      <div class="product-card__bg" style="background:linear-gradient(160deg,#1a1216 0%,#231620 40%,#2d1a28 100%)"></div>
+      <div class="product-card__overlay" style="background:none"></div>
+      <div class="product-card__content" style="display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;height:100%">
+        <span class="product-card__tag" style="background:#e8b4c8;color:#000">New</span>
+        <p class="product-card__name">Glow Mix</p>
+        <p class="product-card__desc">Skin hydration beauty mix. Hyaluronic acid, vitamin C, and marine collagen in a daily stick pack. Hydrate from within &mdash; skin and eyes.</p>
+        <p class="product-card__price" style="color:#e8b4c8">Coming Soon</p>
+        <a class="product-card__btn" href="#" style="background:linear-gradient(135deg,#e8b4c8,#c5b3d4);color:#000">Join Waitlist</a>
+      </div>
+    </div>
+
   </div>
 </section>
 

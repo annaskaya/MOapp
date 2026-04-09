@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moisture Oyster — Brand Book</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+/* ── Reset & Base ──────────────────────────────── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body { font-family: 'DM Sans', system-ui, sans-serif; color: #2a1f23; line-height: 1.6; overflow-x: hidden; }
+
+/* ── Tokens ────────────────────────────────────── */
+:root {
+  --cream:  #faf5ed;
+  --aqua:   #b8d8d0;
+  --aqua-light: #ddeee9;
+  --gold:   #d4a853;
+  --gold-light: #f0ddb3;
+  --sage:   #a8b5a0;
+  --sage-light: #d5ddd0;
+  --dark:   #1c1618;
+  --text:   #2a1f23;
+  --text-light: #6b5a60;
+  --white:  #ffffff;
+  --serif:  'Playfair Display', Georgia, 'Times New Roman', serif;
+  --sans:   'DM Sans', system-ui, -apple-system, sans-serif;
+}
+
+/* ── Section Base ──────────────────────────────── */
+.bb-section {
+  position: relative;
+  min-height: 100vh;
+  padding: 80px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.bb-section--cream  { background: var(--cream); }
+.bb-section--aqua   { background: var(--aqua); }
+.bb-section--dark   { background: var(--dark); color: var(--white); }
+.bb-section--gold   { background: var(--gold-light); }
+.bb-section--sage   { background: var(--sage-light); }
+.bb-section--white  { background: var(--white); }
+
+.bb-page-num {
+  position: absolute;
+  bottom: 24px;
+  left: 60px;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  opacity: 0.4;
+  letter-spacing: 0.05em;
+}
+.bb-section--dark .bb-page-num { color: var(--white); }
+
+/* ── Typography ────────────────────────────────── */
+.bb-serif       { font-family: var(--serif); }
+.bb-sans        { font-family: var(--sans); }
+.bb-heading-xl  { font-family: var(--serif); font-size: clamp(3rem, 6vw, 5.5rem); line-height: 1.05; font-weight: 400; }
+.bb-heading-lg  { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.15; font-weight: 400; }
+.bb-heading-md  { font-family: var(--serif); font-size: clamp(1.5rem, 2.5vw, 2.2rem); line-height: 1.25; font-weight: 400; }
+.bb-subhead     { font-family: var(--sans); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 16px; }
+.bb-body        { font-family: var(--sans); font-size: 1.05rem; line-height: 1.7; max-width: 640px; }
+.bb-body-wide   { font-family: var(--sans); font-size: 1.05rem; line-height: 1.7; }
+.bb-italic      { font-style: italic; }
+.bb-bold        { font-weight: 700; }
+
+/* ── Marker Highlights ─────────────────────────── */
+.hi-aqua {
+  background: linear-gradient(180deg, transparent 55%, var(--aqua) 55%);
+  padding: 0 4px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+.hi-gold {
+  background: linear-gradient(180deg, transparent 55%, var(--gold-light) 55%);
+  padding: 0 4px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+.hi-sage {
+  background: linear-gradient(180deg, transparent 55%, var(--sage-light) 55%);
+  padding: 0 4px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+.hi-cream {
+  background: linear-gradient(180deg, transparent 55%, #efe6d5 55%);
+  padding: 0 4px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* ── Organic Blobs ─────────────────────────────── */
+.bb-blob {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 32px;
+  color: var(--white);
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.bb-blob--aqua  { background: var(--aqua); color: var(--text); }
+.bb-blob--gold  { background: var(--gold); color: var(--white); }
+.bb-blob--sage  { background: var(--sage); color: var(--white); }
+.bb-blob--gray  { background: #8a7d82; color: var(--white); }
+.bb-blob--dark  { background: var(--dark); color: var(--white); }
+
+.bb-blob-1 { border-radius: 62% 38% 46% 54% / 60% 45% 55% 40%; }
+.bb-blob-2 { border-radius: 45% 55% 60% 40% / 50% 62% 38% 50%; }
+.bb-blob-3 { border-radius: 55% 45% 38% 62% / 45% 55% 45% 55%; }
+.bb-blob-4 { border-radius: 40% 60% 55% 45% / 62% 38% 62% 38%; }
+.bb-blob-5 { border-radius: 50% 50% 42% 58% / 55% 48% 52% 45%; }
+.bb-blob-6 { border-radius: 58% 42% 50% 50% / 42% 58% 42% 58%; }
+
+/* ── Blob Grid ─────────────────────────────────── */
+.bb-blob-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.bb-blob-grid .bb-blob {
+  width: 240px;
+  height: 240px;
+  flex-shrink: 0;
+}
+.bb-blob-grid .bb-blob--large {
+  width: 300px;
+  height: 300px;
+}
+
+/* ── Cards ─────────────────────────────────────── */
+.bb-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.bb-card {
+  padding: 40px 32px;
+  border-radius: 24px;
+  min-height: 240px;
+}
+.bb-card__title {
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+}
+.bb-card__subtitle {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 500;
+  opacity: 0.7;
+  margin-bottom: 16px;
+}
+.bb-card__body {
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ── Pillar Strips ─────────────────────────────── */
+.bb-pillar {
+  padding: 60px;
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+.bb-pillar__num {
+  font-family: var(--serif);
+  font-size: 4rem;
+  line-height: 1;
+  opacity: 0.3;
+  flex-shrink: 0;
+  min-width: 80px;
+}
+.bb-pillar__content { flex: 1; }
+.bb-pillar__title {
+  font-family: var(--serif);
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+.bb-pillar__desc {
+  font-family: var(--sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 600px;
+}
+.bb-pillar__usage {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 12px;
+  opacity: 0.6;
+}
+
+/* ── 3-Column Layout ───────────────────────────── */
+.bb-three-col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.bb-three-col__title {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 16px;
+}
+.bb-three-col__body {
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+/* ── Before/After Table ────────────────────────── */
+.bb-transform-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 24px;
+  overflow: hidden;
+}
+.bb-transform-grid__header {
+  padding: 20px 32px;
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+.bb-transform-grid__cell {
+  padding: 16px 32px;
+  font-family: var(--sans);
+  font-size: 1rem;
+  line-height: 1.5;
+  border-top: 1px solid rgba(42, 31, 35, 0.08);
+}
+
+/* ── Words Grid ────────────────────────────────── */
+.bb-words-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.bb-word-tag {
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 40px;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  margin: 4px;
+  font-weight: 500;
+}
+.bb-word-tag--yes { background: var(--aqua-light); color: var(--text); }
+.bb-word-tag--no  { background: #f0e0e0; color: #8a4a4a; text-decoration: line-through; opacity: 0.7; }
+
+/* ── RTB Grid ──────────────────────────────────── */
+.bb-rtb-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.bb-rtb {
+  text-align: center;
+  padding: 32px 24px;
+}
+.bb-rtb__icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  font-size: 1.6rem;
+}
+.bb-rtb__title {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+.bb-rtb__desc {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-light);
+}
+
+/* ── Curvy SVG Decoration ──────────────────────── */
+.bb-curve {
+  position: absolute;
+  pointer-events: none;
+}
+.bb-curve path {
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+/* ── Confidential Badge ────────────────────────── */
+.bb-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  border: 1.5px solid currentColor;
+  border-radius: 40px;
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  opacity: 0.5;
+}
+
+/* ── Competitive Matrix ────────────────────────── */
+.bb-matrix {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  aspect-ratio: 1;
+  margin: 40px auto;
+}
+.bb-matrix__axis-x, .bb-matrix__axis-y {
+  position: absolute;
+  background: rgba(42, 31, 35, 0.15);
+}
+.bb-matrix__axis-x {
+  width: 100%;
+  height: 1.5px;
+  top: 50%;
+  left: 0;
+}
+.bb-matrix__axis-y {
+  width: 1.5px;
+  height: 100%;
+  top: 0;
+  left: 50%;
+}
+.bb-matrix__label {
+  position: absolute;
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  opacity: 0.5;
+}
+.bb-matrix__label--top    { top: 8px; left: 50%; transform: translateX(-50%); }
+.bb-matrix__label--bottom { bottom: 8px; left: 50%; transform: translateX(-50%); }
+.bb-matrix__label--left   { left: 8px; top: 50%; transform: translateY(-50%); }
+.bb-matrix__label--right  { right: 8px; top: 50%; transform: translateY(-50%); }
+
+.bb-matrix__dot {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: rgba(42, 31, 35, 0.06);
+}
+.bb-matrix__dot--mo {
+  background: var(--aqua);
+  color: var(--text);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 8px 16px;
+  box-shadow: 0 4px 20px rgba(184, 216, 208, 0.5);
+}
+
+/* ── Responsive ────────────────────────────────── */
+@media (max-width: 900px) {
+  .bb-section { padding: 60px 32px; }
+  .bb-three-col { grid-template-columns: 1fr; gap: 24px; }
+  .bb-rtb-grid { grid-template-columns: 1fr 1fr; }
+  .bb-blob-grid .bb-blob { width: 180px; height: 180px; font-size: 0.8rem; }
+  .bb-words-grid { grid-template-columns: 1fr; gap: 40px; }
+  .bb-pillar { padding: 40px 32px; flex-direction: column; gap: 16px; }
+  .bb-card-grid { grid-template-columns: 1fr 1fr; }
+  .bb-transform-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .bb-section { padding: 48px 20px; }
+  .bb-card-grid { grid-template-columns: 1fr; }
+  .bb-rtb-grid { grid-template-columns: 1fr; }
+  .bb-blob-grid .bb-blob { width: 150px; height: 150px; font-size: 0.75rem; padding: 20px; }
+}
+</style>
+</head>
+<body>
+
+
+<!-- ============================================================
+     01 — COVER
+     ============================================================ -->
+<section class="bb-section bb-section--cream" style="text-align: center; justify-content: center; align-items: center;">
+
+  <!-- Curvy decorative line -->
+  <svg class="bb-curve" style="top: 60px; right: 80px; width: 200px; height: 200px;" viewBox="0 0 200 200">
+    <path d="M 160 20 C 180 60, 140 100, 160 140 C 180 180, 120 190, 80 170" stroke="var(--aqua)" />
+  </svg>
+  <svg class="bb-curve" style="bottom: 100px; left: 60px; width: 160px; height: 160px;" viewBox="0 0 160 160">
+    <path d="M 20 140 C 40 100, 80 120, 100 80 C 120 40, 140 60, 150 20" stroke="var(--gold)" />
+  </svg>
+
+  <span class="bb-badge" style="margin-bottom: 40px;">Confidential &mdash; Slayers Team</span>
+
+  <h1 class="bb-heading-xl" style="margin-bottom: 20px;">
+    Moisture Oyster
+  </h1>
+
+  <p class="bb-heading-md bb-italic" style="color: var(--text-light); margin-bottom: 48px;">
+    Brand Book
+  </p>
+
+  <p class="bb-body" style="margin: 0 auto; color: var(--text-light); max-width: 480px;">
+    The complete brand identity guide for the screen generation's self-care eye drop.
+  </p>
+
+  <p style="margin-top: 48px; font-family: var(--sans); font-size: 0.8rem; opacity: 0.35;">April 2026 &middot; v1.0</p>
+
+  <span class="bb-page-num">1</span>
+</section>
+
+
+<!-- ============================================================
+     02 — BRAND POINT OF VIEW
+     ============================================================ -->
+<section class="bb-section bb-section--cream">
+
+  <svg class="bb-curve" style="top: 40px; left: 40px; width: 300px; height: 120px;" viewBox="0 0 300 120">
+    <path d="M 10 100 C 60 20, 150 20, 200 60 C 250 100, 290 40, 290 10" stroke="var(--aqua)" />
+  </svg>
+
+  <p class="bb-subhead">Our Point of View</p>
+
+  <h2 class="bb-heading-xl" style="max-width: 1000px; margin-bottom: 48px;">
+    Moisture is for people who <span class="hi-aqua">live on screens</span> and refuse to <span class="hi-gold">let it show.</span>
+  </h2>
+
+  <div style="max-width: 700px; margin-top: 24px;">
+    <p class="bb-subhead" style="margin-top: 40px;">Cultural Tension</p>
+    <p class="bb-heading-md bb-italic" style="color: var(--text-light);">
+      Screens gave us everything &mdash; careers, connection, creativity &mdash; while quietly destroying our eyes. Nobody addresses this in ways that feel <span class="hi-aqua">real, cool, or urgent.</span>
+    </p>
+  </div>
+
+  <div style="max-width: 700px; margin-top: 48px;">
+    <p class="bb-subhead">Core Belief</p>
+    <p class="bb-body">
+      Eyes deserve the same intention as skin, gut, and mind. The clinical industry treated them medically. We treat them <span class="hi-gold">beautifully.</span>
+    </p>
+  </div>
+
+  <div style="max-width: 700px; margin-top: 40px;">
+    <p class="bb-subhead">The Zag</p>
+    <p class="bb-body">
+      Competitors say <span class="hi-cream">"relief."</span> &nbsp;Moisture says <span class="hi-aqua">"identity."</span>
+    </p>
+  </div>
+
+  <span class="bb-page-num">2</span>
+</section>
+
+
+<!-- ============================================================
+     03 — EMPATHY STATEMENT
+     ============================================================ -->
+<section class="bb-section" style="background: var(--aqua-light); text-align: center; align-items: center;">
+
+  <svg class="bb-curve" style="bottom: 40px; right: 60px; width: 180px; height: 180px;" viewBox="0 0 180 180">
+    <path d="M 20 160 C 40 80, 120 120, 160 20" stroke="var(--sage)" stroke-width="2"/>
+  </svg>
+
+  <p class="bb-subhead">Empathy Statement</p>
+
+  <blockquote class="bb-heading-lg bb-italic" style="max-width: 860px; margin: 0 auto;">
+    &ldquo;We get it. You're not sick. You're just living on screens &mdash; and your eyes are paying for it. We built Moisture because we were tired of reaching for bottles that made us feel like <span class="hi-gold">something was wrong with us.</span>&rdquo;
+  </blockquote>
+
+  <span class="bb-page-num">3</span>
+</section>
+
+
+<!-- ============================================================
+     04 — CUSTOMER PROFILE (Blob Layout)
+     ============================================================ -->
+<section class="bb-section bb-section--cream">
+
+  <div style="text-align: center; margin-bottom: 48px;">
+    <p class="bb-subhead">Who She Is</p>
+    <h2 class="bb-heading-lg">The Screen-Native Professional</h2>
+  </div>
+
+  <div class="bb-blob-grid">
+    <div class="bb-blob bb-blob--aqua bb-blob-1 bb-blob--large">
+      <div>
+        <strong style="font-size: 1.1rem;">25 &ndash; 38</strong><br>
+        Urban: LA, NYC,<br>Miami, Chicago<br>
+        <span style="opacity: 0.7; font-size: 0.85rem;">Female skew</span>
+      </div>
+    </div>
+    <div class="bb-blob bb-blob--gold bb-blob-2">
+      <div>
+        <strong>Design-conscious</strong><br>
+        Intentional about<br>self-care
+      </div>
+    </div>
+    <div class="bb-blob bb-blob--sage bb-blob-3 bb-blob--large">
+      <div>
+        <strong>DTC-fluent</strong><br>
+        Subscribes, shares,<br>reviews. Shops Glossier,<br>Aesop, Drunk Elephant
+      </div>
+    </div>
+    <div class="bb-blob bb-blob--gray bb-blob-4">
+      <div>
+        <strong>Knowledge worker</strong><br>
+        Screen-heavy career<br>
+        8&ndash;12 hours daily
+      </div>
+    </div>
+    <div class="bb-blob bb-blob--dark bb-blob-5">
+      <div>
+        <strong>Curates everything</strong><br>
+        AG1 drinker, quality<br>water bottle, has<br>font opinions
+      </div>
+    </div>
+    <div class="bb-blob bb-blob--aqua bb-blob-6">
+      <div>
+        <strong>Pain point</strong><br>
+        Dry, tired eyes<br>by mid-afternoon
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align: center; margin-top: 48px; max-width: 600px; margin-left: auto; margin-right: auto;">
+    <p class="bb-body-wide" style="color: var(--text-light); font-size: 0.95rem;">
+      She searches <span class="hi-aqua">"best dry eye drops"</span> &mdash; never "cheap." She looks for
+      <span class="hi-gold">preservative-free, natural, vegan, cruelty-free.</span> She refuses clinical-looking solutions.
+    </p>
+  </div>
+
+  <span class="bb-page-num">4</span>
+</section>
+
+
+<!-- ============================================================
+     05 — WHY THIS AUDIENCE
+     ============================================================ -->
+<section class="bb-section bb-section--white">
+
+  <div style="text-align: center; margin-bottom: 48px;">
+    <p class="bb-subhead">Why This Audience</p>
+    <h2 class="bb-heading-lg">Five simultaneous criteria</h2>
+  </div>
+
+  <div class="bb-card-grid" style="max-width: 1000px;">
+    <div class="bb-card" style="background: var(--aqua-light);">
+      <div class="bb-card__title">Buys Fast</div>
+      <div class="bb-card__body">DTC muscle memory. Immediate conversion from discovery to purchase.</div>
+    </div>
+    <div class="bb-card" style="background: var(--gold-light);">
+      <div class="bb-card__title">Pays Premium</div>
+      <div class="bb-card__body">Searches "best" not "cheap." $24 price point is comfortable.</div>
+    </div>
+    <div class="bb-card" style="background: var(--sage-light);">
+      <div class="bb-card__title">Tells Everyone</div>
+      <div class="bb-card__body">Shares routines, links, and recommendations organically.</div>
+    </div>
+    <div class="bb-card" style="background: var(--aqua-light);">
+      <div class="bb-card__title">Underserved</div>
+      <div class="bb-card__body">Pharmacy brand tone is incompatible with her values and aesthetic.</div>
+    </div>
+    <div class="bb-card" style="background: var(--gold-light);">
+      <div class="bb-card__title">Perfect Fit</div>
+      <div class="bb-card__body">Our positioning lands specifically for her worldview.</div>
+    </div>
+  </div>
+
+  <span class="bb-page-num">5</span>
+</section>
+
+
+<!-- ============================================================
+     06 — THE ENEMY (Dark Section)
+     ============================================================ -->
+<section class="bb-section bb-section--dark">
+
+  <svg class="bb-curve" style="top: 60px; right: 60px; width: 220px; height: 140px;" viewBox="0 0 220 140">
+    <path d="M 10 120 C 50 40, 120 80, 170 20 C 190 0, 210 40, 210 80" stroke="var(--aqua)" stroke-opacity="0.3" />
+  </svg>
+
+  <p class="bb-subhead" style="color: var(--aqua);">What We Stand Against</p>
+
+  <h2 class="bb-heading-xl" style="max-width: 900px; margin-bottom: 48px;">
+    The belief that eye care must feel <span style="color: var(--gold);">medical, ugly, or embarrassing.</span>
+  </h2>
+
+  <div class="bb-three-col" style="margin-top: 40px;">
+    <div>
+      <p class="bb-three-col__title" style="color: var(--aqua);">The Old Model</p>
+      <p class="bb-three-col__body" style="color: rgba(255,255,255,0.75);">
+        40+ years of pharmacy aisle eye care. White boxes. Clinical language. Forgettable brands treating dry eyes as a diagnosis &mdash; not a reality of modern life.
+      </p>
+    </div>
+    <div>
+      <p class="bb-three-col__title" style="color: var(--gold);">The Assumption</p>
+      <p class="bb-three-col__body" style="color: rgba(255,255,255,0.75);">
+        That people accept ugly, clinical products because functionality is enough. That aesthetics don't matter for eye drops.
+      </p>
+    </div>
+    <div>
+      <p class="bb-three-col__title" style="color: var(--sage);">The Gap</p>
+      <p class="bb-three-col__body" style="color: rgba(255,255,255,0.75);">
+        Skincare, supplements, and oral care evolved from clinical to design-led. Eye care remained stuck. Until now.
+      </p>
+    </div>
+  </div>
+
+  <span class="bb-page-num">6</span>
+</section>
+
+
+<!-- ============================================================
+     07 — ONLINESS STATEMENT + COMPETITIVE LANDSCAPE
+     ============================================================ -->
+<section class="bb-section bb-section--cream" style="align-items: center; text-align: center;">
+
+  <p class="bb-subhead">Positioning</p>
+
+  <h2 class="bb-heading-lg" style="max-width: 860px; margin-bottom: 16px;">
+    Moisture Oyster is the <span class="hi-aqua">only</span> eye drop brand designed for the <span class="hi-gold">screen generation's self-care routine</span> &mdash; not the pharmacy aisle.
+  </h2>
+
+  <p style="font-family: var(--sans); font-size: 0.8rem; color: var(--text-light); margin-bottom: 48px;">
+    Framework: Marty Neumeier's <em>Zag</em>
+  </p>
+
+  <!-- Competitive Matrix -->
+  <div class="bb-matrix">
+    <div class="bb-matrix__axis-x"></div>
+    <div class="bb-matrix__axis-y"></div>
+    <div class="bb-matrix__label bb-matrix__label--top">Lifestyle</div>
+    <div class="bb-matrix__label bb-matrix__label--bottom">Clinical</div>
+    <div class="bb-matrix__label bb-matrix__label--left">Value</div>
+    <div class="bb-matrix__label bb-matrix__label--right">Premium</div>
+
+    <!-- Clinical / Value -->
+    <div class="bb-matrix__dot" style="left: 28%; top: 68%;">Systane</div>
+    <div class="bb-matrix__dot" style="left: 22%; top: 75%;">Refresh Optive</div>
+    <div class="bb-matrix__dot" style="left: 35%; top: 82%;">TheraTears</div>
+    <div class="bb-matrix__dot" style="left: 18%; top: 72%;">Clear Eyes</div>
+    <div class="bb-matrix__dot" style="left: 30%; top: 78%;">Visine</div>
+
+    <!-- Clinical / Premium -->
+    <div class="bb-matrix__dot" style="left: 70%; top: 65%;">Lumify</div>
+    <div class="bb-matrix__dot" style="left: 65%; top: 72%;">Rohto</div>
+
+    <!-- Lifestyle / Premium (adjacent) -->
+    <div class="bb-matrix__dot" style="left: 72%; top: 35%; opacity: 0.5;">Topicals</div>
+    <div class="bb-matrix__dot" style="left: 68%; top: 30%; opacity: 0.5;">Dieux</div>
+
+    <!-- MO Position -->
+    <div class="bb-matrix__dot bb-matrix__dot--mo" style="left: 80%; top: 18%;">Moisture Oyster</div>
+  </div>
+
+  <p class="bb-body" style="margin: 24px auto 0; text-align: center; color: var(--text-light);">
+    The entire <strong>Premium + Lifestyle</strong> quadrant is empty. Not a market gap &mdash; a <span class="hi-aqua">missing market.</span>
+  </p>
+
+  <span class="bb-page-num">7</span>
+</section>
+
+
+<!-- ============================================================
+     08 — BRAND PERSONALITY
+     ============================================================ -->
+<section class="bb-section bb-section--white">
+
+  <div style="text-align: center; margin-bottom: 48px;">
+    <p class="bb-subhead">Brand Personality</p>
+    <h2 class="bb-heading-lg">Four defining traits</h2>
+  </div>
+
+  <div class="bb-card-grid">
+    <div class="bb-card" style="background: var(--aqua-light);">
+      <div class="bb-card__title">Confident</div>
+      <div class="bb-card__subtitle">Not Cocky</div>
+      <div class="bb-card__body">Quiet authority from homework and real choices. No apologies, no over-explaining.</div>
+    </div>
+    <div class="bb-card" style="background: var(--gold-light);">
+      <div class="bb-card__title">Warm</div>
+      <div class="bb-card__subtitle">Not Cheesy</div>
+      <div class="bb-card__body">Smart friend voice. Approachable, empathetic, human. Acknowledges feelings without sentimentality.</div>
+    </div>
+    <div class="bb-card" style="background: var(--sage-light);">
+      <div class="bb-card__title">Knowing</div>
+      <div class="bb-card__subtitle">Not Clinical</div>
+      <div class="bb-card__body">Understands her screen fatigue, curated shelf, 3pm slump. References her reality without lecturing.</div>
+    </div>
+    <div class="bb-card" style="background: var(--cream);">
+      <div class="bb-card__title">Minimal</div>
+      <div class="bb-card__subtitle">Not Cold</div>
+      <div class="bb-card__body">Short sentences. White space. No jargon or filler. Edited, intentional, curated.</div>
+    </div>
+  </div>
+
+  <span class="bb-page-num">8</span>
+</section>
+
+
+<!-- ============================================================
+     09 — MESSAGING PILLARS
+     ============================================================ -->
+<div>
+  <div class="bb-pillar" style="background: var(--aqua-light);">
+    <div class="bb-pillar__num">01</div>
+    <div class="bb-pillar__content">
+      <div class="bb-pillar__title">Screen-Era Self-Care</div>
+      <div class="bb-pillar__desc">Eyes are body parts. 8&ndash;12 hour screen days make eye care non-optional. This isn't medicine &mdash; it's modern life.</div>
+      <div class="bb-pillar__usage">Use in: Hero copy, awareness ads, PR, content, social</div>
+    </div>
+    <span class="bb-page-num" style="position: static; opacity: 0.4; font-size: 0.8rem;">9</span>
+  </div>
+
+  <div class="bb-pillar" style="background: var(--gold-light);">
+    <div class="bb-pillar__num">02</div>
+    <div class="bb-pillar__content">
+      <div class="bb-pillar__title">Clean Without Compromise</div>
+      <div class="bb-pillar__desc">Preservative-free, hyaluronic acid, readable ingredients that match her skincare standards.</div>
+      <div class="bb-pillar__usage">Use in: Product pages, packaging, Amazon, ingredient stories, trust content</div>
+    </div>
+  </div>
+
+  <div class="bb-pillar" style="background: var(--sage-light);">
+    <div class="bb-pillar__num">03</div>
+    <div class="bb-pillar__content">
+      <div class="bb-pillar__title">Designed to Be Seen</div>
+      <div class="bb-pillar__desc">Not a drawer product. Belongs on your desk, in your bag, on your shelf &mdash; alongside everything else she's curated.</div>
+      <div class="bb-pillar__usage">Use in: Packaging, unboxing, lifestyle photography, partnerships, UGC</div>
+    </div>
+  </div>
+
+  <div class="bb-pillar" style="background: var(--cream);">
+    <div class="bb-pillar__num">04</div>
+    <div class="bb-pillar__content">
+      <div class="bb-pillar__title">Your Eyes, Your Routine</div>
+      <div class="bb-pillar__desc">A daily habit, not a fix. Integrate into your morning skincare or evening wind-down. Part of the ritual.</div>
+      <div class="bb-pillar__usage">Use in: How-to content, routine campaigns, subscription, email</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ============================================================
+     10 — PRODUCT TRUTHS / REASONS TO BELIEVE
+     ============================================================ -->
+<section class="bb-section bb-section--white">
+
+  <div style="text-align: center; margin-bottom: 48px;">
+    <p class="bb-subhead">Product Truths</p>
+    <h2 class="bb-heading-lg">Reasons to Believe</h2>
+  </div>
+
+  <div class="bb-rtb-grid">
+    <div class="bb-rtb">
+      <div class="bb-rtb__icon" style="background: var(--aqua-light);">&#x1F4A7;</div>
+      <div class="bb-rtb__title">Preservative-Free</div>
+      <div class="bb-rtb__desc">No BAK. Gentle enough for daily use, sensitive eyes, and contact lens wearers.</div>
+    </div>
+    <div class="bb-rtb">
+      <div class="bb-rtb__icon" style="background: var(--gold-light);">&#x2728;</div>
+      <div class="bb-rtb__title">Hyaluronic Acid</div>
+      <div class="bb-rtb__desc">Premium skincare's star hydration molecule. Deep, lasting moisture for eyes.</div>
+    </div>
+    <div class="bb-rtb">
+      <div class="bb-rtb__icon" style="background: var(--sage-light);">&#x1F441;</div>
+      <div class="bb-rtb__title">Ophthalmologist-Informed</div>
+      <div class="bb-rtb__desc">Professional input for clinical credibility &mdash; without the clinical coldness.</div>
+    </div>
+    <div class="bb-rtb">
+      <div class="bb-rtb__icon" style="background: var(--aqua-light);">&#x1F453;</div>
+      <div class="bb-rtb__title">Contact Lens Compatible</div>
+      <div class="bb-rtb__desc">Safe with all lens types. Seamless integration into your day.</div>
+    </div>
+    <div class="bb-rtb">
+      <div class="bb-rtb__icon" style="background: var(--gold-light);">&#x1F4BB;</div>
+      <div class="bb-rtb__title">Screen Fatigue Formula</div>
+      <div class="bb-rtb__desc">Addresses dryness from screens specifically &mdash; not allergies, weather, or aging.</div>
+    </div>
+    <div class="bb-rtb">
+      <div class="bb-rtb__icon" style="background: var(--sage-light);">&#x1F331;</div>
+      <div class="bb-rtb__title">Clean &amp; Vegan</div>
+      <div class="bb-rtb__desc">Cruelty-free, vegan, no unnecessary additives. Matches her skincare standards.</div>
+    </div>
+  </div>
+
+  <span class="bb-page-num">10</span>
+</section>
+
+
+<!-- ============================================================
+     11 — WORDS WE USE / NEVER USE
+     ============================================================ -->
+<section class="bb-section bb-section--cream">
+
+  <div style="text-align: center; margin-bottom: 48px;">
+    <p class="bb-subhead">Brand Voice</p>
+    <h2 class="bb-heading-lg">Words We Use &amp; Words We Don't</h2>
+  </div>
+
+  <div class="bb-words-grid">
+    <div>
+      <p class="bb-subhead" style="color: #4a8a6a;">Words We Use</p>
+      <div>
+        <span class="bb-word-tag bb-word-tag--yes">screen life</span>
+        <span class="bb-word-tag bb-word-tag--yes">routine</span>
+        <span class="bb-word-tag bb-word-tag--yes">refresh</span>
+        <span class="bb-word-tag bb-word-tag--yes">daily ritual</span>
+        <span class="bb-word-tag bb-word-tag--yes">clean</span>
+        <span class="bb-word-tag bb-word-tag--yes">designed</span>
+        <span class="bb-word-tag bb-word-tag--yes">intentional</span>
+        <span class="bb-word-tag bb-word-tag--yes">your eyes</span>
+        <span class="bb-word-tag bb-word-tag--yes">feel good</span>
+        <span class="bb-word-tag bb-word-tag--yes">self-care</span>
+        <span class="bb-word-tag bb-word-tag--yes">comfort</span>
+        <span class="bb-word-tag bb-word-tag--yes">clarity</span>
+        <span class="bb-word-tag bb-word-tag--yes">hydration</span>
+      </div>
+    </div>
+    <div>
+      <p class="bb-subhead" style="color: #8a4a4a;">Words We Never Use</p>
+      <div>
+        <span class="bb-word-tag bb-word-tag--no">dry eye syndrome</span>
+        <span class="bb-word-tag bb-word-tag--no">treatment</span>
+        <span class="bb-word-tag bb-word-tag--no">remedy</span>
+        <span class="bb-word-tag bb-word-tag--no">relief</span>
+        <span class="bb-word-tag bb-word-tag--no">symptoms</span>
+        <span class="bb-word-tag bb-word-tag--no">patients</span>
+        <span class="bb-word-tag bb-word-tag--no">clinically proven</span>
+        <span class="bb-word-tag bb-word-tag--no">doctor recommended</span>
+        <span class="bb-word-tag bb-word-tag--no">soothing</span>
+        <span class="bb-word-tag bb-word-tag--no">irritation</span>
+      </div>
+    </div>
+  </div>
+
+  <span class="bb-page-num">11</span>
+</section>
+
+
+<!-- ============================================================
+     12 — STORYBRAND SCRIPT
+     ============================================================ -->
+<section class="bb-section" style="background: var(--aqua);">
+
+  <div style="text-align: center; margin-bottom: 48px;">
+    <p class="bb-subhead">StoryBrand BrandScript</p>
+    <h2 class="bb-heading-lg">The 7-Part Narrative</h2>
+  </div>
+
+  <!-- Character + Problem -->
+  <div class="bb-three-col" style="margin-bottom: 48px;">
+    <div>
+      <p class="bb-three-col__title">1. Character</p>
+      <p class="bb-three-col__body">
+        A 25&ndash;38 year-old screen-native professional woman. Ambitious, design-conscious, intentional about self-care. 8&ndash;12 screen hours daily. Experiencing dryness, fatigue, end-of-day burn.
+      </p>
+    </div>
+    <div>
+      <p class="bb-three-col__title">2. Problem</p>
+      <p class="bb-three-col__body">
+        <strong>Villain:</strong> The screen-life tradeoff.<br>
+        <strong>External:</strong> Dry, tired, strained eyes by 3pm.<br>
+        <strong>Internal:</strong> Why must eye care feel medical?<br>
+        <strong>Philosophical:</strong> It's wrong that the screen generation has only hospital-looking options.
+      </p>
+    </div>
+    <div>
+      <p class="bb-three-col__title">3. Guide</p>
+      <p class="bb-three-col__body">
+        <strong>Empathy:</strong> "We understand. You're not sick &mdash; just screen-living."<br>
+        <strong>Authority:</strong> Clean, preservative-free, LA-designed, ophthalmologist-informed. Featured in beauty &amp; lifestyle press.
+      </p>
+    </div>
+  </div>
+
+  <!-- Plan + CTA -->
+  <div class="bb-three-col" style="margin-bottom: 48px;">
+    <div>
+      <p class="bb-three-col__title">4. Plan</p>
+      <p class="bb-three-col__body">
+        <strong>Step 1:</strong> Choose your drop (screen-life formula)<br>
+        <strong>Step 2:</strong> Build your routine (morning / midday / evening)<br>
+        <strong>Step 3:</strong> Feel the difference
+      </p>
+    </div>
+    <div>
+      <p class="bb-three-col__title">5. Call to Action</p>
+      <p class="bb-three-col__body">
+        <strong>Direct:</strong> "Get Moisture"<br>
+        <strong>Transitional:</strong> "Take the Screen Strain Quiz" &mdash; 60-second quiz, email capture, personalized recommendation.
+      </p>
+    </div>
+    <div>
+      <p class="bb-three-col__title">6. Failure</p>
+      <p class="bb-three-col__body">
+        Daily dryness worsens. Tired-eye look becomes permanent. $200/month skincare routine ignored while the most expressive part of her face ages fastest.
+      </p>
+    </div>
+  </div>
+
+  <span class="bb-page-num">12</span>
+</section>
+
+
+<!-- ============================================================
+     13 — TRANSFORMATION (Before / After)
+     ============================================================ -->
+<section class="bb-section bb-section--white" style="align-items: center;">
+
+  <div style="text-align: center; margin-bottom: 48px;">
+    <p class="bb-subhead">7. Success</p>
+    <h2 class="bb-heading-lg">The Transformation</h2>
+  </div>
+
+  <div class="bb-transform-grid">
+    <div class="bb-transform-grid__header" style="background: #f0e0e0; color: #8a4a4a;">Before</div>
+    <div class="bb-transform-grid__header" style="background: var(--aqua-light); color: #3a6a5a;">After</div>
+
+    <div class="bb-transform-grid__cell" style="background: #faf2f2;">Dry, tired eyes by 3pm</div>
+    <div class="bb-transform-grid__cell" style="background: var(--aqua-light);">Fresh, hydrated all day</div>
+
+    <div class="bb-transform-grid__cell" style="background: #faf2f2;">Embarrassed by clinical bottle</div>
+    <div class="bb-transform-grid__cell" style="background: var(--aqua-light);">Proud of a beautiful product</div>
+
+    <div class="bb-transform-grid__cell" style="background: #faf2f2;">Ignoring eye health entirely</div>
+    <div class="bb-transform-grid__cell" style="background: var(--aqua-light);">Intentionally caring for whole self</div>
+
+    <div class="bb-transform-grid__cell" style="background: #faf2f2; border-radius: 0 0 0 24px;">Feels something is wrong</div>
+    <div class="bb-transform-grid__cell" style="background: var(--aqua-light); border-radius: 0 0 24px 0;">Feels ahead of the curve</div>
+  </div>
+
+  <span class="bb-page-num">13</span>
+</section>
+
+
+<!-- ============================================================
+     14 — VISUAL MOOD
+     ============================================================ -->
+<section class="bb-section bb-section--dark" style="align-items: center; text-align: center;">
+
+  <svg class="bb-curve" style="top: 40px; left: 40px; width: 240px; height: 100px;" viewBox="0 0 240 100">
+    <path d="M 10 80 C 60 10, 120 90, 180 30 C 210 10, 230 50, 230 80" stroke="var(--gold)" stroke-opacity="0.25" />
+  </svg>
+
+  <p class="bb-subhead" style="color: var(--aqua);">Visual Direction</p>
+
+  <h2 class="bb-heading-lg" style="max-width: 800px; margin-bottom: 32px;">
+    Dewy. Glowing. Iridescent.<br>
+    <span style="color: var(--gold);">Premium beauty, not pharmacy.</span>
+  </h2>
+
+  <p class="bb-body" style="color: rgba(255,255,255,0.65); margin: 0 auto 40px; text-align: center; max-width: 600px;">
+    Our visual language draws from the world of high-end skincare and editorial beauty photography. Think iridescent textures, glowing skin close-ups, and products that belong on a curated shelf.
+  </p>
+
+  <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; max-width: 700px;">
+    <span class="bb-word-tag" style="background: var(--aqua); color: var(--dark);">Iridescent textures</span>
+    <span class="bb-word-tag" style="background: var(--gold); color: var(--white);">Dewy close-ups</span>
+    <span class="bb-word-tag" style="background: var(--sage); color: var(--white);">Glowing skin</span>
+    <span class="bb-word-tag" style="background: rgba(255,255,255,0.1); color: var(--white);">Editorial beauty</span>
+    <span class="bb-word-tag" style="background: rgba(255,255,255,0.1); color: var(--white);">Curated shelf</span>
+    <span class="bb-word-tag" style="background: var(--aqua); color: var(--dark);">Product-as-art</span>
+  </div>
+
+  <p style="margin-top: 40px; font-family: var(--sans); font-size: 0.85rem; color: rgba(255,255,255,0.35);">
+    Mood board &rarr; pinterest.com/j_bebre/mo-best-of-the-best/
+  </p>
+
+  <span class="bb-page-num">14</span>
+</section>
+
+
+<!-- ============================================================
+     15 — BIG FISH, SMALL POND
+     ============================================================ -->
+<section class="bb-section bb-section--cream" style="align-items: center; text-align: center;">
+
+  <svg class="bb-curve" style="top: 60px; right: 80px; width: 200px; height: 160px;" viewBox="0 0 200 160">
+    <path d="M 10 140 C 40 60, 100 100, 140 40 C 160 10, 190 50, 190 100" stroke="var(--sage)" />
+  </svg>
+
+  <p class="bb-subhead">Strategy</p>
+
+  <h2 class="bb-heading-xl" style="margin-bottom: 40px;">
+    Big Fish,<br><span class="hi-aqua">Small Pond.</span>
+  </h2>
+
+  <div class="bb-three-col" style="text-align: left; margin-top: 24px;">
+    <div>
+      <p class="bb-three-col__title" style="color: var(--gold);">What We Own</p>
+      <p class="bb-three-col__body">
+        First beautiful, clean eye drop for design-conscious women. The eye drop that belongs in a skincare routine &mdash; next to Glossier and Aesop, not Systane.
+      </p>
+    </div>
+    <div>
+      <p class="bb-three-col__title" style="color: var(--aqua);">What We Don't Compete On</p>
+      <p class="bb-three-col__body">
+        Clinical/medical positioning (we're wellness). Pharmacy shelf space (that's Systane's territory). Price competition (she searches "best," not "cheap").
+      </p>
+    </div>
+    <div>
+      <p class="bb-three-col__title" style="color: var(--sage);">Expansion Path</p>
+      <p class="bb-three-col__body">
+        <strong>Launch:</strong> Screen-native women, 25&ndash;35<br>
+        <strong>Year 1:</strong> Broader screen workers, 25&ndash;40<br>
+        <strong>Year 2+:</strong> Contact lens wearers, Gen Z
+      </p>
+    </div>
+  </div>
+
+  <span class="bb-page-num">15</span>
+</section>
+
+
+<!-- ============================================================
+     16 — CLOSING
+     ============================================================ -->
+<section class="bb-section bb-section--cream" style="text-align: center; align-items: center; min-height: 60vh;">
+
+  <svg class="bb-curve" style="bottom: 80px; left: 80px; width: 200px; height: 200px;" viewBox="0 0 200 200">
+    <path d="M 20 180 C 40 100, 100 140, 140 60 C 160 20, 180 80, 180 140" stroke="var(--aqua)" />
+  </svg>
+  <svg class="bb-curve" style="top: 80px; right: 100px; width: 160px; height: 160px;" viewBox="0 0 160 160">
+    <path d="M 140 140 C 120 80, 60 100, 40 40" stroke="var(--gold)" />
+  </svg>
+
+  <h2 class="bb-heading-xl bb-italic" style="max-width: 700px; color: var(--text-light);">
+    Eyes deserve intention.
+  </h2>
+
+  <p style="margin-top: 40px; font-family: var(--sans); font-size: 0.85rem; color: var(--text-light); opacity: 0.5;">
+    Moisture Oyster, Inc. &middot; Confidential &middot; Slayers Team &middot; April 2026
+  </p>
+
+  <p style="margin-top: 8px; font-family: var(--sans); font-size: 0.75rem; color: var(--text-light); opacity: 0.3;">
+    v260408.01 &middot; Brand Book v1.0
+  </p>
+
+  <span class="bb-page-num">16</span>
+</section>
+
+
+</body>
+</html>

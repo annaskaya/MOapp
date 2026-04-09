@@ -1,12 +1,12 @@
 {
-  "version": "v260408.01 10:45p",
+  "version": "v260409.01 4:47a",
   "release": 1,
-  "sha": "8f14c72",
-  "fullSha": "8f14c722deb27dbf68927715a1a9a5d1aebbf0b7",
+  "sha": "6a5001b",
+  "fullSha": "6a5001b7693c353d4b68ea4e09977d818ed4b415",
   "actor": "annaskaya",
   "source": "github-main-push",
   "model": "ci",
   "machine": "runnervm727z3",
-  "pushedAt": "2026-04-08T16:45:28-06:00",
-  "commits": [{"sha":"2d8a84f","message":"Add Moisture Oyster internal positioning page","author":"Julianna Bebre"},{"sha":"8f14c72","message":"Merge branch 'main' of https://github.com/annaskaya/MOapp","author":"Julianna Bebre"}]
+  "pushedAt": "2026-04-08T21:47:25-07:00",
+  "commits": [{"sha":"6a5001b","message":"Add Moisture Oyster brand book in Dasha Zotsenko editorial style","author":"Anna Skaya"}]
 }

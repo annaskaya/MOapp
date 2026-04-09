@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moisture Oyster — Screen-Era Self-Care</title>
+<meta name="description" content="Preservative-free eye drops with hyaluronic acid. Designed for the screen generation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;color:#fff;background:#000;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none;cursor:pointer}
+a:hover{opacity:0.8}
+
+@keyframes shimmer{to{background-position:200% center}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+
+.fade-up{animation:fadeUp 1s ease both}
+.fade-up-d1{animation:fadeUp 1s ease 0.2s both}
+.fade-up-d2{animation:fadeUp 1s ease 0.4s both}
+.fade-up-d3{animation:fadeUp 1s ease 0.6s both}
+
+/* Nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:28px 48px;transition:background 0.3s}
+.nav--scrolled{background:rgba(0,0,0,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+.nav__logo{font-family:'Playfair Display',serif;font-size:1.4rem;font-style:italic}
+.nav__links{display:flex;gap:32px;align-items:center}
+.nav__link{font-size:0.7rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.6);transition:color 0.2s}
+.nav__link:hover{color:#fff;opacity:1}
+.nav__cta{font-size:0.7rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:#000;background:#fff;padding:10px 24px;border-radius:40px;transition:transform 0.2s}
+.nav__cta:hover{transform:scale(1.03);opacity:1}
+
+/* Hero */
+.hero{position:relative;min-height:100vh;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:0 48px 80px}
+.hero__bg{position:absolute;inset:0;background:url('https://i.pinimg.com/736x/f5/a5/1d/f5a51dec3fdb325258a03f0e9fb5648f.jpg') center top/cover}
+.hero__overlay{position:absolute;inset:0;background:linear-gradient(0deg,#000 0%,rgba(0,0,0,0.3) 40%,transparent 70%)}
+.hero__content{position:relative;z-index:2}
+.hero__label{font-size:0.65rem;font-weight:500;letter-spacing:0.3em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:24px}
+.hero__title{font-weight:900;font-size:clamp(3.5rem,8vw,8rem);line-height:0.88;letter-spacing:-0.04em;text-transform:uppercase;max-width:750px}
+.hero__desc{font-weight:300;font-size:1rem;line-height:1.7;color:rgba(255,255,255,0.5);max-width:420px;margin-top:32px}
+.hero__actions{display:flex;gap:16px;margin-top:32px;flex-wrap:wrap}
+
+/* Buttons */
+.btn{display:inline-block;font-size:0.7rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;padding:16px 40px;border-radius:40px;transition:transform 0.2s}
+.btn:hover{transform:scale(1.03);opacity:1}
+.btn--iridescent{color:#000;background:linear-gradient(135deg,#e8b4c8,#c5b3d4,#9bc4ab)}
+.btn--outline{color:#fff;border:1px solid rgba(255,255,255,0.2);font-weight:500}
+.btn--white{color:#000;background:#fff}
+
+/* Features strip */
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.06)}
+.feature{background:#000;padding:48px 40px;text-align:center}
+.feature__title{font-family:'Playfair Display',serif;font-size:clamp(1.3rem,2vw,1.8rem);font-style:italic;margin-bottom:8px}
+.feature__desc{font-size:0.8rem;font-weight:300;color:rgba(255,255,255,0.4)}
+
+/* Split section */
+.split{display:grid;grid-template-columns:1fr 1fr;min-height:80vh}
+.split__img{background-size:cover;background-position:center top}
+.split__text{display:flex;flex-direction:column;justify-content:center;padding:clamp(40px,6vw,100px)}
+.split__label{font-size:0.65rem;font-weight:500;letter-spacing:0.3em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:24px}
+.split__title{font-weight:900;font-size:clamp(2rem,4vw,4rem);line-height:0.92;letter-spacing:-0.03em;text-transform:uppercase;margin-bottom:24px}
+.split__desc{font-weight:300;font-size:0.95rem;line-height:1.7;color:rgba(255,255,255,0.4);max-width:400px}
+
+/* Product hero */
+.product-hero{min-height:80vh;display:flex;align-items:center;justify-content:center;position:relative;background-size:cover;background-position:center}
+.product-hero__overlay{position:absolute;inset:0;background:rgba(0,0,0,0.25)}
+.product-hero__content{position:relative;z-index:1;text-align:center;padding:40px}
+.product-hero__title{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,6vw,6rem);font-style:italic;line-height:1}
+.product-hero__sub{font-size:0.7rem;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:24px}
+
+/* CTA section */
+.cta{padding:clamp(80px,12vw,180px) clamp(40px,6vw,100px);text-align:center}
+.cta__title{font-weight:900;font-size:clamp(4rem,10vw,10rem);line-height:0.85;letter-spacing:-0.04em;text-transform:uppercase;background:linear-gradient(90deg,#e8b4c8,#c5b3d4,#9bc4ab,#c9a96e,#e8b4c8);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 6s linear infinite;margin-bottom:48px}
+
+/* Marquee */
+.marquee{overflow:hidden;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06);padding:20px 0}
+.marquee__inner{display:inline-block;animation:scroll 20s linear infinite}
+@keyframes scroll{to{transform:translateX(-50%)}}
+.marquee__text{font-weight:900;font-size:clamp(0.8rem,1.2vw,1rem);letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.15)}
+
+/* Footer */
+.footer{border-top:1px solid rgba(255,255,255,0.06);padding:32px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.footer__logo{font-family:'Playfair Display',serif;font-size:1.1rem;font-style:italic}
+.footer__links{display:flex;gap:24px}
+.footer__link{font-size:0.65rem;font-weight:400;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.3)}
+.footer__copy{font-size:0.6rem;font-weight:300;letter-spacing:0.1em;color:rgba(255,255,255,0.15)}
+
+/* Responsive */
+@media(max-width:900px){
+  .nav{padding:20px 24px}
+  .nav__links{gap:16px}
+  .hero{padding:0 24px 60px}
+  .features{grid-template-columns:1fr}
+  .split{grid-template-columns:1fr}
+  .split__img{min-height:50vh}
+  .footer{padding:24px}
+}
+@media(max-width:600px){
+  .nav__link{display:none}
+  .hero__actions{flex-direction:column}
+  .btn{text-align:center}
+}
+</style>
+</head>
+<body>
+
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a class="nav__logo" href="#">Moisture Oyster</a>
+  <div class="nav__links">
+    <a class="nav__link" href="#">Shop</a>
+    <a class="nav__link" href="#">About</a>
+    <a class="nav__link" href="#">Quiz</a>
+    <a class="nav__cta" href="#">Get Moisture</a>
+  </div>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__bg"></div>
+  <div class="hero__overlay"></div>
+  <div class="hero__content">
+    <p class="hero__label fade-up">Screen-Era Self-Care</p>
+    <h1 class="hero__title fade-up-d1">Your Eyes.<br>Your<br>Routine.</h1>
+    <p class="hero__desc fade-up-d2">Preservative-free eye drops with hyaluronic acid. Designed for the screen generation.</p>
+    <div class="hero__actions fade-up-d3">
+      <a class="btn btn--iridescent" href="#">Get Moisture</a>
+      <a class="btn btn--outline" href="#">Take the Quiz</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee__inner">
+    <span class="marquee__text">Preservative-Free &nbsp;&middot;&nbsp; Hyaluronic Acid &nbsp;&middot;&nbsp; Vegan &nbsp;&middot;&nbsp; Contact Lens Safe &nbsp;&middot;&nbsp; Screen Fatigue Formula &nbsp;&middot;&nbsp; Clean Ingredients &nbsp;&middot;&nbsp; Ophthalmologist-Informed &nbsp;&middot;&nbsp; Preservative-Free &nbsp;&middot;&nbsp; Hyaluronic Acid &nbsp;&middot;&nbsp; Vegan &nbsp;&middot;&nbsp; Contact Lens Safe &nbsp;&middot;&nbsp; Screen Fatigue Formula &nbsp;&middot;&nbsp; Clean Ingredients &nbsp;&middot;&nbsp; Ophthalmologist-Informed &nbsp;&middot;&nbsp; </span>
+  </div>
+</div>
+
+
+<!-- FEATURES -->
+<div class="features">
+  <div class="feature">
+    <p class="feature__title" style="color:#e8b4c8">Preservative-Free</p>
+    <p class="feature__desc">No BAK. Gentle enough for daily use and sensitive eyes.</p>
+  </div>
+  <div class="feature">
+    <p class="feature__title" style="color:#9bc4ab">Hyaluronic Acid</p>
+    <p class="feature__desc">Premium skincare's star hydration molecule. For your eyes.</p>
+  </div>
+  <div class="feature">
+    <p class="feature__title" style="color:#c9a96e">Screen Formula</p>
+    <p class="feature__desc">Built specifically for 8&ndash;12 hour screen days.</p>
+  </div>
+</div>
+
+
+<!-- SPLIT: WHY MOISTURE -->
+<section class="split">
+  <div class="split__img" style="background-image:url('https://i.pinimg.com/736x/d9/9c/5f/d99c5f3d85bc1a41062831315d6348e5.jpg')"></div>
+  <div class="split__text">
+    <p class="split__label">Why Moisture?</p>
+    <h2 class="split__title">Screens Gave You Everything. We Protect What They Take.</h2>
+    <p class="split__desc">You're not sick. You're just living on screens &mdash; and your eyes are paying for it. We built Moisture for people who refuse to let it show.</p>
+    <a class="btn btn--outline" href="#" style="margin-top:40px;align-self:flex-start">Learn More</a>
+  </div>
+</section>
+
+
+<!-- SPLIT: REVERSED -->
+<section class="split">
+  <div class="split__text">
+    <p class="split__label">The Routine</p>
+    <h2 class="split__title">Morning. Midday. Evening. Three Drops. Fresh Eyes.</h2>
+    <p class="split__desc">Integrate Moisture into your daily self-care ritual. Next to your serum. Next to your SPF. Where it belongs.</p>
+    <a class="btn btn--outline" href="#" style="margin-top:40px;align-self:flex-start">Build Your Routine</a>
+  </div>
+  <div class="split__img" style="background-image:url('https://i.pinimg.com/736x/84/eb/2d/84eb2d0bb958dbf196819f99c23c9afb.jpg')"></div>
+</section>
+
+
+<!-- PRODUCT HERO -->
+<section class="product-hero" style="background-image:url('https://i.pinimg.com/736x/3b/d8/84/3bd884e35e62e713a4f91ee5dae66526.jpg')">
+  <div class="product-hero__overlay"></div>
+  <div class="product-hero__content">
+    <p class="product-hero__title">Coming Soon</p>
+    <p class="product-hero__sub">Join the waitlist</p>
+    <a class="btn btn--iridescent" href="#" style="margin-top:40px">Notify Me</a>
+  </div>
+</section>
+
+
+<!-- QUOTE -->
+<section style="padding:clamp(60px,10vw,120px) clamp(40px,6vw,100px);text-align:center">
+  <blockquote style="font-family:'Playfair Display',serif;font-size:clamp(1.5rem,3vw,3rem);font-style:italic;line-height:1.3;max-width:700px;margin:0 auto;color:rgba(255,255,255,0.6)">
+    &ldquo;We were tired of reaching for bottles that made us feel like something was wrong with us.&rdquo;
+  </blockquote>
+</section>
+
+
+<!-- CTA -->
+<section class="cta">
+  <h2 class="cta__title">Get<br>Moisture.</h2>
+  <a class="btn btn--white" href="#">Shop Now &rarr;</a>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="footer">
+  <a class="footer__logo" href="#">Moisture Oyster</a>
+  <div class="footer__links">
+    <a class="footer__link" href="#">Instagram</a>
+    <a class="footer__link" href="#">TikTok</a>
+    <a class="footer__link" href="#">Newsletter</a>
+  </div>
+  <p class="footer__copy">&copy; 2026 Moisture Oyster, Inc.</p>
+</footer>
+
+
+<script>
+// Sticky nav background on scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('nav--scrolled', window.scrollY > 80);
+});
+</script>
+
+</body>
+</html>

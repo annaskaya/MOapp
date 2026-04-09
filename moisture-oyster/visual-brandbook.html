@@ -142,7 +142,7 @@ body{font-family:'Inter',system-ui,sans-serif;color:#000;background:#fff;overflo
      02 — THE PIN — HERO IMAGE MOMENT
      ============================================================ -->
 <section class="pin-hero">
-  <div class="pin-hero__bg"></div>
+  <div class="pin-hero__bg" style="background-image:url('https://i.pinimg.com/736x/f5/a5/1d/f5a51dec3fdb325258a03f0e9fb5648f.jpg');background-size:cover;background-position:center top"></div>
   <div class="pin-hero__overlay"></div>
   <div class="pin-hero__content">
     <p class="label mb-16" style="opacity:0.5">The Core Visual</p>
@@ -249,22 +249,25 @@ body{font-family:'Inter',system-ui,sans-serif;color:#000;background:#fff;overflo
   <h2 class="huge mb-64">Skin.<br>Light.<br>Moisture.</h2>
 
   <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;max-width:1200px">
-    <div style="background:linear-gradient(135deg,#e8b4c8,#c49a7a);aspect-ratio:1;display:flex;align-items:flex-end;padding:24px">
-      <div>
-        <p class="label mb-8" style="color:#000;opacity:0.5">01</p>
-        <p class="mid" style="color:#000;font-size:clamp(1rem,2vw,1.8rem)">Extreme<br>Close-ups</p>
+    <div style="background:url('https://i.pinimg.com/736x/f5/a5/1d/f5a51dec3fdb325258a03f0e9fb5648f.jpg') center/cover;aspect-ratio:1;display:flex;align-items:flex-end;padding:24px;position:relative">
+      <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,0.6) 0%,transparent 50%)"></div>
+      <div style="position:relative;z-index:1">
+        <p class="label mb-8" style="color:#fff;opacity:0.5">01</p>
+        <p class="mid" style="color:#fff;font-size:clamp(1rem,2vw,1.8rem)">Extreme<br>Close-ups</p>
       </div>
     </div>
-    <div style="background:linear-gradient(135deg,#c5b3d4,#9bc4ab);aspect-ratio:1;display:flex;align-items:flex-end;padding:24px">
-      <div>
-        <p class="label mb-8" style="color:#000;opacity:0.5">02</p>
-        <p class="mid" style="color:#000;font-size:clamp(1rem,2vw,1.8rem)">Iridescent<br>Glow</p>
+    <div style="background:url('https://i.pinimg.com/736x/84/eb/2d/84eb2d0bb958dbf196819f99c23c9afb.jpg') center/cover;aspect-ratio:1;display:flex;align-items:flex-end;padding:24px;position:relative">
+      <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,0.6) 0%,transparent 50%)"></div>
+      <div style="position:relative;z-index:1">
+        <p class="label mb-8" style="color:#fff;opacity:0.5">02</p>
+        <p class="mid" style="color:#fff;font-size:clamp(1rem,2vw,1.8rem)">Iridescent<br>Glow</p>
       </div>
     </div>
-    <div style="background:linear-gradient(135deg,#c9a96e,#f2dcc8);aspect-ratio:1;display:flex;align-items:flex-end;padding:24px">
-      <div>
-        <p class="label mb-8" style="color:#000;opacity:0.5">03</p>
-        <p class="mid" style="color:#000;font-size:clamp(1rem,2vw,1.8rem)">Real<br>Skin</p>
+    <div style="background:url('https://i.pinimg.com/736x/d9/9c/5f/d99c5f3d85bc1a41062831315d6348e5.jpg') center/cover;aspect-ratio:1;display:flex;align-items:flex-end;padding:24px;position:relative">
+      <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,0.6) 0%,transparent 50%)"></div>
+      <div style="position:relative;z-index:1">
+        <p class="label mb-8" style="color:#fff;opacity:0.5">03</p>
+        <p class="mid" style="color:#fff;font-size:clamp(1rem,2vw,1.8rem)">Real<br>Skin</p>
       </div>
     </div>
   </div>
@@ -402,7 +405,121 @@ body{font-family:'Inter',system-ui,sans-serif;color:#000;background:#fff;overflo
 
 
 <!-- ============================================================
-     13 — CLOSING SLAM
+     13 — MOOD BOARD
+     ============================================================ -->
+<section class="s s--white s--pad" style="min-height:auto">
+  <p class="label mb-40">Mood Board</p>
+  <h2 class="big mb-64">The World<br>We Live In.</h2>
+</section>
+
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:2px">
+  <div style="grid-row:span 2;background:url('https://i.pinimg.com/736x/f5/a5/1d/f5a51dec3fdb325258a03f0e9fb5648f.jpg') center/cover;min-height:600px"></div>
+  <div style="background:url('https://i.pinimg.com/736x/d9/9c/5f/d99c5f3d85bc1a41062831315d6348e5.jpg') center top/cover;min-height:300px"></div>
+  <div style="background:url('https://i.pinimg.com/736x/84/eb/2d/84eb2d0bb958dbf196819f99c23c9afb.jpg') center/cover;min-height:300px"></div>
+  <div style="background:url('https://i.pinimg.com/736x/3b/d8/84/3bd884e35e62e713a4f91ee5dae66526.jpg') center/cover;min-height:300px;grid-row:span 2"></div>
+  <div style="background:linear-gradient(135deg,#e8b4c8,#c5b3d4);min-height:300px;display:flex;align-items:center;justify-content:center;padding:32px">
+    <p class="serif-big" style="color:rgba(0,0,0,0.3);text-align:center;font-size:clamp(1.5rem,2.5vw,2.5rem)">Iridescent.<br>Intimate.<br>Alive.</p>
+  </div>
+  <div style="background:linear-gradient(135deg,#9bc4ab,#c9a96e);min-height:300px;display:flex;align-items:center;justify-content:center;padding:32px">
+    <p class="mid" style="color:rgba(0,0,0,0.2);text-align:center;font-size:clamp(1rem,2vw,1.5rem)">Not pharmacy.<br>Beauty.</p>
+  </div>
+</div>
+
+
+<!-- ============================================================
+     14 — EXAMPLE LANDING PAGE
+     ============================================================ -->
+<section class="s s--black s--pad center" style="min-height:40vh">
+  <p class="label mb-24" style="color:#c9a96e">Applied Example</p>
+  <h2 class="huge">Landing<br>Page</h2>
+</section>
+
+<!-- The actual landing page mockup -->
+<div style="background:#000;border:1px solid rgba(255,255,255,0.06);max-width:1400px;margin:0 auto;position:relative">
+
+  <!-- HERO -->
+  <div style="position:relative;min-height:100vh;overflow:hidden">
+    <div style="position:absolute;inset:0;background:url('https://i.pinimg.com/736x/f5/a5/1d/f5a51dec3fdb325258a03f0e9fb5648f.jpg') center top/cover"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(0deg,#000 0%,rgba(0,0,0,0.3) 40%,transparent 70%)"></div>
+    <!-- Nav -->
+    <div style="position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;padding:32px 48px">
+      <p style="font-family:'Playfair Display',serif;font-size:1.4rem;color:#fff;font-style:italic">Moisture Oyster</p>
+      <div style="display:flex;gap:32px;align-items:center">
+        <a style="font-family:'Inter',sans-serif;font-size:0.75rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.6);text-decoration:none">Shop</a>
+        <a style="font-family:'Inter',sans-serif;font-size:0.75rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.6);text-decoration:none">About</a>
+        <a style="font-family:'Inter',sans-serif;font-size:0.75rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.6);text-decoration:none">Quiz</a>
+        <a style="font-family:'Inter',sans-serif;font-size:0.7rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:#000;background:#fff;padding:10px 24px;border-radius:40px;text-decoration:none">Get Moisture</a>
+      </div>
+    </div>
+    <!-- Hero Content -->
+    <div style="position:relative;z-index:2;padding:0 48px 80px;margin-top:auto;min-height:calc(100vh - 100px);display:flex;flex-direction:column;justify-content:flex-end">
+      <p style="font-family:'Inter',sans-serif;font-size:0.65rem;font-weight:500;letter-spacing:0.3em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:24px">Screen-Era Self-Care</p>
+      <h1 style="font-family:'Inter',sans-serif;font-weight:900;font-size:clamp(3rem,7vw,7rem);line-height:0.9;letter-spacing:-0.04em;text-transform:uppercase;color:#fff;max-width:700px">Your Eyes.<br>Your<br>Routine.</h1>
+      <p style="font-family:'Inter',sans-serif;font-weight:300;font-size:1rem;line-height:1.7;color:rgba(255,255,255,0.5);max-width:400px;margin-top:32px">Preservative-free eye drops with hyaluronic acid. Designed for the screen generation.</p>
+      <div style="display:flex;gap:16px;margin-top:32px">
+        <a style="font-family:'Inter',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#000;background:linear-gradient(135deg,#e8b4c8,#c5b3d4,#9bc4ab);padding:16px 40px;border-radius:40px;text-decoration:none">Get Moisture</a>
+        <a style="font-family:'Inter',sans-serif;font-size:0.7rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,0.2);padding:16px 40px;border-radius:40px;text-decoration:none">Take the Quiz</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FEATURES STRIP -->
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.06)">
+    <div style="background:#000;padding:48px 40px;text-align:center">
+      <p style="font-family:'Playfair Display',serif;font-size:1.8rem;color:#e8b4c8;font-style:italic;margin-bottom:8px">Preservative-Free</p>
+      <p style="font-family:'Inter',sans-serif;font-size:0.8rem;font-weight:300;color:rgba(255,255,255,0.4)">No BAK. Gentle for daily use.</p>
+    </div>
+    <div style="background:#000;padding:48px 40px;text-align:center">
+      <p style="font-family:'Playfair Display',serif;font-size:1.8rem;color:#9bc4ab;font-style:italic;margin-bottom:8px">Hyaluronic Acid</p>
+      <p style="font-family:'Inter',sans-serif;font-size:0.8rem;font-weight:300;color:rgba(255,255,255,0.4)">Premium skincare hydration for eyes.</p>
+    </div>
+    <div style="background:#000;padding:48px 40px;text-align:center">
+      <p style="font-family:'Playfair Display',serif;font-size:1.8rem;color:#c9a96e;font-style:italic;margin-bottom:8px">Screen Formula</p>
+      <p style="font-family:'Inter',sans-serif;font-size:0.8rem;font-weight:300;color:rgba(255,255,255,0.4)">Built for 8-12 hour screen days.</p>
+    </div>
+  </div>
+
+  <!-- SPLIT: IMAGE + TEXT -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;min-height:80vh">
+    <div style="background:url('https://i.pinimg.com/736x/d9/9c/5f/d99c5f3d85bc1a41062831315d6348e5.jpg') center top/cover"></div>
+    <div style="background:#000;display:flex;flex-direction:column;justify-content:center;padding:clamp(40px,6vw,100px)">
+      <p style="font-family:'Inter',sans-serif;font-size:0.65rem;font-weight:500;letter-spacing:0.3em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:24px">Why Moisture?</p>
+      <h2 style="font-family:'Inter',sans-serif;font-weight:900;font-size:clamp(2rem,4vw,4rem);line-height:0.92;letter-spacing:-0.03em;text-transform:uppercase;color:#fff;margin-bottom:24px">Screens Gave<br>You Everything.<br>We Protect<br>What They<br>Take.</h2>
+      <p style="font-family:'Inter',sans-serif;font-weight:300;font-size:0.95rem;line-height:1.7;color:rgba(255,255,255,0.4);max-width:380px">You're not sick. You're just living on screens. We built Moisture for people who refuse to let it show.</p>
+    </div>
+  </div>
+
+  <!-- PRODUCT HIGHLIGHT -->
+  <div style="background:url('https://i.pinimg.com/736x/3b/d8/84/3bd884e35e62e713a4f91ee5dae66526.jpg') center/cover;min-height:70vh;display:flex;align-items:center;justify-content:center;position:relative">
+    <div style="position:absolute;inset:0;background:rgba(0,0,0,0.2)"></div>
+    <div style="position:relative;z-index:1;text-align:center;padding:40px">
+      <p style="font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,5rem);color:#fff;font-style:italic;line-height:1">Coming Soon</p>
+      <p style="font-family:'Inter',sans-serif;font-size:0.7rem;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:24px">Join the waitlist</p>
+    </div>
+  </div>
+
+  <!-- CTA SECTION -->
+  <div style="background:#000;padding:clamp(60px,10vw,140px) clamp(40px,6vw,100px);text-align:center">
+    <h2 style="font-family:'Inter',sans-serif;font-weight:900;font-size:clamp(3rem,8vw,8rem);line-height:0.88;letter-spacing:-0.04em;text-transform:uppercase;background:linear-gradient(90deg,#e8b4c8,#c5b3d4,#9bc4ab,#c9a96e,#e8b4c8);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 6s linear infinite;margin-bottom:40px">Get<br>Moisture.</h2>
+    <a style="display:inline-block;font-family:'Inter',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#000;background:#fff;padding:18px 48px;border-radius:40px;text-decoration:none">Shop Now &rarr;</a>
+  </div>
+
+  <!-- FOOTER -->
+  <div style="border-top:1px solid rgba(255,255,255,0.06);padding:32px 48px;display:flex;justify-content:space-between;align-items:center;background:#000;flex-wrap:wrap;gap:16px">
+    <p style="font-family:'Playfair Display',serif;font-size:1.1rem;color:#fff;font-style:italic">Moisture Oyster</p>
+    <div style="display:flex;gap:24px">
+      <span style="font-family:'Inter',sans-serif;font-size:0.65rem;font-weight:400;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.3)">Instagram</span>
+      <span style="font-family:'Inter',sans-serif;font-size:0.65rem;font-weight:400;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.3)">TikTok</span>
+      <span style="font-family:'Inter',sans-serif;font-size:0.65rem;font-weight:400;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.3)">Newsletter</span>
+    </div>
+    <p style="font-family:'Inter',sans-serif;font-size:0.6rem;font-weight:300;letter-spacing:0.1em;color:rgba(255,255,255,0.15)">&copy; 2026 Moisture Oyster, Inc.</p>
+  </div>
+</div>
+
+<div style="height:2px"></div>
+
+<!-- ============================================================
+     15 — CLOSING SLAM
      ============================================================ -->
 <section class="s s--iridescent s--pad center" style="min-height:70vh">
   <h2 class="huge" style="color:rgba(0,0,0,0.2);font-size:clamp(5rem,15vw,18rem)">Eyes<br>Deserve<br>Beauty.</h2>

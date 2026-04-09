@@ -1,12 +1,12 @@
 {
-  "version": "v260409.04 5:26a",
-  "release": 4,
-  "sha": "988656f",
-  "fullSha": "988656f9d281559e778eca7f6bcaebfef8fbf6cb",
+  "version": "v260409.05 5:31a",
+  "release": 5,
+  "sha": "dafa78c",
+  "fullSha": "dafa78cbe561bb1ea0a09e4e03523b4e8514485a",
   "actor": "annaskaya",
   "source": "github-main-push",
   "model": "ci",
   "machine": "runnervm727z3",
-  "pushedAt": "2026-04-08T22:26:16-07:00",
-  "commits": [{"sha":"988656f","message":"Add standalone Moisture Oyster landing page","author":"Anna Skaya"}]
+  "pushedAt": "2026-04-08T22:31:42-07:00",
+  "commits": [{"sha":"dafa78c","message":"Add Eye Vitamins and Glow Mix products to landing page","author":"Anna Skaya"}]
 }

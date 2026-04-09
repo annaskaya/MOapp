@@ -35,7 +35,7 @@ a:hover{opacity:0.8}
 
 /* Hero */
 .hero{position:relative;min-height:100vh;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:0 48px 80px}
-.hero__bg{position:absolute;inset:0;background:url('https://i.pinimg.com/736x/f5/a5/1d/f5a51dec3fdb325258a03f0e9fb5648f.jpg') center top/cover}
+.hero__bg{position:absolute;inset:0;background-color:#2a1f23;background-size:cover;background-position:center top}
 .hero__overlay{position:absolute;inset:0;background:linear-gradient(0deg,#000 0%,rgba(0,0,0,0.3) 40%,transparent 70%)}
 .hero__content{position:relative;z-index:2}
 .hero__label{font-size:0.65rem;font-weight:500;letter-spacing:0.3em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:24px}
@@ -182,7 +182,7 @@ a:hover{opacity:0.8}
 
 <!-- SPLIT: WHY MOISTURE -->
 <section class="split">
-  <div class="split__img" style="background-image:url('https://i.pinimg.com/736x/d9/9c/5f/d99c5f3d85bc1a41062831315d6348e5.jpg')"></div>
+  <div class="split__img" data-bg="beauty-portrait.jpg" style="background-size:cover;background-position:center top"></div>
   <div class="split__text">
     <p class="split__label">Why Moisture?</p>
     <h2 class="split__title">Screens Gave You Everything. We Protect What They Take.</h2>
@@ -200,7 +200,7 @@ a:hover{opacity:0.8}
     <p class="split__desc">Integrate Moisture into your daily self-care ritual. Next to your serum. Next to your SPF. Where it belongs.</p>
     <a class="btn btn--outline" href="#" style="margin-top:40px;align-self:flex-start">Build Your Routine</a>
   </div>
-  <div class="split__img" style="background-image:url('https://i.pinimg.com/736x/84/eb/2d/84eb2d0bb958dbf196819f99c23c9afb.jpg')"></div>
+  <div class="split__img" data-bg="y2k-glam.jpg" style="background-size:cover;background-position:center"></div>
 </section>
 
 
@@ -213,7 +213,7 @@ a:hover{opacity:0.8}
 
     <!-- 01: Eye Drops (original) -->
     <div class="product-card">
-      <div class="product-card__bg" style="background:url('https://i.pinimg.com/736x/3b/d8/84/3bd884e35e62e713a4f91ee5dae66526.jpg') center/cover"></div>
+      <div class="product-card__bg" data-bg="dropper-bottle.jpg" style="background-size:cover;background-position:center"></div>
       <div class="product-card__overlay"></div>
       <div class="product-card__content">
         <span class="product-card__tag" style="background:#9bc4ab;color:#000">Eye Drops</span>
@@ -228,7 +228,15 @@ a:hover{opacity:0.8}
     <div class="product-card">
       <div class="product-card__bg" style="background:linear-gradient(160deg,#1a1216 0%,#2a1f23 40%,#3a2833 100%)"></div>
       <div class="product-card__overlay" style="background:none"></div>
-      <div class="product-card__content" style="display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;height:100%">
+      <!-- Visual: floating capsules -->
+      <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;z-index:0">
+        <div style="position:relative;width:200px;height:300px">
+          <div style="position:absolute;width:60px;height:120px;border-radius:30px;background:linear-gradient(180deg,#c9a96e,#e8b4c8);opacity:0.7;top:20px;left:70px;transform:rotate(-15deg);box-shadow:0 0 40px rgba(201,169,110,0.3)"></div>
+          <div style="position:absolute;width:50px;height:100px;border-radius:25px;background:linear-gradient(180deg,#e8b4c8,#c5b3d4);opacity:0.5;top:80px;left:20px;transform:rotate(10deg);box-shadow:0 0 30px rgba(232,180,200,0.2)"></div>
+          <div style="position:absolute;width:55px;height:110px;border-radius:27px;background:linear-gradient(180deg,#9bc4ab,#c9a96e);opacity:0.4;top:60px;left:120px;transform:rotate(-8deg);box-shadow:0 0 35px rgba(155,196,171,0.2)"></div>
+        </div>
+      </div>
+      <div class="product-card__content" style="display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;height:100%;position:relative;z-index:1">
         <span class="product-card__tag" style="background:#c9a96e;color:#000">New</span>
         <p class="product-card__name">Eye Vitamins</p>
         <p class="product-card__desc">Daily eye nutrition. Lutein, zeaxanthin, and bilberry extract in a clean, vegan capsule. Screen protection from the inside out.</p>
@@ -241,7 +249,16 @@ a:hover{opacity:0.8}
     <div class="product-card">
       <div class="product-card__bg" style="background:linear-gradient(160deg,#1a1216 0%,#231620 40%,#2d1a28 100%)"></div>
       <div class="product-card__overlay" style="background:none"></div>
-      <div class="product-card__content" style="display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;height:100%">
+      <!-- Visual: stick packs -->
+      <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;z-index:0">
+        <div style="position:relative;width:220px;height:280px">
+          <div style="position:absolute;width:36px;height:180px;border-radius:18px;background:linear-gradient(180deg,#e8b4c8,#d4a0b8);opacity:0.6;top:30px;left:40px;transform:rotate(-5deg);box-shadow:0 0 30px rgba(232,180,200,0.3)"></div>
+          <div style="position:absolute;width:36px;height:180px;border-radius:18px;background:linear-gradient(180deg,#c5b3d4,#e8b4c8);opacity:0.7;top:20px;left:80px;transform:rotate(2deg);box-shadow:0 0 30px rgba(197,179,212,0.3)"></div>
+          <div style="position:absolute;width:36px;height:180px;border-radius:18px;background:linear-gradient(180deg,#e8b4c8,#c5b3d4);opacity:0.5;top:40px;left:120px;transform:rotate(-3deg);box-shadow:0 0 30px rgba(232,180,200,0.2)"></div>
+          <div style="position:absolute;width:36px;height:180px;border-radius:18px;background:linear-gradient(180deg,#d4a0b8,#c5b3d4);opacity:0.35;top:50px;left:160px;transform:rotate(6deg);box-shadow:0 0 25px rgba(212,160,184,0.2)"></div>
+        </div>
+      </div>
+      <div class="product-card__content" style="display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;height:100%;position:relative;z-index:1">
         <span class="product-card__tag" style="background:#e8b4c8;color:#000">New</span>
         <p class="product-card__name">Glow Mix</p>
         <p class="product-card__desc">Skin hydration beauty mix. Hyaluronic acid, vitamin C, and marine collagen in a daily stick pack. Hydrate from within &mdash; skin and eyes.</p>
@@ -286,6 +303,21 @@ a:hover{opacity:0.8}
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
   nav.classList.toggle('nav--scrolled', window.scrollY > 80);
+});
+
+// Resolve image paths relative to this HTML file
+let dir = window.location.pathname;
+// Ensure we have the directory, not a file or bare path
+if (!dir.endsWith('/')) {
+  // Could be /moisture-oyster or /moisture-oyster/index.html
+  if (dir.includes('.')) dir = dir.substring(0, dir.lastIndexOf('/') + 1);
+  else dir = dir + '/';
+}
+const img = (name) => dir + 'img/' + name;
+
+document.querySelector('.hero__bg').style.backgroundImage = `url('${img('hero-iridescent.jpg')}')`;
+document.querySelectorAll('[data-bg]').forEach(el => {
+  el.style.backgroundImage = `url('${img(el.dataset.bg)}')`;
 });
 </script>
 

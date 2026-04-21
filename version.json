@@ -1,12 +1,12 @@
 {
-  "version": "v260421.01 10:51p",
-  "release": 1,
-  "sha": "692f20f",
-  "fullSha": "692f20f662ab9278eb8a75e797a61103b47b42a4",
+  "version": "v260421.02 11:03p",
+  "release": 2,
+  "sha": "daac1e2",
+  "fullSha": "daac1e24ad4a0fb0efe2b2452e01a96c3056443e",
   "actor": "annaskaya",
   "source": "github-main-push",
   "model": "ci",
   "machine": "runnervmeorf1",
-  "pushedAt": "2026-04-21T18:50:48-04:00",
-  "commits": [{"sha":"692f20f","message":"Add agency scope & pricing comparison page","author":"Anna Skaya"}]
+  "pushedAt": "2026-04-21T19:03:30-04:00",
+  "commits": [{"sha":"daac1e2","message":"Add FDA/regulatory section and Shopify vendor proposal","author":"Anna Skaya"}]
 }
